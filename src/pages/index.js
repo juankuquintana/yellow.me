@@ -63,7 +63,7 @@ const IndexPage = () => (
 
     <ClientsList />
 
-    <div className="bg-light-grey full-screen testimonial-ctr content-ctr">
+    <div className="testimonial-ctr bg-light-grey full-screen content-ctr">
       <h2 className="fw-300">
         “[Yellowme] has been there for us through ups and downs. I can’t believe
         it’s been three years already. You guys were there even before we had
