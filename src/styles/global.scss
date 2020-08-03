@@ -33,6 +33,10 @@ h6 {
 
 .content-ctr {
   padding: 4rem 10vw;
+
+  @media (min-width: 992px) {
+    padding-top: 4rem;
+  }
 }
 
 

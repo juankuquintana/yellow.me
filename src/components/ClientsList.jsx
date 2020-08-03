@@ -39,14 +39,18 @@ const clientsList = [
 const ClientsList = () => {
   return (
     <div>
-      <div className="content-ctr">
-        <h2>Shared journeys</h2>
-        {clientsList.map((client) => {
-          return <div className="clients-list--client">
-            <img src={client.logo} alt="client-logo"/>
-            <p>{client.text}</p>
-          </div>
-        })}
+      <div className="clients-section content-ctr">
+        <h2>Currently working alongside these promising companies</h2>
+        <div className="clients-list">
+          {clientsList.map(client => {
+            return (
+              <div className="clients-list--client">
+                <img src={client.logo} alt="client-logo" />
+                <p>{client.text}</p>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

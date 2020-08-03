@@ -22,34 +22,38 @@ const IndexPage = () => (
     </div>
 
     <div className="bg-medium-grey">
-      <div className="content-ctr">
-        <h6 className="statement uppercase">
-          For us it’s actually really simple
-        </h6>
+      <div className="section-1 content-ctr">
+        <div className="section-1--left">
+          <h6 className="statement uppercase">
+            For us it’s actually really simple
+          </h6>
+        </div>
 
-        <h2>Stage doesn’t matter.</h2>
-        <p>
-          We don’t care if you just raised a massive Series B or if you’re
-          bootstrapping an MVP.
-        </p>
-        <div className="divider" />
+        <div className="section-1--right">
+          <h2>Stage doesn’t matter.</h2>
+          <p>
+            We don’t care if you just raised a massive Series B or if you’re
+            bootstrapping an MVP.
+          </p>
+          <div className="divider" />
 
-        <h2>Fame doesn’t matter. </h2>
-        <p>
-          We take pride in working with companies on the rise who aren’t
-          household names, yet.
-        </p>
-        <div className="divider" />
+          <h2>Fame doesn’t matter. </h2>
+          <p>
+            We take pride in working with companies on the rise who aren’t
+            household names, yet.
+          </p>
+          <div className="divider" />
 
-        <h2>Industry doesn’t matter. </h2>
-        <p>
-          We love a good challenge and we’ve been lucky to find them everywhere
-          from banking to education.
-        </p>
+          <h2>Industry doesn’t matter. </h2>
+          <p>
+            We love a good challenge and we’ve been lucky to find them
+            everywhere from banking to education.
+          </p>
+        </div>
       </div>
     </div>
 
-    <div className="bg-medium-yellow full-screen df-cc df-column ta-c content-ctr">
+    <div className="yellow-section bg-medium-yellow full-screen df-cc df-column ta-c content-ctr">
       <h2 className="fw-500">Mission does matter.</h2>
       <p>
         We strive to work with strong leaders who inspire a shared sense of
