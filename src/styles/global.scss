@@ -1,0 +1,98 @@
+p {
+  font-size: 1.25rem;
+  line-height: 1.7;
+}
+
+h1 {}
+
+h2 {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+.bg-medium-grey {
+  background-color: #FBFBFB;
+}
+
+.bg-light-grey {
+  background-color: #F6F6F6;
+}
+
+.bg-medium-yellow {
+  background-color: #FFE384;
+}
+
+.content-ctr {
+  padding: 4rem 10vw;
+}
+
+
+
+// utils
+.uppercase {
+  text-transform: uppercase;
+}
+
+.full-screen {
+  height: 100vh;
+}
+
+.df-cc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.df-column {
+  flex-direction: column;
+}
+
+.ta-c {
+  text-align: center;
+}
+
+// font-weigets
+.fw-200 {
+  font-weight: 200 ;
+}
+
+.fw-300 {
+  font-weight: 300 ;
+}
+
+.fw-500 {
+  font-weight: 500 ;
+}
+
+
+// Components
+header {
+  position: absolute;
+  padding: 0 16px;
+}
+
+.footer {
+
+  &--email {
+    margin-bottom: 3.2rem;
+  }
+
+  &--social-icons {
+    height: 30px;
+    display: flex;
+    align-items: center;
+
+    & img {
+      margin-right: .5rem;
+    }
+  }
+}

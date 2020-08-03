@@ -2,20 +2,74 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import "../styles/home.scss"
+
+import ClientsList from "../components/ClientsList"
+import Footer from "../components/Footer"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <div className="hero content-ctr">
+      <div className="hero--ctr">
+        <div className="hero--sentence">
+          Commit. <br />
+          Ship. <br />
+          Enjoy. <br />
+        </div>
+        <h5>Hi, we’re Yellowme 👋</h5>
+        <p>Your own design and engineering team</p>
+      </div>
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+
+    <div className="bg-medium-grey">
+      <div className="content-ctr">
+        <h6 className="statement uppercase">
+          For us it’s actually really simple
+        </h6>
+
+        <h2>Stage doesn’t matter.</h2>
+        <p>
+          We don’t care if you just raised a massive Series B or if you’re
+          bootstrapping an MVP.
+        </p>
+        <div className="divider" />
+
+        <h2>Fame doesn’t matter. </h2>
+        <p>
+          We take pride in working with companies on the rise who aren’t
+          household names, yet.
+        </p>
+        <div className="divider" />
+
+        <h2>Industry doesn’t matter. </h2>
+        <p>
+          We love a good challenge and we’ve been lucky to find them everywhere
+          from banking to education.
+        </p>
+      </div>
+    </div>
+
+    <div className="bg-medium-yellow full-screen df-cc df-column ta-c content-ctr">
+      <h2 className="fw-500">Mission does matter.</h2>
+      <p>
+        We strive to work with strong leaders who inspire a shared sense of
+        purpose.
+      </p>
+    </div>
+
+    <ClientsList />
+
+    <div className="bg-light-grey full-screen testimonial-ctr content-ctr">
+      <h2 className="fw-300">
+        “[Yellowme] has been there for us through ups and downs. I can’t believe
+        it’s been three years already. You guys were there even before we had
+        real money to spend.”
+      </h2>
+      <h5>Rahim Fazal</h5>
+      <span>SVA Academy</span>
+    </div>
+
+    <Footer />
   </Layout>
 )
 
