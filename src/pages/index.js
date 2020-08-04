@@ -16,7 +16,9 @@ const IndexPage = () => (
           Ship. <br />
           Enjoy. <br />
         </div>
-        <h5>Hi, we’re Yellowme 👋</h5>
+        <h5>
+          Hi, we’re Yellowme <div className="hand-emoji">👋</div>
+        </h5>
         <p>Your own design and engineering team</p>
       </div>
     </div>

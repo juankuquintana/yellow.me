@@ -3,7 +3,8 @@ p {
   line-height: 1.7;
 }
 
-h1 {}
+h1 {
+}
 
 h2 {
   font-size: 32px;
@@ -20,15 +21,15 @@ h6 {
 }
 
 .bg-medium-grey {
-  background-color: #FBFBFB;
+  background-color: #fbfbfb;
 }
 
 .bg-light-grey {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
 
 .bg-medium-yellow {
-  background-color: #FFE384;
+  background-color: #ffe384;
 }
 
 .content-ctr {
@@ -38,8 +39,6 @@ h6 {
     padding-top: 4rem;
   }
 }
-
-
 
 // utils
 .uppercase {
@@ -66,26 +65,59 @@ h6 {
 
 // font-weigets
 .fw-200 {
-  font-weight: 200 ;
+  font-weight: 200;
 }
 
 .fw-300 {
-  font-weight: 300 ;
+  font-weight: 300;
 }
 
 .fw-500 {
-  font-weight: 500 ;
+  font-weight: 500;
 }
 
+// Animations
+@keyframes shake {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  20% { transform: translate(0px, 0px) rotate(40deg); }
+  40% { transform: translate(-0px, 0px) rotate(0deg); }
+  60% { transform: translate(0px, 0px) rotate(40deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
 
 // Components
 header {
   position: absolute;
   padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  width: 98.5vw;
+  padding: 0 9.5vw;
+  margin-top: 4rem;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+    margin-left: 2rem;
+    padding: .6rem;
+    border-radius: 40px;
+    font-size: .9rem;
+    
+    &:hover {
+      background-color: #FFD100;
+    };
+  }
+
+  @media (min-width: 992px) {
+    img {
+      height: 2rem;
+    }
+  }
 }
 
 .footer {
-
   &--email {
     margin-bottom: 3.2rem;
   }
@@ -96,7 +128,7 @@ header {
     align-items: center;
 
     & img {
-      margin-right: .5rem;
+      margin-right: 0.5rem;
     }
   }
 }

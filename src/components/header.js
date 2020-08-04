@@ -7,6 +7,18 @@ import Logotype from "../images/Logotype.svg"
 const Header = () => (
   <header>
     <img src={Logotype} />
+
+    <div className="links-ctr">
+      <Link to="/culture" activeStyle={{ color: "red" }}>
+        CULTURE + TRIBE
+      </Link>
+      <Link to="/culture" activeStyle={{ color: "red" }}>
+        CAREERS
+      </Link>
+      <Link to="/culture" activeStyle={{ color: "red" }}>
+        CONTACT
+      </Link>
+    </div>
   </header>
 )
 
