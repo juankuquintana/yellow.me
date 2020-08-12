@@ -17,22 +17,22 @@ import triangle from "../images/triangle.png";
 const IndexPage = () => (
   <Layout>
     
-    <div className="yellow-section full-screen df-cc df-column ta-c content-ctr">
+    <div className="join-a-culture-section full-screen df-cc df-column ta-c content-ctr">
       <h2 className="fw-500">Join a culture of permanent <br/> work-in-progress.</h2>
     </div>
 
-    <div className="photos-grid">
-      <div className="wrapper-a">
-        <div class="box a-1">1</div>
-        <div class="box a-2">2</div>
-        <div class="box a-3">3</div>
-        <div class="box a-4">4</div>
-        <div class="box a-5">5</div>
-        <div class="box a-6">6</div>
+    <div className="photos-grid-a">
+      <div className="photos-wrapper-a">
+        <div class="slot photo-1">1</div>
+        <div class="slot photo-2">2</div>
+        <div class="slot photo-3">3</div>
+        <div class="slot photo-4">4</div>
+        <div class="slot photo-5">5</div>
+        <div class="slot photo-6">6</div>
       </div>
     </div>
 
-    <div className="">
+    <div className="principles-section">
       <div className="section-1 content-ctr">
         <div className="section-1--left">
           <h6 className="statement">
@@ -73,13 +73,13 @@ const IndexPage = () => (
       </div>
     </div>
 
-    <div className="photos-grid">
-      <div className="wrapper-b">
-        <div class="box b-1">1</div>
-        <div class="box b-2">2</div>
-        <div class="box b-3">3</div>
-        <div class="box b-4">4</div>
-        <div class="box b-5">5</div>
+    <div className="photos-grid-b">
+      <div className="photos-wrapper-b">
+        <div class="slot photo-1">1</div>
+        <div class="slot photo-2">2</div>
+        <div class="slot photo-3">3</div>
+        <div class="slot photo-4">4</div>
+        <div class="slot photo-5">5</div>
       </div>
     </div>
 
@@ -90,7 +90,7 @@ const IndexPage = () => (
         </div>
 
         <div className="section-1--right">
-          <h2></h2>
+          <h2><br/><br/></h2>
           <p>
           The team has grown, our model has continuously evolved but our core values remain the same. 
           If anything, we’re always looking to strengthen them by bringing the best possible people to work with us.</p>
@@ -101,7 +101,7 @@ const IndexPage = () => (
     <ValuesList />
 
     <div>
-      <div className="meet-yellows-section content-ctr">
+      <div className="meet-yellows-section content-ctr-thin">
         <h2>Meet the yellows</h2>
         <div className="meet-yellows">
 
@@ -114,24 +114,24 @@ const IndexPage = () => (
 
             <div class="display-flex">
               <div class="yellow-role">
-                <p className="caption fs-14">ROLE</p>
-                <p className="value fs-24">Software Enginner</p>
+                <p className="caption">ROLE</p>
+                <p className="value">Software Enginner</p>
               </div>
 
               <div class="yellow-exp">
-                <p className="caption fs-14">EXP</p>
-                <p className="value fs-24">7 Years</p>
+                <p className="caption">EXP</p>
+                <p className="value">7 Years</p>
               </div>
             </div>
 
             <div class="yellow-currently">
-              <p className="caption fs-14">CURRENTLY</p>
-              <p className="value fs-24">Working on the banking back-end of Enso</p>
+              <p className="caption">CURRENTLY</p>
+              <p className="value">Working on the banking back-end of Enso</p>
             </div>
 
             <div class="yellow-scoop">
-              <p className="caption fs-14">SCOOP</p>
-              <p className="value fs-24">Loves telling jokes 🤡</p>
+              <p className="caption">SCOOP</p>
+              <p className="value">Loves telling jokes 🤡</p>
             </div>
 
             <div className="divider" />
@@ -140,7 +140,6 @@ const IndexPage = () => (
               <span className="fs-14">Yellowme is Jorge and 60 other amazing designers, engineers and product managers.</span>
               <button><img src={ArrowRotation} /></button>
             </div>
-
           </div>
 
         </div>
@@ -159,17 +158,13 @@ const IndexPage = () => (
 
           <div className="form-email fw-500 fs-24">
             <span>Subscribe to our job opportunity feed</span>
-
             <div>
               <input className="email-input" type="text" name="email" placeholder="Your email here"/>
-              
               <div className="send-email">
                 <span className="fs-14">We send one email per week maximun</span>
                 <button><img src={ArrowRight} /></button>
               </div>
-              
             </div>
-
           </div>
 
         </div>
