@@ -9,13 +9,13 @@ const Header = () => (
     <img src={Logotype} />
 
     <div className="links-ctr">
-      <Link to="/culture" activeStyle={{ color: "red" }}>
+      <Link to="/culture" activeClassName="selected">
         CULTURE + TRIBE
       </Link>
-      <Link to="/culture" activeStyle={{ color: "red" }}>
+      <Link to="/careers" activeClassName="selected">
         CAREERS
       </Link>
-      <Link to="/culture" activeStyle={{ color: "red" }}>
+      <Link to="/contact" activeClassName="selected">
         CONTACT
       </Link>
     </div>

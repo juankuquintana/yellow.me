@@ -108,6 +108,11 @@ header {
     &:hover {
       background-color: #FFD100;
     };
+
+    &.selected {
+      background-color: #FFD100;
+    }
+
   }
 
   @media (min-width: 992px) {
