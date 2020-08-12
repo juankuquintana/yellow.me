@@ -76,6 +76,11 @@ h6 {
   font-weight: 500;
 }
 
+.fw-700 {
+  font-weight: 700;
+}
+
+// font-sizes
 .fs-14 {
   font-size: 14px;
 }
@@ -135,14 +140,17 @@ header {
 }
 
 .footer {
-  &--email {
-    margin-bottom: 3.2rem;
+  &--find-us {
+    margin: auto;
+    max-width: 600px;
   }
 
   &--social-icons {
     height: 30px;
+    max-width: 600px;
     display: flex;
     align-items: center;
+    margin: auto;
 
     & img {
       margin-right: 0.5rem;
