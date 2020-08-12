@@ -144,9 +144,16 @@ header {
     display: none;
   }
 
+  .links-ctr-toogle-menu {
+    display: block;
+  }
+
   @media (min-width: 992px) {
     .links-ctr {
       display: block;
+    }
+    .links-ctr-toogle-menu {
+      display: none;
     }
     img {
       height: 2rem;

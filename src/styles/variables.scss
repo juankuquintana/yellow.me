@@ -1,8 +1,15 @@
 $neutral-medium-grey: #f6f6f6;
 $neutral-black: #000;
 $neutral-dark-grey: #96989a;
+$brand-yellow:    #ffd100;
 
 $font-size-12px: 12px;
 $font-size-14px: 14px;
 $font-size-18px: 18px;
 $font-size-24px: 24px;
+
+$breakpoint-desktop-x-large: "max-width: 1690px";
+$breakpoint-desktop-large:   "max-width: 1200px";
+$breakpoint-desktop:         "max-width: 992px";
+$breakpoint-tablet:          "max-width: 768px";
+$breakpoint-mobile:          "max-width: 576px";
