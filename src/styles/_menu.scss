@@ -182,23 +182,15 @@
   -o-transform-origin: left center;
   transform-origin: left center;
   
-  &.section-0 {
+  &.line-0 {
     background-color: #FFF;
   }
 
-  &.section-1 {
+  &.line-1 {
     background-color: #000;
   }
 
-  &.section-2 {
-    background-color: #000;
-
-    @media only screen and ($breakpoint-tablet) {
-      background-color: #FFF
-    }
-  }
-
-  &.section-3 {
+  &.line-2 {
     background-color: #000;
 
     @media only screen and ($breakpoint-tablet) {
@@ -206,15 +198,23 @@
     }
   }
 
-  &.section-4 {
+  &.line-3 {
+    background-color: #000;
+
+    @media only screen and ($breakpoint-tablet) {
+      background-color: #FFF
+    }
+  }
+
+  &.line-4 {
     background-color: #FFF;
   }
 
-  &.section-5 {
+  &.line-5 {
     background-color: #FFF;
   }
 
-  &.section-6 {
+  &.line-6 {
     background-color: #FFF;
 
     @media only screen and ($breakpoint-tablet) {
@@ -222,7 +222,7 @@
     }
   }
 
-  &.section-44 {
+  &.line-44 {
     background-color: #FFF;
 
     @media only screen and (max-width: 900px) {

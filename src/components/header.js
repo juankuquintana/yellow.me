@@ -31,9 +31,9 @@ const Header = () => {
 
       <div className="links-ctr-toogle-menu">
         <div className={`menu__icon ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
-          <span className={`section-1`}></span>
-          <span className={`section-1`}></span>
-          <span className={`section-1`}></span>
+          <span className={`line-1`}></span>
+          <span className={`line-1`}></span>
+          <span className={`line-1`}></span>
         </div>  
         <Menu 
           isMenuOpen={isMenuOpen}
