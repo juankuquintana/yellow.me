@@ -17,8 +17,8 @@ import triangle from "../images/triangle.png";
 const IndexPage = () => (
   <Layout>
     
-    <div className="join-a-culture-section full-screen df-cc df-column ta-c content-ctr">
-      <h2 className="fw-500">Join a culture of permanent <br/> work-in-progress.</h2>
+    <div className="join-a-culture-section df-cc df-column ta-c content-ctr">
+      <h2 className="">Join a culture of permanent <br/> work-in-progress.</h2>
     </div>
 
     <div className="photos-grid-a">
@@ -83,7 +83,7 @@ const IndexPage = () => (
       </div>
     </div>
 
-    <div className="">
+    <div className="we-are-our-values-section">
       <div className="section-1 content-ctr">
         <div className="section-1--left">
           <h2 className="statement">We are our values</h2>
@@ -110,7 +110,7 @@ const IndexPage = () => (
           </div>
 
           <div className="yellow-bio">
-            <p className="yellow-name fw-500">Jorge Pintor</p>
+            <p className="yellow-name">Jorge Pintor</p>
 
             <div class="display-flex">
               <div class="yellow-role">
@@ -137,7 +137,7 @@ const IndexPage = () => (
             <div className="divider" />
 
             <div className="footer">
-              <span className="fs-14">Yellowme is Jorge and 60 other amazing designers, engineers and product managers.</span>
+              <span>Yellowme is Jorge and 60 other amazing designers, engineers and product managers.</span>
               <button><img src={ArrowRotation} /></button>
             </div>
           </div>
@@ -156,12 +156,12 @@ const IndexPage = () => (
             <img src={triangle} height={47} width={46}/>
           </div>
 
-          <div className="form-email fw-500 fs-24">
+          <div className="form-email">
             <span>Subscribe to our job opportunity feed</span>
             <div>
               <input className="email-input" type="text" name="email" placeholder="Your email here"/>
               <div className="send-email">
-                <span className="fs-14">We send one email per week maximun</span>
+                <span>We send one email per week maximun</span>
                 <button><img src={ArrowRight} /></button>
               </div>
             </div>

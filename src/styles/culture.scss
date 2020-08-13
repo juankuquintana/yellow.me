@@ -1,13 +1,20 @@
 @import "./variables.scss";
+@import "./mixins";
 
 .join-a-culture-section {
+  padding-top: 202px;
+  padding-bottom: 80px;
+
+  h2 {
+    @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+  }
+
   @media (min-width: 992px) {
+    padding-top: 308px;
+    padding-bottom: 147px;
     h2 {
-      font-size: 5rem;
-    }
-    p {
-      font-size: 2rem;
-      max-width: 900px;
+      font-size: 56px;
+      line-height: normal;
     }
   }
 }
@@ -60,27 +67,35 @@
   }
 }
 
-.principles-section {
+.principles-section {
   .section-1 {
+    padding-top: 80px;
+
+    h2 {
+      @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+    }
+  
+    p {
+      @include text-style("TTInterfaces", 400, 24px, 1.5);
+    }
+
     @media (min-width: 992px) {
+      padding-top: 224px;
       display: grid;
       grid-template-columns: 1fr 1fr;
   
       h2 {
-        font-size: 3.5rem;
-      }
-  
-      p {
-        font-size: 1.45rem;
+        font-size: 56px;
+        line-height: normal;
       }
     }
 
     &--left {
       .statement {
         margin-bottom: 90px;
+        @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
       
         @media (min-width: 992px) {
-          font-size: 1.7rem;
           max-width: 330px;
           position: sticky;
           top: 4rem;
@@ -91,6 +106,7 @@
 }
 
 .photos-grid-b {
+  padding-top: 147px;
   max-width: 95%;
   .photos-wrapper-b {
     display: grid;
@@ -160,34 +176,76 @@
   }
 }
 
+.we-are-our-values-section {
+  .section-1 {
+    padding-top: 146px;
+    padding-bottom: 80px;
+
+    p {
+      @include text-style("TTInterfaces", 400, 24px, 1.5);
+    }
+
+    @media (min-width: 992px) {
+      padding-top: 224px;
+      padding-bottom: 146px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &--left {
+      .statement {
+        margin-bottom: 90px;
+        @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+      
+        @media (min-width: 992px) {
+          font-size: 56px;
+          line-height: normal;
+          max-width: 330px;
+          position: sticky;
+          top: 4rem;
+        }
+      }
+    }
+  }
+}
+
 .meet-yellows-section {
-  h2 {
+  padding-top: 146px;
+  > h2 {
+    @include text-style("TTInterfaces Medium", 500, 38px, 1.25);
     text-align: center;
-    font-size: 2.5rem;
     max-width: 600px;
     margin: auto;
     margin-bottom: 7rem;
+  }
+  @media (min-width: 992px) {
+    > h2 {
+      font-size: 56px;  
+    }
   }
 
   .meet-yellows {
     display: grid;
     grid-template-rows: 350px;
-    @media (min-width: 992px) {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 700px;
-    }
-  
+
     .yellow-photo {
       img {
         height: 100%;
         width: 100%;
         border-radius: 20px 20px 0px 0px;
         object-fit: cover;
-        @media (min-width: 992px) {
-          border-radius: 20px 0px 0px 20px;  
+      }
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 700px;
+      
+      .yellow-photo {
+        img {
+          border-radius: 20px 0px 0px 20px;
         }
       }
-      
     }
   
     .yellow-bio {
@@ -195,9 +253,8 @@
       border-radius: 0px 0px 20px 20px;
       padding: 30px;
 
-      @media (min-width: 992px) {
-        border-radius: 0px 20px 20px 0px; 
-        padding: 70px;
+      .yellow-name {
+        @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
       }
   
       .display-flex {
@@ -210,24 +267,30 @@
       }
       
       .caption {
+        @include text-style("TTInterfaces Bold", 700, 14px, 1.29);
         margin-bottom: 0;
-        font-size: $font-size-12px;
-        @media (min-width: 992px) {
-          font-size: $font-size-14px;
-        }
       }
 
       .value {
-        font-size: $font-size-18px;
-        @media (min-width: 992px) {
-          font-size: $font-size-24px;  
-        }
+        @include text-style("TTInterfaces", 400, 24px, 1.5);
+      }
+
+      @media (min-width: 992px) {
+        border-radius: 0px 20px 20px 0px; 
+        padding: 70px;
+
+        .yellow-name { font-size: 56px; line-height: normal; }
       }
       
       .footer {
         display: grid;
         grid-template-columns: 80% 20%;
         align-items: center;
+
+        span {
+          @include text-style("TTInterfaces", 400, 14px);
+        }
+
         button {
           width: 70px;
           height: 70px;
@@ -246,39 +309,35 @@
 }
 
 .subscribe-section {
-  h2 {
+  padding-top: 100px;
+  > h2 {
+    @include text-style("TTInterfaces", 400, 38px, 1.26);
     text-align: left;
-    font-size: 2.5rem;
     max-width: 600px;
     margin: auto;
     margin-bottom: 7rem;
   }
-  .subscribe {
-    @media (min-width: 992px) {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 100px 150px;
-      max-width: 600px;
-      margin: auto;
-
-      .form-email {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
+  @media (min-width: 992px) {
+    padding-top: 146px;
+    > h2 {
+      font-size: 56;
+      line-height: 1.18;  
     }
-
+  }
+  .subscribe {
     .form-email {
-      span{
+      > span {
+        @include text-style("TTInterfaces Medium", 500, 24px, 1.5);
         display: inline-block;
         margin: 30px 0;
       }
     }
 
-    .email-input{
+    .email-input {
       border-width: 0px 0px 1px 0px;
       border-color: $neutral-dark-grey;
-      font-size: 20px;
       width: 100%;
+      @include text-style("TTInterfaces", 400, 20px);
 
       &:focus {
         outline: none;
@@ -290,7 +349,8 @@
       display: grid;
       grid-template-columns: 80% 20%;
       align-items: center;
-      span {
+      > span {
+        @include text-style("TTInterfaces", 400, 14px);
         color: $neutral-dark-grey;
       }
       button {
@@ -303,6 +363,22 @@
         img{
           height: 30px;
           width: 30px;
+        }
+      }
+    }
+
+    @media (min-width: 992px) {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 100px 150px;
+      max-width: 600px;
+      margin: auto;
+
+      .form-email {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        > span {
+          @include text-style("TTInterfaces Bold", 700, 32px, 1.44);  
         }
       }
     }

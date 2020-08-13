@@ -1,24 +1,4 @@
-p {
-  font-size: 1.25rem;
-  line-height: 1.7;
-}
-
-h1 {
-}
-
-h2 {
-  font-size: 32px;
-  font-weight: 400;
-}
-
-h5 {
-  font-size: 20px;
-  margin-bottom: 1rem;
-}
-
-h6 {
-  font-size: 14px;
-}
+@import "./typography.scss";
 
 .bg-medium-grey {
   background-color: #fbfbfb;
@@ -33,18 +13,14 @@ h6 {
 }
 
 .content-ctr {
-  padding: 4rem 10vw;
-
-  @media (min-width: 992px) {
-    padding-top: 4rem;
-  }
+  padding: 80px 10vw 0px 10vw;
 }
 
 .content-ctr-thin {
-  padding: 4rem 5vw;
+  padding: 80px 5vw 0px 5vw;
 
   @media (min-width: 992px) {
-    padding: 4rem 10vw;
+    padding: 80px 10vw 0px 10vw;
   }
 }
 
@@ -162,6 +138,7 @@ header {
 }
 
 .footer {
+  padding-bottom: 32px;
   &--find-us {
     margin: auto;
     max-width: 600px;

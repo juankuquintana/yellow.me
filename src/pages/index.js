@@ -9,7 +9,7 @@ import Footer from "../components/Footer"
 
 const IndexPage = () => (
   <Layout>
-    <div className="hero content-ctr">
+    <div className="hero content-ctr-thin">
       <div className="hero--ctr">
         <div className="hero--sentence">
           Commit. <br />
@@ -26,7 +26,7 @@ const IndexPage = () => (
     <div className="bg-medium-grey">
       <div className="section-1 content-ctr">
         <div className="section-1--left">
-          <h6 className="statement uppercase">
+          <h6 className="statement">
             For us it’s actually really simple
           </h6>
         </div>
@@ -56,7 +56,7 @@ const IndexPage = () => (
     </div>
 
     <div className="yellow-section bg-medium-yellow full-screen df-cc df-column ta-c content-ctr">
-      <h2 className="fw-500">Mission does matter.</h2>
+      <h2>Mission does matter.</h2>
       <p>
         We strive to work with strong leaders who inspire a shared sense of
         purpose.
@@ -66,7 +66,7 @@ const IndexPage = () => (
     <ClientsList />
 
     <div className="testimonial-ctr bg-light-grey full-screen content-ctr">
-      <h2 className="fw-300">
+      <h2>
         “[Yellowme] has been there for us through ups and downs. I can’t believe
         it’s been three years already. You guys were there even before we had
         real money to spend.”

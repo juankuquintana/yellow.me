@@ -1,5 +1,7 @@
 import React from "react"
 
+import "../styles/_valuesList.scss"
+
 import circle from "../images/circle.png";
 import triangle from "../images/triangle.png";
 
@@ -35,12 +37,12 @@ const ValuesList = () => {
     <>
       {valuesList.map(value => {
         return (
-          <div className="yellow-section bg-light-grey full-screen df-cc df-column ta-c content-ctr">
+          <div className="values-list-section bg-light-grey full-screen df-cc df-column ta-c content-ctr">
           <div>
             <img src={circle} height={47} width={46} style={{marginRight: 8}}/>
             <img src={triangle} height={47} width={46}/>
           </div>
-          <h2 className="fw-500">{value.title}</h2>
+          <h2>{value.title}</h2>
           <p>
             {value.description}
           </p>
