@@ -14,7 +14,7 @@ import Footer from "../components/Footer"
 import circle from "../images/circle.png";
 import triangle from "../images/triangle.png";
 
-const IndexPage = () => (
+const CulturePage = () => (
   <Layout>
     
     <div className="join-a-culture-section df-cc df-column ta-c content-ctr">
@@ -176,4 +176,4 @@ const IndexPage = () => (
   </Layout>
 )
 
-export default IndexPage
+export default CulturePage

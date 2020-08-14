@@ -14,7 +14,7 @@ const Menu = ({ isMenuOpen, toggleMenu }) => (
         <a style={{transitionDelay: isMenuOpen ? '.41s' : '.3s' }} className={`menu__link ${isMenuOpen ? 'animate' : ''}`} href="/culture">
           Tribe + Culture
         </a>
-        <a style={{transitionDelay: isMenuOpen ? '.41s' : '.3s' }} className={`menu__link ${isMenuOpen ? 'animate' : ''}`} href="/contactc">
+        <a style={{transitionDelay: isMenuOpen ? '.41s' : '.3s' }} className={`menu__link ${isMenuOpen ? 'animate' : ''}`} href="/contact">
           Contact
         </a>
             
