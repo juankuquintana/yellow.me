@@ -5,6 +5,8 @@ import "../styles/_valuesList.scss"
 import circle from "../images/circle.png";
 import triangle from "../images/triangle.png";
 
+import Culture6 from "../images/culture/culture-icon-6.png"
+
 const valuesList = [
   {
     title: "Strive for ownership",
@@ -39,8 +41,7 @@ const ValuesList = () => {
         return (
           <div className="values-list-section bg-light-grey full-screen df-cc df-column ta-c content-ctr">
           <div>
-            <img src={circle} height={47} width={46} style={{marginRight: 8}}/>
-            <img src={triangle} height={47} width={46}/>
+            <img src={Culture6} height={60} width={120} />
           </div>
           <h2>{value.title}</h2>
           <p>

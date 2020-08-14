@@ -8,7 +8,7 @@ import Footer from "../components/Footer"
 
 import ArrowRight from "../images/arrow-right.svg"
 //Culture icons
-import Culture6 from "../images/culture/culture-6.png"
+import Culture6 from "../images/culture/culture-icon-6.png"
 
 const ContactPage = () => {
 

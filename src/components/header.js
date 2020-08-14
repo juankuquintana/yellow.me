@@ -15,15 +15,17 @@ const Header = () => {
 
   return (
     <header>
-      <img src={Logotype} />
+      <img src={Logotype}/>
 
       <div className="links-ctr">
         <Link to="/culture" activeClassName="selected">
           CULTURE + TRIBE
         </Link>
-        <Link to="/careers" activeClassName="selected">
+        {
+        /*<Link to="/careers" activeClassName="selected">
           CAREERS
-        </Link>
+        </Link>*/
+        }
         <Link to="/contact" activeClassName="selected">
           CONTACT
         </Link>

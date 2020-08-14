@@ -11,8 +11,7 @@ import ArrowRight from "../images/arrow-right.svg"
 
 import Footer from "../components/Footer"
 
-import circle from "../images/circle.png";
-import triangle from "../images/triangle.png";
+import Culture6 from "../images/culture/culture-icon-6.png"
 
 const CulturePage = () => (
   <Layout>
@@ -90,7 +89,6 @@ const CulturePage = () => (
         </div>
 
         <div className="section-1--right">
-          <h2><br/><br/></h2>
           <p>
           The team has grown, our model has continuously evolved but our core values remain the same. 
           If anything, we’re always looking to strengthen them by bringing the best possible people to work with us.</p>
@@ -152,8 +150,7 @@ const CulturePage = () => (
         <div className="subscribe">
 
           <div>
-            <img src={circle} height={47} width={46} style={{marginRight: 8}}/>
-            <img src={triangle} height={47} width={46}/>
+            <img src={Culture6} height={60} width={120} />
           </div>
 
           <div className="form-email">
