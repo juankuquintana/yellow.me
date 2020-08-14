@@ -16,15 +16,24 @@ import Culture6 from "../images/culture/culture-6.png"
 
 const ContactPage = () => {
 
-  const [selectedOption, setSelectedOption] = useState("option2");
+  const [selectedOption, setSelectedOption] = useState("Designer");
+  const [selectInputExpand, setSelectInputExpand] = useState(false)
+  const [yearsExperience, setYearsExperience] = useState("Select your experience");
 
   const handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
   };
 
   const handleOptionChange = (value) => {
-    console.log("Value", value);
     setSelectedOption(value)
+  }
+
+  const handleYearsExperienceChange = (value) => {
+    setYearsExperience(value);
+  }
+
+  const selectInputToogle = () => {
+    setSelectInputExpand(!selectInputExpand);
   }
 
   return(
@@ -68,45 +77,53 @@ const ContactPage = () => {
               <input type="email" name="email" placeholder="Your email"/>
 
               <p>And you are?</p>
-              <form onSubmit={handleFormSubmit}>
+              <form className="form-job-searched" onSubmit={handleFormSubmit}>
+                <input className="checkbox-tools" type="radio" value="Designer" checked={selectedOption === "Designer"} />
+                  <label className="for-checkbox-tools" onClick={() => handleOptionChange("Designer")}>
+                    <div className="radio-button-inside">
+                      <img src={Culture6}/>
+                      <p>Designer</p>
+                    </div>
+                  </label>
 
-              
+                <input className="checkbox-tools" type="radio" value="Engineer" checked={selectedOption === "Engineer"} />
+                  <label className="for-checkbox-tools" onClick={() => handleOptionChange("Engineer")}>
+                    <div className="radio-button-inside">
+                      <img src={Culture6}/>
+                      <p>Engineer</p>
+                    </div>
+                  </label>
 
-              <input className="checkbox-tools" type="radio" name="tools" id="tool-1" value="option1" checked={selectedOption === "option1"} />
-                <label className="for-checkbox-tools" onClick={() => handleOptionChange("option1")}>
-                  <div className="radio-button-inside">
-                    <img src={Culture6}/>
-                    <p>Designer</p>
-                  </div>
-                </label>
-
-              <input className="checkbox-tools" type="radio" name="tools" id="tool-2" value="option2" checked={selectedOption === "option2"} />
-                <label className="for-checkbox-tools" onClick={() => handleOptionChange("option2")}>
-                  <div className="radio-button-inside">
-                    <img src={Culture6}/>
-                    <p>Engineer</p>
-                  </div>
-                </label>
-
-              <input className="checkbox-tools" type="radio" name="tools" id="tool-3" value="option3" checked={selectedOption === "option3"} />
-                <label className="for-checkbox-tools" onClick={() => handleOptionChange("option3")}>
-                  <div className="radio-button-inside">
-                    <img src={Culture6}/>
-                    <p>Other</p>
-                  </div>
-                </label>
-
-                
-
+                <input className="checkbox-tools" type="radio" value="Other" checked={selectedOption === "Other"} />
+                  <label className="for-checkbox-tools" onClick={() => handleOptionChange("Other")}>
+                    <div className="radio-button-inside">
+                      <img src={Culture6}/>
+                      <p>Other</p>
+                    </div>
+                  </label>
               </form>
 
               <p>Paid professional experience</p>
-              <select>
-                <option value="grapefruit">Grapefruit</option>
-                <option value="lime">Lime</option>
-                <option selected value="coconut">Coconut</option>
-                <option value="mango">Mango</option>
-              </select>
+              <form className="form-years-experience" onSubmit={handleFormSubmit}>
+
+              <span className={`dropdown ${selectInputExpand ? 'expanded': ''}`} onClick={selectInputToogle}>
+
+                <label>{yearsExperience}</label>
+
+                <input type="radio" value="1 to 3 years" checked={yearsExperience === "1 to 3 years"}/>
+                <label onClick={()=> {handleYearsExperienceChange("1 to 3 years")}}>1 to 3 years</label>
+
+                <input type="radio" value="3 to 5 years" checked={yearsExperience === "3 to 5 years"}/>
+                <label onClick={()=> {handleYearsExperienceChange("3 to 5 years")}}>3 to 5 years</label>
+
+                <input type="radio" value="5 to 8 years" checked={yearsExperience === "5 to 8 years"}/>
+                <label onClick={()=> {handleYearsExperienceChange("5 to 8 years")}}>5 to 8 years</label>
+
+                <input type="radio" value="+ 8 years" checked={yearsExperience === "+ 8 years"}/>
+                <label onClick={()=> {handleYearsExperienceChange("+ 8 years")}}>+ 8 years</label>
+              </span>
+
+              </form>
 
             </div>
 
