@@ -89,6 +89,9 @@
     h2 {
       font-size: 56px;
       line-height: normal;
+      &:first-child {
+        padding-top: 100px;
+      }
     }
   }
 }
@@ -197,6 +200,66 @@
     span {
       font-size: 24px;
       line-height: 1.5;
+    }
+  }
+}
+
+.yellowme-home-section {
+  padding-bottom: 80px;
+}
+
+.tell-us-section {
+  padding: 0px 15vw 0px 15vw;
+
+  @media (min-width: 992px) {
+    padding: 80px 20vw 80px 20vw;  
+  }
+
+  h2{
+    @include text-style("TTInterfaces", 400, 38px, 1.26);
+    text-align: left;
+  }
+
+  p{
+    @include text-style("TTInterfaces Bold", 700, 18px);
+    margin-left: auto;
+  }
+
+  @media (min-width: 992px) {
+    h2{
+      @include text-style("TTInterfaces", 400, 56px, 1.25);
+      padding-right: 15%;
+    }
+    p{
+      @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
+    }
+  }
+}
+
+.explore-oportunity-section {
+  padding: 40px 15vw 0px 15vw;
+
+  @media (min-width: 992px) {
+    padding: 80px 20vw 80px 20vw;  
+  }
+
+  h2{
+    @include text-style("TTInterfaces", 400, 38px, 1.26);
+    text-align: left;
+  }
+
+  p{
+    @include text-style("TTInterfaces Bold", 700, 18px);
+    margin-left: auto;
+  }
+
+  @media (min-width: 992px) {
+    h2{
+      @include text-style("TTInterfaces", 400, 56px, 1.25);
+      padding-right: 15%;
+    }
+    p{
+      @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
     }
   }
 }

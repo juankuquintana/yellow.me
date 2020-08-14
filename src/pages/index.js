@@ -7,6 +7,9 @@ import "../styles/home.scss"
 import ClientsList from "../components/ClientsList"
 import Footer from "../components/Footer"
 
+import ArrowRightBlack from "../images/arrow-right-black.svg"
+import Yellowme from "../images/home/yellowme-home.gif"
+
 const IndexPage = () => (
   <Layout>
     <div className="hero content-ctr-thin">
@@ -73,6 +76,24 @@ const IndexPage = () => (
       </h2>
       <h5>Rahim Fazal</h5>
       <span>SVA Academy</span>
+    </div>
+
+
+    <div className="yellowme-home-section df-cc df-column ta-c content-ctr">
+      <img src={Yellowme}></img>
+    </div>
+
+    <div className="tell-us-section df-cc df-column ta-c content-ctr">
+      <h2>Hey 👋 <br/> <br/>
+      Tell us about your company, we're all ears
+      </h2>
+      <p>Drop us a line <img src={ArrowRightBlack}/></p>
+      <div className="divider" />
+    </div>
+
+    <div className="explore-oportunity-section df-cc df-column ta-c content-ctr">
+      <h2>Explore a great opportunity for your career</h2>
+      <p>Tribe + Culture <img src={ArrowRightBlack}/></p>
     </div>
 
     <Footer />
