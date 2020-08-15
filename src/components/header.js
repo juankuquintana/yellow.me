@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 import Logotype from "../images/Logotype.svg"
 
@@ -8,32 +8,31 @@ import Menu from "../components/menu";
 
 const Header = () => {
   const [isMenuOpen, setOpen] = useState(false);
+  useEffect(() => enableScrolling(), []);
+
+  const disableScrolling = () => {
+    let scrollX = window.scrollX;
+    let crollY = window.scrollY;
+    window.onscroll=function(){window.scrollTo(scrollX, crollY);};
+  }
+
+  const enableScrolling = () => {
+    window.onscroll=function(){};
+  }
 
   const toggleMenu = () => {
+    isMenuOpen === false ? disableScrolling() : enableScrolling();
     setOpen(!isMenuOpen)
   }
 
   return (
     <header>
-      <img src={Logotype}/>
-
-      <div className="links-ctr">
-        <Link to="/culture" activeClassName="selected">
-          CULTURE + TRIBE
-        </Link>
-        {
-        /*<Link to="/careers" activeClassName="selected">
-          CAREERS
-        </Link>*/
-        }
-        <Link to="/contact" activeClassName="selected">
-          CONTACT
-        </Link>
-      </div>
+      <Link to="/">
+        <img src={Logotype}/>
+      </Link>
 
       <div className="links-ctr-toogle-menu">
         <div className={`menu__icon ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
-          <span className={`line-1`}></span>
           <span className={`line-1`}></span>
           <span className={`line-1`}></span>
         </div>  
@@ -42,6 +41,22 @@ const Header = () => {
           toggleMenu={toggleMenu}
         />
       </div>
+
+      <div className="links-ctr">
+        <Link to="/culture" activeClassName="selected">
+          TRIBE + CULTURE
+        </Link>
+        {
+        /*<Link to="/careers" activeClassName="selected">
+          CAREERS
+        </Link>*/
+        }
+        <Link to="/contact" className="bg-yellow" activeClassName="selected">
+          CONTACT
+        </Link>
+      </div>
+
+      
 
     </header>
   )

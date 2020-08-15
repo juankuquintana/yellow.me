@@ -1,4 +1,5 @@
 @import "./typography.scss";
+@import "./variables.scss";
 
 .bg-medium-grey {
   background-color: #fbfbfb;
@@ -97,7 +98,7 @@ header {
   margin-top: 4rem;
   align-items: center;
 
-  a {
+  .links-ctr a, nav a {
     text-decoration: none;
     font-weight: 600;
     color: #000;
@@ -107,10 +108,27 @@ header {
     font-size: .9rem;
     
     &:hover {
-      background-color: #FFD100;
+      color: $neutral-dark-grey;
     };
 
-    &.selected {
+    &.selected:before {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      border-radius: 100%;
+      background-color: #FFD100;
+      top: 20px;
+      margin-left: -12px;
+      @media (min-width: 992px) {
+        width: 5px;
+        height: 5px;
+        top: 16px;
+        margin-left: -10px;
+      }
+    }
+
+    &.bg-yellow {
       background-color: #FFD100;
     }
 

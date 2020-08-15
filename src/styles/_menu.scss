@@ -1,4 +1,5 @@
 @import "./variables.scss";
+@import "./mixins";
 
 .menu {
   position: absolute;
@@ -26,7 +27,7 @@
     padding-bottom: 3vw;
     padding-right: 10vw;
     transform: translateY(-110%);
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(255, 255, 255, 1);
     transition: transform .4s ease-in-out,visibility 0s .4s;
   }
 
@@ -45,22 +46,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
 
-    & :not(:last-child) {
+    &:nth-child(1){
+      white-space: pre;
+    }
+
+    & > * {
       margin-bottom: 1.8rem;
     };
   }
 
   &__link {
+    @include text-style("TTInterfaces DemiBold", 600, 42px, 1.17);
     position: relative;
-    font-size: 64px;
-    font-weight: bold;
     text-align: end;
-    line-height: 1;
     opacity: 0;
     width: fit-content;
-    font-family: "Neutrif Studio Bold";
     transform: translateY(-8px);
     transition: all .2s;
     animation: fade-in-top .5s ease forwards;
@@ -78,64 +79,18 @@
       transition: all .17s ease-out;
     }
 
-    &:hover {
-      cursor: pointer;
-      &:after {
-        width: 100%;
-        background-color: $brand-yellow;
-      }
-    }
-
     &.animate {
       transform: translateY(0);
       opacity: 1;
-    }
-
-    @media only screen and ($breakpoint-desktop) {
-      font-size: 3rem;
-    }
-
-    @media only screen and (max-width: 680px) {
-      line-height: .7;
-    }
-  }
-
-  &__social-links-container {
-    &__social-link {
-      display: inline-block;
-      margin-left: 24px;
-      float: right;
-      font-size: 32px;
-      font-weight: bold;
-      font-family: "Neutrif Studio Bold";
-      cursor: pointer;
-      margin-bottom: 3rem;
-      transition: all .4s;
-
-      &:hover {
-        color: $brand-yellow;
-        cursor: pointer;
-      }
-
-      @media only screen and (max-width: 500px) {
-        margin-bottom: 1.5rem;
-        &:last-child {
-          margin-bottom: 8rem;
-        }
-      }
-    }
-  
-    @media only screen and (max-width: 500px) {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
     }
   }
 }
 
 .menu__icon {
   width: 40px;
-  height: 48px;
+  height: 40px;
+  background-color: $brand-yellow;
+  border-radius: 100%;
   position: relative;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -147,11 +102,6 @@
   transition: .5s ease-in-out;
   cursor: pointer;
   z-index: 9;
-
-  @media screen and ($breakpoint-tablet) {
-    height: 24px !important;
-    width: 30px;
-  }
 
   span {
     display: block;
@@ -169,10 +119,6 @@
     -moz-transition: .25s ease-in-out;
     -o-transition: .25s ease-in-out;
     transition: .25s ease-in-out;
-
-    @media screen and ($breakpoint-tablet) {
-      height: 2.5px;
-    }
   }
 }
 
@@ -182,74 +128,23 @@
   -o-transform-origin: left center;
   transform-origin: left center;
   
-  &.line-0 {
-    background-color: #FFF;
-  }
-
   &.line-1 {
-    background-color: #000;
-  }
-
-  &.line-2 {
-    background-color: #000;
-
-    @media only screen and ($breakpoint-tablet) {
-      background-color: #FFF
-    }
-  }
-
-  &.line-3 {
-    background-color: #000;
-
-    @media only screen and ($breakpoint-tablet) {
-      background-color: #FFF
-    }
-  }
-
-  &.line-4 {
     background-color: #FFF;
-  }
-
-  &.line-5 {
-    background-color: #FFF;
-  }
-
-  &.line-6 {
-    background-color: #FFF;
-
-    @media only screen and ($breakpoint-tablet) {
-      background-color: #FFF
-    }
-  }
-
-  &.line-44 {
-    background-color: #FFF;
-
-    @media only screen and (max-width: 900px) {
-      background-color: #000
-    }
   }
 }
 
 .menu__icon span:nth-child(1) {
-  top: 0px;
-  width: 100%;
+  width: 40%;
+  height: 1px;
+  top: 18px;
+  left: 12px;
 }
 
 .menu__icon span:nth-child(2) {
-  top: 12px;
-  width: 66%;
-  @media only screen and ($breakpoint-tablet) { top: 8px; }
-}
-
-.menu__icon span:nth-child(3) {
-  top: 24px;
-  width: 33%;
-  @media only screen and ($breakpoint-tablet) { top: 16px; }
-}
-
-.menu__icon.open span {
-  background-color: #000;
+  width: 40%;
+  height: 1px;
+  top: 22px;
+  left: 12px;
 }
 
 .menu__icon.open span:nth-child(1) {
@@ -257,22 +152,25 @@
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
-  top: -3px;
-  right: -8px;
+  width: 32%;
+  height: 1px;
+  top: 14px;
+  left: 16px;
 }
 
 .menu__icon.open span:nth-child(2) {
-  width: 0%;
-  opacity: 0;
-}
-
-.menu__icon.open span:nth-child(3) {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  width: 100%;
-  top: 26px;
-  left: 8px;
-  @media only screen and ($breakpoint-tablet) { top: 19px; }
+  width: 32%;
+  height: 1px;
+  top: 23px;
+  left: 16px;
+}
+
+div.footer {
+  > div.divider{
+    height: 0px;
+  }
 }
