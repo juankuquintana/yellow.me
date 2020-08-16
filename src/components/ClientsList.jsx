@@ -1,5 +1,12 @@
 import React from "react"
-import SynapseLogo from "../images/SynapseLogo.svg"
+import SynapseLogo from "../images/synapse-logo.png"
+import SVAcademyLogo from "../images/sv-academy-logo.png"
+import EnsoLogo from "../images/enso-logo.png"
+import KueskiLogo from "../images/kueski-logo.png"
+import Billetto from "../images/billetto-logo.png"
+import BaseOperationsLogo from "../images/base-logo.png"
+import TillidenLogo from "../images/tilliden-logo.png"
+import WizelineLogo from "../images/wizeline-logo.png"
 
 const clientsList = [
   {
@@ -7,31 +14,31 @@ const clientsList = [
     text: "Supporting organization-level training and upskilling",
   },
   {
-    logo: SynapseLogo,
+    logo: SVAcademyLogo,
     text: "Expanding access to the jobs of the future",
   },
   {
-    logo: SynapseLogo,
+    logo: EnsoLogo,
     text: "Accompanying people on their path to financial freedom",
   },
   {
-    logo: SynapseLogo,
+    logo: KueskiLogo,
     text: "Solving access to microlending through data and technology",
   },
   {
-    logo: SynapseLogo,
+    logo: Billetto,
     text: "Accelerating the cashless economy",
   },
   {
-    logo: SynapseLogo,
+    logo: BaseOperationsLogo,
     text: "Keeping people safe through street-level intelligence",
   },
   {
-    logo: SynapseLogo,
+    logo: TillidenLogo,
     text: "Empowering kids through decision-making and financial literacy",
   },
   {
-    logo: SynapseLogo,
+    logo: WizelineLogo,
     text: "Solving business challenges with design and technology ",
   },
 ]
