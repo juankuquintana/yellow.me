@@ -84,6 +84,11 @@
       opacity: 1;
     }
   }
+  div.footer {
+    > div.divider{
+      height: 0px;
+    }
+  }
 }
 
 .menu__icon {
@@ -167,10 +172,4 @@
   height: 1px;
   top: 23px;
   left: 16px;
-}
-
-div.footer {
-  > div.divider{
-    height: 0px;
-  }
 }

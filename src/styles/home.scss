@@ -75,10 +75,16 @@
   padding-bottom: 100px;
   h2 {
     @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+    &:not(:first-child) {
+      margin-top: 100px;
+    }
   }
 
   p {
     @include text-style("TTInterfaces", 400, 24px, 1.5);
+    &:not(:last-child) {
+      margin-bottom: 100px;
+    }
   }
 
   @media (min-width: 992px) {
@@ -87,11 +93,15 @@
     grid-template-columns: 1fr 1fr;
 
     h2 {
+      margin-top: 0px !important;
       font-size: 56px;
       line-height: normal;
       &:first-child {
         padding-top: 100px;
       }
+    }
+    p {
+      margin-bottom: 1.45rem !important;
     }
   }
 }
@@ -123,7 +133,6 @@
 
   h2 {
     @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
-    text-align: center;
     max-width: 800px;
     margin: auto;
     margin-bottom: 7rem;
@@ -132,6 +141,7 @@
   @media (min-width: 992px) {
     padding-top: 132px;
     h2 {
+      text-align: center;
       font-size: 56px;
     }
   }
@@ -224,6 +234,7 @@
   p{
     @include text-style("TTInterfaces Bold", 700, 18px);
     margin-left: auto;
+    margin-bottom: 33px;
   }
 
   @media (min-width: 992px) {
@@ -239,7 +250,7 @@
 }
 
 .explore-oportunity-section {
-  padding: 40px 15vw 0px 15vw;
+  padding: 33px 15vw 0px 15vw;
 
   @media (min-width: 992px) {
     padding: 10px 20vw 80px 20vw;  

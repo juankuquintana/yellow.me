@@ -436,8 +436,7 @@
 }
 
 div.footer {
-  > div.divider{
-    height: 0.5px;
+  > div.divider {
     margin-top: 0px;
 
     @media (min-width: 992px) {
