@@ -1,5 +1,6 @@
 @import "./typography.scss";
 @import "./variables.scss";
+@import "./mixins";
 
 .bg-medium-grey {
   background-color: #fbfbfb;
@@ -99,8 +100,8 @@ header {
   align-items: center;
 
   .links-ctr a, nav a {
+    @include text-style("TTInterfaces Bold", 700, 14px, 1.29);
     text-decoration: none;
-    font-weight: 600;
     color: #000;
     margin-left: 2rem;
     padding: .6rem;
@@ -158,8 +159,14 @@ header {
 .footer {
   padding-bottom: 32px;
   &--find-us {
-    margin: auto;
+    @include text-style("TTInterfaces Bold", 700, 18px);
+    margin: 0px auto 19px auto;
     max-width: 600px;
+
+    @media (min-width: 992px) {
+      @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
+      margin-bottom: 7px;
+    }
   }
 
   &--social-icons {
@@ -169,8 +176,20 @@ header {
     align-items: center;
     margin: auto;
 
+    & a {
+      margin-left: 0px;
+      padding: 9px 0px;
+      margin-right: 4px;
+    }
+
     & img {
-      margin-right: 0.5rem;
+      max-width: max-content;
+      height: 37px;
+      width: 37px;
+      @media (min-width: 992px) {
+        height: 47px;
+        width: 47px;
+      }
     }
   }
 }

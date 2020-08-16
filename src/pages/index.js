@@ -30,7 +30,7 @@ const IndexPage = () => (
       <div className="section-1 content-ctr">
         <div className="section-1--left">
           <h6 className="statement">
-            For us it’s actually really simple
+            Working with us is simple
           </h6>
         </div>
 
@@ -68,14 +68,14 @@ const IndexPage = () => (
 
     <ClientsList />
 
-    <div className="testimonial-ctr bg-light-grey full-screen content-ctr">
+    <div className="testimonial-ctr bg-light-grey full-screen df-column content-ctr">
       <h2>
         “[Yellowme] has been there for us through ups and downs. I can’t believe
         it’s been three years already. You guys were there even before we had
         real money to spend.”
       </h2>
       <h5>Rahim Fazal</h5>
-      <span>SVA Academy</span>
+      <span>SV Academy</span>
     </div>
 
 
