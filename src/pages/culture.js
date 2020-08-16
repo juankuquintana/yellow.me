@@ -5,8 +5,8 @@ import Layout from "../components/layout"
 import "../styles/culture.scss"
 
 import ValuesList from "../components/ValuesList"
+import Yellows from "../components/Yellows";
 
-import ButtonNewMember from "../images/button-new-member.svg"
 import ArrowRight from "../images/arrow-right.svg"
 
 import Footer from "../components/Footer"
@@ -101,46 +101,7 @@ const CulturePage = () => (
     <div>
       <div className="meet-yellows-section content-ctr-thin">
         <h2>Meet the Yellows</h2>
-        <div className="meet-yellows">
-
-          <div className="yellow-photo">
-            <img src={"https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F98a933ad-7009-4968-8cf7-637c245c1a85%2FYELLOWME_retratos_albanyjalvarezfotografia_001.jpg?table=block&id=9e3973c8-ade4-4fc6-8b8f-b6fd43dedc71&width=2560&cache=v2"}/>
-          </div>
-
-          <div className="yellow-bio">
-            <p className="yellow-name">Jorge Pintor</p>
-
-            <div class="display-flex">
-              <div class="yellow-role">
-                <p className="caption">ROLE</p>
-                <p className="value">Software Enginner</p>
-              </div>
-
-              <div class="yellow-exp">
-                <p className="caption">EXP</p>
-                <p className="value">7 Years</p>
-              </div>
-            </div>
-
-            <div class="yellow-currently">
-              <p className="caption">CURRENTLY</p>
-              <p className="value">Working on the banking back-end of Enso</p>
-            </div>
-
-            <div class="yellow-scoop">
-              <p className="caption">SCOOP</p>
-              <p className="value">Loves telling jokes 🤡</p>
-            </div>
-
-            <div className="divider" />
-
-            <div className="footer">
-              <span>Yellowme is Jorge and 60 other amazing designers, engineers and product managers.</span>
-              <img src={ButtonNewMember} />
-            </div>
-          </div>
-
-        </div>
+          <Yellows />
       </div>
     </div>
 
