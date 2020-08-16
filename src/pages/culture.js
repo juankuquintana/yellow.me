@@ -6,28 +6,28 @@ import "../styles/culture.scss"
 
 import ValuesList from "../components/ValuesList"
 
-import ArrowRotation from "../images/arrow-circle-rotation.svg"
+import ButtonNewMember from "../images/button-new-member.svg"
 import ArrowRight from "../images/arrow-right.svg"
 
 import Footer from "../components/Footer"
 
-import Culture6 from "../images/culture/culture-icon-6.png"
+import NewsletterIcon from "../images/culture/newsletter-icon.png"
 
 const CulturePage = () => (
   <Layout>
     
-    <div className="join-a-culture-section df-cc df-column ta-c content-ctr">
+    <div className="join-a-culture-section df-cc df-column content-ctr">
       <h2 className="">Join a culture of permanent <br/> work-in-progress.</h2>
     </div>
 
     <div className="photos-grid-a">
       <div className="photos-wrapper-a">
-        <div class="slot photo-1">1</div>
-        <div class="slot photo-2">2</div>
-        <div class="slot photo-3">3</div>
-        <div class="slot photo-4">4</div>
-        <div class="slot photo-5">5</div>
-        <div class="slot photo-6">6</div>
+        <div class="slot photo-1"></div>
+        <div class="slot photo-2"></div>
+        <div class="slot photo-3"></div>
+        <div class="slot photo-4"></div>
+        <div class="slot photo-5"></div>
+        <div class="slot photo-6"></div>
       </div>
     </div>
 
@@ -74,11 +74,11 @@ const CulturePage = () => (
 
     <div className="photos-grid-b">
       <div className="photos-wrapper-b">
-        <div class="slot photo-1">1</div>
-        <div class="slot photo-2">2</div>
-        <div class="slot photo-3">3</div>
-        <div class="slot photo-4">4</div>
-        <div class="slot photo-5">5</div>
+        <div class="slot photo-1"></div>
+        <div class="slot photo-2"></div>
+        <div class="slot photo-3"></div>
+        <div class="slot photo-4"></div>
+        <div class="slot photo-5"></div>
       </div>
     </div>
 
@@ -100,7 +100,7 @@ const CulturePage = () => (
 
     <div>
       <div className="meet-yellows-section content-ctr-thin">
-        <h2>Meet the yellows</h2>
+        <h2>Meet the Yellows</h2>
         <div className="meet-yellows">
 
           <div className="yellow-photo">
@@ -136,7 +136,7 @@ const CulturePage = () => (
 
             <div className="footer">
               <span>Yellowme is Jorge and 60 other amazing designers, engineers and product managers.</span>
-              <button><img src={ArrowRotation} /></button>
+              <img src={ButtonNewMember} />
             </div>
           </div>
 
@@ -145,12 +145,12 @@ const CulturePage = () => (
     </div>
 
     <div>
-      <div className="subscribe-section content-ctr">
-        <h2>We are constantly posting new job opportunities</h2>
+      <div className="subscribe-section df-cc df-column content-ctr">
+        <h2>We are constantly posting new <br/>job opportunities</h2>
         <div className="subscribe">
 
           <div>
-            <img src={Culture6} height={60} width={120} />
+            <img src={NewsletterIcon} />
           </div>
 
           <div className="form-email">
@@ -158,7 +158,7 @@ const CulturePage = () => (
             <div>
               <input className="email-input" type="text" name="email" placeholder="Your email here"/>
               <div className="send-email">
-                <span>We send one email per week maximun</span>
+                <span>We send one email per week maximum</span>
                 <button><img src={ArrowRight} /></button>
               </div>
             </div>
