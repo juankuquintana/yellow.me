@@ -303,7 +303,7 @@
 }
 
 .tell-us-section {
-  padding: 0px 15vw 0px 15vw;
+  padding: 0px 10vw 0px 10vw;
 
   @media (min-width: 992px) {
     padding: 80px 20vw 0px 20vw;  
@@ -333,7 +333,7 @@
 }
 
 .explore-oportunity-section {
-  padding: 33px 15vw 0px 15vw;
+  padding: 33px 15vw 30px 15vw;
 
   @media (min-width: 992px) {
     padding: 10px 20vw 0px 20vw;  
@@ -360,19 +360,23 @@
   }
 }
 
-div.footer {
-  @media (min-width: 992px) {
-    > div.divider {
-      margin-top: 0px;
+.home-footer {
+  div.footer {
+    padding-top: 0px;
+    @media (min-width: 992px) {
+      padding-top: 80px;
+      > div.divider {
+        margin-top: 0px;
+      }
+      > div.footer--find-us {
+        padding: 0px 10vw 0px 10vw;
+        margin-bottom: 10px;
+        max-width: none;
+      }
+      > div.footer--social-icons {
+        padding: 0px 10vw 0px 10vw;
+        margin: 0px 0px 85px 0px;
+      }
     }
-    > div.footer--find-us {
-      padding: 0px 10vw 0px 10vw;
-      margin-bottom: 10px;
-      max-width: none;
-    }
-    > div.footer--social-icons {
-      padding: 0px 10vw 0px 10vw;
-      margin: 0px 0px 85px 0px;
-    }
-  }
+  }  
 }

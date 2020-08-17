@@ -96,7 +96,8 @@ const IndexPage = () => (
       <p>Tribe + Culture <img src={ArrowRightBlack}/></p>
     </div>
 
-    <Footer />
+    <div className="home-footer"><Footer /></div>
+   
   </Layout>
 )
 

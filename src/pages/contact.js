@@ -43,7 +43,7 @@ const ContactPage = () => {
         <div className="container">
           <div className="subscribe">
             <div>
-              <img src={ContactIcon1} height={83} width={139}/>
+              <img src={ContactIcon1}/>
             </div>
 
             <span>Do you need support building or extending a product team?</span>
@@ -61,7 +61,7 @@ const ContactPage = () => {
         <div className="container">
           <div className="subscribe">
             <div>
-              <img src={ContactIcon2} height={83} width={139}/>
+              <img src={ContactIcon2}/>
             </div>
 
             <span>Are you open to join us and work on exciting Silicon Valley level companies?</span>

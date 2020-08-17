@@ -3,20 +3,29 @@
 .values-list-section {
   padding-bottom: 80px;
   h2 {
-    @include text-style("TTInterfaces Medium", 500, 42px, 1.17);
+    @include text-style("TTInterfaces DemiBold", 600, 42px, 1.17);
   }
 
   p {
     @include text-style("TTInterfaces", 400, 24px, 1.5);
   }
 
+  img {
+    width: 150px;
+    height: 60px;
+  }
+
   @media (min-width: 992px) {
+    padding: 80px 30vw 0px 30vw;
     h2 {
-      font-size: 56px;
-      line-height: 1.25;
+      @include text-style("TTInterfaces Medium", 500, 56px, 1.25);
     }
     p {
       max-width: 900px;
+    }
+    img {
+      width: 150px;
+      height: 70px;
     }
   }
 }
