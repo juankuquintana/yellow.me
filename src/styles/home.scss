@@ -212,7 +212,7 @@
       }
       &:nth-child(3) {
         img {
-          height: 25px;  
+          height: 32px;  
         }
       }
       &:nth-child(4) {
@@ -336,7 +336,7 @@
   padding: 33px 15vw 0px 15vw;
 
   @media (min-width: 992px) {
-    padding: 10px 20vw 80px 20vw;  
+    padding: 10px 20vw 0px 20vw;  
   }
 
   h2{
@@ -352,10 +352,27 @@
   @media (min-width: 992px) {
     h2{
       @include text-style("TTInterfaces", 400, 56px, 1.25);
-      padding-right: 15%;
     }
     p{
       @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
+      margin-bottom: 0px;
+    }
+  }
+}
+
+div.footer {
+  @media (min-width: 992px) {
+    > div.divider {
+      margin-top: 0px;
+    }
+    > div.footer--find-us {
+      padding: 0px 10vw 0px 10vw;
+      margin-bottom: 10px;
+      max-width: none;
+    }
+    > div.footer--social-icons {
+      padding: 0px 10vw 0px 10vw;
+      margin: 0px 0px 85px 0px;
     }
   }
 }

@@ -51,7 +51,7 @@ const Header = () => {
           CAREERS
         </Link>*/
         }
-        <Link to="/contact" className="bg-yellow" activeClassName="selected">
+        <Link to="/contact" className="bg-yellow CTA" activeClassName="selected">
           CONTACT
         </Link>
       </div>

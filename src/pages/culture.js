@@ -7,7 +7,7 @@ import "../styles/culture.scss"
 import ValuesList from "../components/ValuesList"
 import Yellows from "../components/Yellows";
 
-import ArrowRight from "../images/arrow-right.svg"
+import SendIcon from "../images/button-send.svg"
 
 import Footer from "../components/Footer"
 
@@ -120,7 +120,7 @@ const CulturePage = () => (
               <input className="email-input" type="text" name="email" placeholder="Your email here"/>
               <div className="send-email">
                 <span>We send one email per week maximum</span>
-                <button><img src={ArrowRight} /></button>
+                <img src={SendIcon} />
               </div>
             </div>
           </div>
@@ -129,7 +129,7 @@ const CulturePage = () => (
       </div>
     </div>
 
-    <Footer />
+    <div className="culture-footer"><Footer /></div>
 
   </Layout>
 )

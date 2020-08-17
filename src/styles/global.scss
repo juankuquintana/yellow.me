@@ -107,9 +107,16 @@ header {
     padding: .6rem;
     border-radius: 40px;
     font-size: .9rem;
+    border: 1px solid transparent;
     
     &:hover {
       color: $neutral-dark-grey;
+    };
+
+    &.CTA:hover {
+      border: 1px solid $brand-yellow;
+      color: #000;
+      background-color: $neutral-white;
     };
 
     &.selected:before {

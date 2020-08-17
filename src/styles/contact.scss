@@ -5,7 +5,7 @@
   padding: 152px 5vw 0px 5vw;
 
   > h2 {
-    @include text-style("TTInterfaces", 400, 38px, 1.26);
+    @include text-style("TTInterfaces Medium", 500, 38px);
     text-align: left;
     max-width: 700px;
     margin: auto;
@@ -15,8 +15,7 @@
   @media (min-width: 992px) {
     padding: 224px 16vw 0px 16vw;
     > h2 {
-      font-size: 56px;
-      line-height: 1.18;  
+      font-size: 56px; 
     }
   }
 
@@ -42,33 +41,27 @@
           @include text-style("TTInterfaces Bold", 700, 14px, 1.29);
           margin-left: auto;
         }
-        button {
+
+        img {
           width: 60px;
           height: 60px;
-          border: 0;
-          padding: 15px;
-          border-radius: 100%;
-          background-color: $neutral-black;
           margin-left: auto;
-          img{
-            height: 30px;
-            width: 30px;
-          }
         }
+        
       }
     }
 
     @media (min-width: 992px) {
       padding: 65px 100px;
-      > span {
-        font-size: 32px;
-        line-height: 1.44;
-      }
-      > p {
-        font-size: 32px;
-        line-height: 1.44;
-      }
       .subscribe {
+        > span {
+          font-size: 32px;
+          line-height: 1.44;
+        }
+        > p {
+          font-size: 32px;
+          line-height: 1.44;
+        }
         .program-a-call {
           grid-template-columns: 90% 10%;
           > span {
@@ -83,20 +76,8 @@
 .talent-card {
   padding: 32px 5vw 0px 5vw;
 
-  > h2 {
-    @include text-style("TTInterfaces", 400, 38px, 1.26);
-    text-align: left;
-    max-width: 700px;
-    margin: auto;
-    margin-bottom: 64px;
-  }
-
   @media (min-width: 992px) {
-    padding: 64px 16vw 0px 16vw;
-    > h2 {
-      font-size: 56px;
-      line-height: 1.18;  
-    }
+    padding: 64px 16vw 0px 16vw;    
   }
 
   .container {
@@ -120,6 +101,7 @@
           @include text-style("TTInterfaces", 400, 20px);
           border-width: 0px 0px 1px 0px;
           border-color: $neutral-dark-grey;
+          caret-color: $brand-yellow;
           width: 100%;
           &:focus {
             outline: none;
@@ -148,6 +130,10 @@
       }
 
       @media (min-width: 992px) {
+        > span {
+          font-size: 32px;
+          line-height: 1.44;
+        }
         .contact-form {
           p {
             @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
@@ -161,8 +147,9 @@
             display: flex;
             justify-content: space-between;
             .radio-button-inside {
-              justify-content: space-evenly;
               img {
+                height: 51px;
+                width: 96px;
                 margin-left: 0px;
               }
               p {
@@ -186,18 +173,11 @@
           @include text-style("TTInterfaces Bold", 700, 14px, 1.29);
           margin-left: auto;
         }
-        button {
+
+        img {
           width: 60px;
           height: 60px;
-          border: 0;
-          padding: 15px;
-          border-radius: 100%;
-          background-color: $neutral-black;
           margin-left: auto;
-          img {
-            height: 30px;
-            width: 30px;
-          }
         }
       }
     }
@@ -237,7 +217,7 @@ form.form-job-searched {
   .checkbox-tools:not(:checked) + label {
     position: relative;
     display: inline-block;
-    padding: 20px;
+    padding: 10px;
     width: 270px;
     height: 81px;
     border-radius: 15px;

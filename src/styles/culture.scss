@@ -234,9 +234,6 @@
     }
 
     @media (min-width: 992px) {
-      p {
-        padding-top: 140px;
-      }
       padding-top: 224px;
       padding-bottom: 146px;
       display: grid;
@@ -249,6 +246,7 @@
         @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
       
         @media (min-width: 992px) {
+          padding-top: 0px;
           margin-bottom: 90px;
           font-size: 56px;
           line-height: normal;
@@ -258,6 +256,17 @@
         }
       }
     }
+    &--right {
+      @media (min-width: 992px) {
+        padding-top: 140px;
+      }
+    }
+  }
+}
+
+.values-list-section {
+  @media (min-width: 992px) {
+    padding: 80px 30vw 0px 30vw;
   }
 }
 
@@ -336,10 +345,15 @@
 
       @media (min-width: 992px) {
         border-radius: 0px 20px 20px 0px; 
-        padding: 70px 70px 0px 70px;
+        padding: 100px;
+
+        .divider {
+          margin-top: 45px;
+          margin-bottom: 35px;
+        }
 
         .yellow-data {
-          height: 405px;
+          height: 350px;
         }
 
         .yellow-name { font-size: 56px; line-height: normal; }
@@ -355,7 +369,8 @@
         align-items: center;
 
         @media (min-width: 992px) {
-          grid-template-columns: 70% 30%;  
+          grid-template-columns: 70% 30%;
+          padding-bottom: 0px;
         }
 
         span {
@@ -381,6 +396,7 @@
   }
   @media (min-width: 992px) {
     padding-top: 146px;
+    padding-bottom: 145px;
     > h2 {
       font-size: 56px;
       line-height: 1.18;
@@ -423,19 +439,13 @@
         @include text-style("TTInterfaces", 400, 14px);
         color: $neutral-dark-grey;
       }
-      button {
+      
+      img {
+        margin-left: auto;
         width: 60px;
         height: 60px;
-        border: 0;
-        padding: 15px;
-        margin-left: auto;
-        border-radius: 100%;
-        background-color: $neutral-black;
-        img{
-          height: 30px;
-          width: 30px;
-        }
       }
+      
     }
 
     @media (min-width: 992px) {
@@ -461,12 +471,23 @@
   }
 }
 
-div.footer {
-  > div.divider {
-    margin-top: 0px;
+.culture-footer {
+  div.footer {
+    > div.divider {
+      margin-top: 0px;
+    }
 
     @media (min-width: 992px) {
-      margin-top: 140px;  
+      padding-top: 50px;
+      > div.footer--find-us {
+        padding: 0px 14vw 0px 14vw;
+        margin-bottom: 10px;
+      }
+      > div.footer--social-icons {
+        padding: 0px 14vw 0px 14vw;
+        margin: 0px 0px 85px 0px;
+      }
     }
   }
 }
+

@@ -6,9 +6,13 @@ import "../styles/contact.scss"
 
 import Footer from "../components/Footer"
 
-import ArrowRight from "../images/arrow-right.svg"
+import SendIcon from "../images/button-send.svg"
 //Culture icons
-import Culture6 from "../images/culture/culture-icon-6.png"
+import ContactIcon1 from "../images/contact/contact-icon-1.png"
+import ContactIcon2 from "../images/contact/contact-icon-2.png"
+import DesignerIcon from "../images/contact/Designer.png"
+import EngineerIcon from "../images/contact/Engineer.png"
+import OtherIcon from "../images/contact/Other.png"
 
 const ContactPage = () => {
 
@@ -39,7 +43,7 @@ const ContactPage = () => {
         <div className="container">
           <div className="subscribe">
             <div>
-              <img src={Culture6} height={60} width={120}/>
+              <img src={ContactIcon1} height={83} width={139}/>
             </div>
 
             <span>Do you need support building or extending a product team?</span>
@@ -47,7 +51,7 @@ const ContactPage = () => {
 
             <div className="program-a-call">
               <span className="uppercase">Program a call</span>
-              <button><img src={ArrowRight} /></button>
+              <img src={SendIcon} />
             </div>
           </div>
         </div>
@@ -57,7 +61,7 @@ const ContactPage = () => {
         <div className="container">
           <div className="subscribe">
             <div>
-              <img src={Culture6} height={60} width={120}/>
+              <img src={ContactIcon2} height={83} width={139}/>
             </div>
 
             <span>Are you open to join us and work on exciting Silicon Valley level companies?</span>
@@ -65,17 +69,17 @@ const ContactPage = () => {
             <div className="contact-form">
             
               <p>Tell us your name</p>
-              <input type="text" name="name" placeholder="Your Name"/>
+              <input type="text" name="name"/>
 
               <p>What’s your email?</p>
-              <input type="email" name="email" placeholder="Your email"/>
+              <input type="email" name="email"/>
 
               <p>And you are?</p>
               <form className="form-job-searched" onSubmit={handleFormSubmit}>
                 <input className="checkbox-tools" type="radio" value="Designer" checked={selectedOption === "Designer"} />
                   <label className="for-checkbox-tools" onClick={() => handleOptionChange("Designer")}>
                     <div className="radio-button-inside">
-                      <img src={Culture6}/>
+                      <img src={DesignerIcon}/>
                       <p>Designer</p>
                     </div>
                   </label>
@@ -83,7 +87,7 @@ const ContactPage = () => {
                 <input className="checkbox-tools" type="radio" value="Engineer" checked={selectedOption === "Engineer"} />
                   <label className="for-checkbox-tools" onClick={() => handleOptionChange("Engineer")}>
                     <div className="radio-button-inside">
-                      <img src={Culture6}/>
+                      <img src={EngineerIcon}/>
                       <p>Engineer</p>
                     </div>
                   </label>
@@ -91,7 +95,7 @@ const ContactPage = () => {
                 <input className="checkbox-tools" type="radio" value="Other" checked={selectedOption === "Other"} />
                   <label className="for-checkbox-tools" onClick={() => handleOptionChange("Other")}>
                     <div className="radio-button-inside">
-                      <img src={Culture6}/>
+                      <img src={OtherIcon}/>
                       <p>Other</p>
                     </div>
                   </label>
@@ -124,7 +128,7 @@ const ContactPage = () => {
 
             <div className="program-a-call">
               <span className="uppercase">Send form</span>
-              <button><img src={ArrowRight} /></button>
+              <img src={SendIcon} />
             </div>
           </div>
         </div>
