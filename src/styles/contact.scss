@@ -49,10 +49,13 @@
           margin-left: auto;
         }
 
+        a {
+          margin-left: auto;
+        }
+
         img {
           width: 60px;
           height: 60px;
-          margin-left: auto;
         }
         
       }
@@ -199,6 +202,7 @@
           width: 60px;
           height: 60px;
           margin-left: auto;
+          cursor: pointer;
         }
       }
     }
@@ -329,6 +333,31 @@ form.form-years-experience {
       input:checked + label {
         background-color: $brand-yellow-light;
       }
+    }
+  }
+}
+
+.confirmation-email {
+  padding-top: 30vh;
+  text-align: center;
+  h2 {
+    @include text-style("TTInterfaces DemiBold", 600, 42px, 1.17);
+    @media (min-width: 992px) {
+      @include text-style("TTInterfaces DemiBold", 600, 80px, 1.1);   
+      margin-bottom: 33px;
+    }
+  }
+  img {
+    @media (min-width: 992px) {
+      width: 367px;
+      height: 138px;
+    }
+  }
+  p {
+    @include text-style("TTInterfaces DemiBold", 400, 24px, 1.5);
+    @media (min-width: 992px) {
+      @include text-style("TTInterfaces", 400, 56px, 1.25);
+      margin-top: 35px;
     }
   }
 }
