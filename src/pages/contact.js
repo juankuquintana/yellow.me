@@ -51,7 +51,7 @@ const ContactPage = () => {
 
 
   const sendTalentInfo = () => {
-    GoogleSheets.sendTalentInfo(name, email, selectedOption, yearsExperience).then(()=>{
+    GoogleSheets.sendTalentInfo(name, email, selectedOption, (yearsExperience == "+ 8 years" ? "'+ 8 years": yearsExperience)).then(()=>{
       setEmailSent(true);
     })
   }
