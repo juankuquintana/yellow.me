@@ -163,7 +163,7 @@ const ContactPage = () => {
       <div className={`confirmation-email df-cc df-column content-ctr ${emailSent ? '' : 'hidden'}`}>
         <h2 className="">Thank you!</h2>
         <img src={ConfirmationIcon}></img>
-        <p>We will send you a confirmation email</p>
+        <p>Great! Now you're part of our talent pool.</p>
       </div>
 
     </Layout>  
