@@ -47,7 +47,7 @@ exports.subscribeNewsletter = (email) => {
 
 exports.sendTalentInfo = (name, email, selectedOption, yearsExperience) => {
   return generateNewTokenGoogleSheets().then((result)=>{
-    let SHEET_ID = process.env.SHEET_ID;
+    let SHEET_ID = process.env.GATSBY_SHEET_ID;
     let ACCESS_TOKEN = result.access_token;
 
     fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Talent!A2:D2:append?valueInputOption=USER_ENTERED`, {
