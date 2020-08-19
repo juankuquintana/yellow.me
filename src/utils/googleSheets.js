@@ -5,9 +5,9 @@ const generateNewTokenGoogleSheets = () => {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      "client_id": process.env.CLIENT_ID,
-      "client_secret": process.env.CLIENT_SECRET,
-      "refresh_token": process.env.REFRESH_TOKEN,
+      "client_id": process.env.GATSBY_CLIENT_ID,
+      "client_secret": process.env.GATSBY_CLIENT_SECRET,
+      "refresh_token": process.env.GATSBY_REFRESH_TOKEN,
       "grant_type": "refresh_token"
     })
   }).then(result => { return result.json() })
@@ -18,7 +18,7 @@ exports.subscribeNewsletter = (email) => {
   return generateNewTokenGoogleSheets().then((result)=>{
     //console.log("sadasd", result.access_token);
 
-    let SHEET_ID = process.env.SHEET_ID;
+    let SHEET_ID = process.env.GATSBY_SHEET_ID;
     let ACCESS_TOKEN = result.access_token;
 
     return fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Newsletter!A2:A3:append?valueInputOption=USER_ENTERED`, {
