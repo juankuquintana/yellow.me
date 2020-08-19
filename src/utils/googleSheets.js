@@ -47,6 +47,7 @@ exports.subscribeNewsletter = (email) => {
 
 exports.sendTalentInfo = (name, email, selectedOption, yearsExperience) => {
   return generateNewTokenGoogleSheets().then((result)=>{
+
     let SHEET_ID = process.env.GATSBY_SHEET_ID;
     let ACCESS_TOKEN = result.access_token;
 
