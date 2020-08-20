@@ -70,12 +70,12 @@ const IndexPage = () => (
 
     <div className="testimonial-ctr bg-light-grey full-screen df-column content-ctr">
       <h2>
-        “[Yellowme] has been there for us through ups and downs. I can’t believe
-        it’s been three years already. You guys were there even before we had
-        real money to spend.”
+      “Yellowme has a unique culture centered on human capital development.
+      This translates into a creative environment that enables them to integrate
+      with the start-up and deliver high quality products quickly”
       </h2>
-      <h5>Rahim Fazal</h5>
-      <span>SV Academy</span>
+      <h5>Victor</h5>
+      <span>Investor, Synapse</span>
     </div>
 
 

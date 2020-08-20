@@ -269,7 +269,7 @@
   justify-content: center;
 
   h2 {
-    @include text-style("TTInterfaces", 400, 38px, 1.26);
+    @include text-style("TTInterfaces", 400, 28px, 1.44);
   }
 
   h5 {
@@ -282,9 +282,10 @@
   }
 
   @media (min-width: 992px) {
-    padding: 80px 18vw;
+    padding: 80px 23vw;
     h2 {
-      font-size: 56px;
+      font-size: 44px;
+      line-height: 1.32;
       max-width: 900px;
     }
     h5 {
