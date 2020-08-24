@@ -3,7 +3,7 @@ import SynapseLogo from "../images/synapse-logo.png"
 import SVAcademyLogo from "../images/sv-academy-logo.png"
 import EnsoLogo from "../images/enso-logo.png"
 import KueskiLogo from "../images/kueski-logo.png"
-import Billetto from "../images/billetto-logo.png"
+import Billeto from "../images/billeto-logo.png"
 import BaseOperationsLogo from "../images/base-logo.png"
 import TillidenLogo from "../images/tilliden-logo.png"
 import WizelineLogo from "../images/wizeline-logo.png"
@@ -26,7 +26,7 @@ const clientsList = [
     text: "Solving access to microlending through data and technology",
   },
   {
-    logo: Billetto,
+    logo: Billeto,
     text: "Accelerating the cashless economy",
   },
   {
