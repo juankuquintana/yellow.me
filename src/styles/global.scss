@@ -90,23 +90,39 @@
 
 // Components
 header {
-  position: absolute;
-  padding: 0 16px;
+  position: fixed;
+  z-index: 2;
+  padding: 24px 6vw;
   display: flex;
   justify-content: space-between;
-  width: 98.5vw;
-  padding: 0 9.5vw;
-  margin-top: 4rem;
+  width: 100vw;
   align-items: center;
+  background-color: $neutral-white;
+  top: 0;
+  transition: top 0.5s;
+
+  a.yellowme-logo {
+    height: 24px;
+    img {
+      height: 24px;
+    }
+  }
+
+  &.menu-open {
+    background-color: $neutral-white;
+  }
+
+  &.header-hide {
+    top: -100px
+  }
 
   .links-ctr a, nav a {
     @include text-style("TTInterfaces Bold", 700, 14px, 1.29);
     text-decoration: none;
     color: #000;
     margin-left: 2rem;
-    padding: .6rem;
+    padding: 8px 13px;
     border-radius: 40px;
-    font-size: .9rem;
     border: 1px solid transparent;
     
     &:hover {
@@ -131,7 +147,7 @@ header {
       @media (min-width: 992px) {
         width: 5px;
         height: 5px;
-        top: 16px;
+        top: 30px;
         margin-left: -10px;
       }
     }
@@ -151,14 +167,18 @@ header {
   }
 
   @media (min-width: 992px) {
+    padding: 24px 10vw;
     .links-ctr {
       display: block;
     }
     .links-ctr-toogle-menu {
       display: none;
     }
-    img {
-      height: 2rem;
+    a.yellowme-logo {
+      height: 32px;
+      img {
+        height: 32px;
+      }
     }
   }
 }

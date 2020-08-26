@@ -65,6 +65,7 @@
 
   @media (min-width: 992px) {
     @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
+    padding-top: 142px;
     max-width: 330px;
     position: sticky;
     top: 4rem;
@@ -88,6 +89,7 @@
   }
 
   @media (min-width: 992px) {
+    padding-top: 82px;
     padding-bottom: 153px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -97,7 +99,7 @@
       font-size: 56px;
       line-height: normal;
       &:first-child {
-        padding-top: 100px;
+        padding-top: 250px;
       }
     }
     p {

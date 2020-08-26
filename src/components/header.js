@@ -8,7 +8,8 @@ import Menu from "../components/menu";
 
 const Header = () => {
   const [isMenuOpen, setOpen] = useState(false);
-  useEffect(() => enableScrolling(), []);
+  const [isScrollingDown, setIsScrollingDown] = useState(false);
+  useEffect(() => {enableScrolling(); watchScrolling();}, []);
 
   const disableScrolling = () => {
     let scrollX = window.scrollX;
@@ -20,14 +21,34 @@ const Header = () => {
     window.onscroll=function(){};
   }
 
+  const watchScrolling = () => {
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+      let currentScrollPos = window.pageYOffset;
+      
+      if (currentScrollPos > prevScrollpos) {
+        if (currentScrollPos > 250)
+          setIsScrollingDown(true);
+      } else {
+        setIsScrollingDown(false);
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  }
+
   const toggleMenu = () => {
-    isMenuOpen === false ? disableScrolling() : enableScrolling();
+    if (isMenuOpen === false){
+      disableScrolling()
+    } else {
+      enableScrolling();
+      watchScrolling();
+    }
     setOpen(!isMenuOpen)
   }
 
   return (
-    <header>
-      <Link to="/">
+    <header className={`${isMenuOpen ? 'menu-open' : ''} ${isScrollingDown ? 'header-hide' : ''}`}>
+      <Link to="/" className="yellowme-logo">
         <img src={Logotype}/>
       </Link>
 
