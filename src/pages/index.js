@@ -8,7 +8,8 @@ import ClientsList from "../components/ClientsList"
 import Footer from "../components/Footer"
 
 import ArrowRightBlack from "../images/arrow-right-black.svg"
-import Yellowme from "../images/home/yellowme-home.gif"
+import YellowmeGifWebm from "../images/home/yellowme-home.webm"
+import YellowmeGifMp4 from "../images/home/yellowme-home.mp4"
 
 const IndexPage = () => (
   <Layout>
@@ -80,7 +81,10 @@ const IndexPage = () => (
 
 
     <div className="yellowme-home-section df-cc df-column ta-c content-ctr">
-      <img src={Yellowme}></img>
+      <video autoPlay playsInline loop muted>
+        <source src={YellowmeGifWebm} type="video/webm"></source>
+        <source src={YellowmeGifMp4} type="video/mp4"></source>
+      </video>
     </div>
 
     <div className="tell-us-section df-cc df-column ta-c content-ctr">
