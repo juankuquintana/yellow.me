@@ -5,6 +5,7 @@ import GoogleSheets from "../utils/googleSheets";
 import Layout from "../components/layout"
 import "../styles/culture.scss"
 
+import PhotosGrid from "../components/PhotosGrid"
 import ValuesList from "../components/ValuesList"
 import Yellows from "../components/Yellows";
 
@@ -37,16 +38,7 @@ const CulturePage = () => {
         <h2 className="">Join a culture of permanent <br/> work-in-progress.</h2>
       </div>
 
-      <div className="photos-grid-a">
-        <div className="photos-wrapper-a">
-          <div class="slot photo-1"></div>
-          <div class="slot photo-2"></div>
-          <div class="slot photo-3"></div>
-          <div class="slot photo-4"></div>
-          <div class="slot photo-5"></div>
-          <div class="slot photo-6"></div>
-        </div>
-      </div>
+      <PhotosGrid sectionNumber={1}/>
 
       <div className="principles-section">
         <div className="section-1 content-ctr">
@@ -89,15 +81,7 @@ const CulturePage = () => {
         </div>
       </div>
 
-      <div className="photos-grid-b">
-        <div className="photos-wrapper-b">
-          <div class="slot photo-1"></div>
-          <div class="slot photo-2"></div>
-          <div class="slot photo-3"></div>
-          <div class="slot photo-4"></div>
-          <div class="slot photo-5"></div>
-        </div>
-      </div>
+      <PhotosGrid sectionNumber={2}/>
 
       <div className="we-are-our-values-section">
         <div className="section-1 content-ctr">

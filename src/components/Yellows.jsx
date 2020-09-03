@@ -1,20 +1,58 @@
 import React, { useState } from "react"
 
-import DaniPhoto from "../images/yellows/Dani.jpg";
-import GerryPhoto from "../images/yellows/Gerry.jpg";
-import JimenaPhoto from "../images/yellows/Jimena.jpg";
-import LuisPhoto from "../images/yellows/Luis.jpg";
-import PintorPhoto from "../images/yellows/Pintor.jpg";
-import EdPhoto from "../images/yellows/Ed.jpg";
-import HuriPhoto from "../images/yellows/Huri.jpg";
-import VictorPhoto from "../images/yellows/Victor.jpg";
-import JeromePhoto from "../images/yellows/Jerome.jpg";
+import DaniWebpDesktop from "../images/yellows/webp/Dani-Yellowme-Team-Desktop.webp";
+import DaniJpgDesktop from "../images/yellows/jpg/Dani-Yellowme-Team-Desktop.jpg";
+import DaniWebpMobile from "../images/yellows/webp/Dani-Yellowme-Team-Mobile.webp";
+import DaniJpgMobile from "../images/yellows/jpg/Dani-Yellowme-Team-Mobile.jpg";
+
+import GerryWebpDesktop from "../images/yellows/webp/Gerry-Yellowme-Team-Desktop.webp";
+import GerryJpgDesktop from "../images/yellows/jpg/Gerry-Yellowme-Team-Desktop.jpg";
+import GerryWebpMobile from "../images/yellows/webp/Gerry-Yellowme-Team-Mobile.webp";
+import GerryJpgMobile from "../images/yellows/jpg/Gerry-Yellowme-Team-Mobile.jpg";
+
+import JimenaWebpDesktop from "../images/yellows/webp/Jimena-Yellowme-Team-Desktop.webp";
+import JimenaJpgDesktop from "../images/yellows/jpg/Jimena-Yellowme-Team-Desktop.jpg";
+import JimenaWebpMobile from "../images/yellows/webp/Jimena-Yellowme-Team-Mobile.webp";
+import JimenaJpgMobile from "../images/yellows/jpg/Jimena-Yellowme-Team-Mobile.jpg";
+
+import LuisWebpDesktop from "../images/yellows/webp/Luis-Yellowme-Team-Desktop.webp";
+import LuisJpgDesktop from "../images/yellows/jpg/Luis-Yellowme-Team-Desktop.jpg";
+import LuisWebpMobile from "../images/yellows/webp/Luis-Yellowme-Team-Mobile.webp";
+import LuisJpgMobile from "../images/yellows/jpg/Luis-Yellowme-Team-Mobile.jpg";
+
+import PintorWebpDesktop from "../images/yellows/webp/Pintor-Yellowme-Team-Desktop.webp";
+import PintorJpgDesktop from "../images/yellows/jpg/Pintor-Yellowme-Team-Desktop.jpg";
+import PintorWebpMobile from "../images/yellows/webp/Pintor-Yellowme-Team-Mobile.webp";
+import PintorJpgMobile from "../images/yellows/jpg/Pintor-Yellowme-Team-Mobile.jpg";
+
+import EdWebpDesktop from "../images/yellows/webp/Ed-Yellowme-Team-Desktop.webp";
+import EdJpgDesktop from "../images/yellows/jpg/Ed-Yellowme-Team-Desktop.jpg";
+import EdWebpMobile from "../images/yellows/webp/Ed-Yellowme-Team-Mobile.webp";
+import EdJpgMobile from "../images/yellows/jpg/Gerry-Yellowme-Team-Mobile.jpg";
+
+import HuriWebpDesktop from "../images/yellows/webp/Huri-Yellowme-Team-Desktop.webp";
+import HuriJpgDesktop from "../images/yellows/jpg/Huri-Yellowme-Team-Desktop.jpg";
+import HuriWebpMobile from "../images/yellows/webp/Huri-Yellowme-Team-Mobile.webp";
+import HuriJpgMobile from "../images/yellows/jpg/Huri-Yellowme-Team-Mobile.jpg";
+
+import VictorWebpDesktop from "../images/yellows/webp/Victor-Yellowme-Team-Desktop.webp";
+import VictorJpgDesktop from "../images/yellows/jpg/Victor-Yellowme-Team-Desktop.jpg";
+import VictorWebpMobile from "../images/yellows/webp/Victor-Yellowme-Team-Mobile.webp";
+import VictorJpgMobile from "../images/yellows/jpg/Victor-Yellowme-Team-Mobile.jpg";
+
+import JeromeWebpDesktop from "../images/yellows/webp/Jerome-Yellowme-Team-Desktop.webp";
+import JeromeJpgDesktop from "../images/yellows/jpg/Jerome-Yellowme-Team-Desktop.jpg";
+import JeromeWebpMobile from "../images/yellows/webp/Jerome-Yellowme-Team-Mobile.webp";
+import JeromeJpgMobile from "../images/yellows/jpg/Jerome-Yellowme-Team-Mobile.jpg";
 
 import ButtonNewMember from "../images/button-new-member.svg"
 
 const yellowsPeople = [
   {
-    photo: DaniPhoto,
+    photoWebpDesktop: DaniWebpDesktop,
+    photoJpgDesktop: DaniJpgDesktop,
+    photoWebpMobile: DaniWebpMobile,
+    photoJpgMobile: DaniJpgMobile,
     firstname: "Dani",
     lastname: "Jaime",
     role: "Finance Lead",
@@ -23,7 +61,10 @@ const yellowsPeople = [
     scoop: "Born to eat chocolate 🍫"
   },
   {
-    photo: GerryPhoto,
+    photoWebpDesktop: GerryWebpDesktop,
+    photoJpgDesktop: GerryJpgDesktop,
+    photoWebpMobile: GerryWebpMobile,
+    photoJpgMobile: GerryJpgMobile,
     firstname: "Gerry",
     lastname: "",
     role: "Software engineer",
@@ -32,7 +73,10 @@ const yellowsPeople = [
     scoop: "Plays soccer since 4 years old ⚽️"
   },
   {
-    photo: JimenaPhoto,
+    photoWebpDesktop: JimenaWebpDesktop,
+    photoJpgDesktop: JimenaJpgDesktop,
+    photoWebpMobile: JimenaWebpMobile,
+    photoJpgMobile: JimenaJpgMobile,
     firstname: "Jimena",
     lastname: "Hernández",
     role: "Head of people",
@@ -41,7 +85,10 @@ const yellowsPeople = [
     scoop: "Loves to dance salsa  💃"
   },
   {
-    photo: LuisPhoto,
+    photoWebpDesktop: LuisWebpDesktop,
+    photoJpgDesktop: LuisJpgDesktop,
+    photoWebpMobile: LuisWebpMobile,
+    photoJpgMobile: LuisJpgMobile,
     firstname: "Luis",
     lastname: "Burgos",
     role: "Mobile developer",
@@ -50,7 +97,10 @@ const yellowsPeople = [
     scoop: "Can airdrum any rhythm 🥁"
   },
   {
-    photo: PintorPhoto,
+    photoWebpDesktop: PintorWebpDesktop,
+    photoJpgDesktop: PintorJpgDesktop,
+    photoWebpMobile: PintorWebpMobile,
+    photoJpgMobile: PintorJpgMobile,
     firstname: "Jorge",
     lastname: "Pintor",
     role: "Software Enginner",
@@ -59,7 +109,10 @@ const yellowsPeople = [
     scoop: "Loves telling jokes 🤡"
   },
   {
-    photo: EdPhoto,
+    photoWebpDesktop: EdWebpDesktop,
+    photoJpgDesktop: EdJpgDesktop,
+    photoWebpMobile: EdWebpMobile,
+    photoJpgMobile: EdJpgMobile,
     firstname: "Ed",
     lastname: "Vázquez",
     role: "Product Designer",
@@ -68,7 +121,10 @@ const yellowsPeople = [
     scoop: "Aspiring professional gamer 🎮"
   },
   {
-    photo: HuriPhoto,
+    photoWebpDesktop: HuriWebpDesktop,
+    photoJpgDesktop: HuriJpgDesktop,
+    photoWebpMobile: HuriWebpMobile,
+    photoJpgMobile: HuriJpgMobile,
     firstname: "Huri",
     lastname: "",
     role: "Designer",
@@ -77,7 +133,10 @@ const yellowsPeople = [
     scoop: "Is always creating something 💡"
   },
   {
-    photo: VictorPhoto,
+    photoWebpDesktop: VictorWebpDesktop,
+    photoJpgDesktop: VictorJpgDesktop,
+    photoWebpMobile: VictorWebpMobile,
+    photoJpgMobile: VictorJpgMobile,
     firstname: "Victor",
     lastname: "",
     role: "Software engineer",
@@ -86,7 +145,10 @@ const yellowsPeople = [
     scoop: "Enjoys dancing salsa 🕺"
   },
   {
-    photo: JeromePhoto,
+    photoWebpDesktop: JeromeWebpDesktop,
+    photoJpgDesktop: JeromeJpgDesktop,
+    photoWebpMobile: JeromeWebpMobile,
+    photoJpgMobile: JeromeJpgMobile,
     firstname: "Jerome",
     lastname: "",
     role: "Software engineer",
@@ -116,7 +178,14 @@ const Yellows = () => {
     <div className="meet-yellows">
 
       <div className="yellow-photo">
-        <img src={currentYellowPerson.photo}/>
+        <picture>
+          <source srcSet={currentYellowPerson.photoWebpDesktop} media="(min-width: 992px)" type="image/webp" />
+          <source srcSet={currentYellowPerson.photoJpgDesktop} media="(min-width: 992px)" type="image/jpeg" />
+          <source srcSet={currentYellowPerson.photoWebpMobile} type="image/webp" />
+          <source srcSet={currentYellowPerson.photoJpgMobile} type="image/jpeg" />
+
+          <img src={currentYellowPerson.photoJpgDesktop}/>
+        </picture>
       </div>
 
       <div className="yellow-bio">

@@ -1,0 +1,119 @@
+.meet-yellows-section {
+  padding-top: 146px;
+  > h2 {
+    @include text-style("TTInterfaces Medium", 500, 38px, 1.25);
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 46px;
+  }
+  @media (min-width: 992px) {
+    > h2 {
+      font-size: 56px; 
+      margin-bottom: 100px; 
+    }
+  }
+
+  .meet-yellows {
+    display: grid;
+    grid-template-rows: 250px;
+
+    .yellow-photo {
+      picture > img {
+        height: 100%;
+        width: 100%;
+        border-radius: 20px 20px 0px 0px;
+        object-fit: cover;
+        object-position: top;
+      }
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 700px;
+      
+      .yellow-photo {
+        picture > img {
+          height: 100%;
+          width: 100%;
+          border-radius: 20px 0px 0px 20px;
+        }
+      }
+    }
+  
+    .yellow-bio {
+      background-color: $neutral-medium-grey;
+      border-radius: 0px 0px 20px 20px;
+      padding: 22px 30px 0px 30px;
+
+      .yellow-data {
+        height: 300px;
+      }
+
+      .yellow-name {
+        @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+      }
+  
+      .display-flex {
+        display: flex;
+        justify-content: start;
+      }
+  
+      .yellow-exp {
+        margin-left: auto;
+      }
+      
+      .caption {
+        @include text-style("TTInterfaces Bold", 700, 14px, 1.29);
+        margin-bottom: 0;
+      }
+
+      .value {
+        @include text-style("TTInterfaces", 400, 20px, 1.5);
+      }
+
+      @media (min-width: 992px) {
+        border-radius: 0px 20px 20px 0px; 
+        padding: 100px;
+
+        .divider {
+          margin-top: 45px;
+          margin-bottom: 35px;
+        }
+
+        .yellow-data {
+          height: 350px;
+        }
+
+        .yellow-name { font-size: 56px; line-height: normal; }
+
+        .value {
+          font-size: 24px;
+        }
+      }
+      
+      .footer {
+        display: grid;
+        grid-template-columns: 75% 25%;
+        align-items: center;
+
+        @media (min-width: 992px) {
+          grid-template-columns: 70% 30%;
+          padding-bottom: 0px;
+        }
+
+        span {
+          @include text-style("TTInterfaces", 400, 14px);
+        }
+
+        img {
+          width: 70px;
+          height: 70px;
+          border: 0;
+          margin-left: auto;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
