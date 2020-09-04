@@ -316,51 +316,63 @@
     padding: 80px 20vw 0px 20vw;  
   }
 
-  h2{
+  h2 {
     @include text-style("TTInterfaces", 400, 38px, 1.26);
     text-align: left;
   }
 
-  p{
+  a {
     @include text-style("TTInterfaces Bold", 700, 18px);
     margin-left: auto;
-    margin-bottom: 33px;
+    margin-bottom: 10px;
+    &:link {
+      text-decoration: none;
+    }
+    &:visited {
+      color: black;
+    }
   }
 
   @media (min-width: 992px) {
-    h2{
+    h2 {
       @include text-style("TTInterfaces", 400, 56px, 1.25);
       padding-right: 15%;
     }
-    p{
+    a {
       @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
   }
 }
 
 .explore-oportunity-section {
-  padding: 33px 15vw 30px 15vw;
+  padding: 33px 10vw 30px 10vw;
 
   @media (min-width: 992px) {
     padding: 10px 20vw 0px 20vw;  
   }
 
-  h2{
+  h2 {
     @include text-style("TTInterfaces", 400, 38px, 1.26);
     text-align: left;
   }
 
-  p{
+  a {
     @include text-style("TTInterfaces Bold", 700, 18px);
     margin-left: auto;
+    &:link {
+      text-decoration: none;
+    }
+    &:visited {
+      color: black;
+    }
   }
 
   @media (min-width: 992px) {
-    h2{
+    h2 {
       @include text-style("TTInterfaces", 400, 56px, 1.25);
     }
-    p{
+    a {
       @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
       margin-bottom: 0px;
     }

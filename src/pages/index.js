@@ -89,13 +89,13 @@ const IndexPage = () => (
       <h2>Hey 👋 <br/> <br/>
       Tell us about your company, we're all ears
       </h2>
-      <p>Drop us a line <a href="mailto:hello@yellow.me"><img src={ArrowRightBlack}/></a></p>
+      <a href="mailto:hello@yellow.me"><p>Drop us a line <img src={ArrowRightBlack}/></p></a>
       <div className="divider" />
     </div>
 
     <div className="explore-oportunity-section df-cc df-column ta-c content-ctr">
       <h2>Explore a great opportunity for your career</h2>
-      <p>Tribe + Culture <a href="/culture"><img src={ArrowRightBlack}/></a></p>
+      <a href="/culture"><p>Tribe + Culture <img src={ArrowRightBlack}/></p></a>
     </div>
 
     <div className="home-footer"><Footer /></div>
