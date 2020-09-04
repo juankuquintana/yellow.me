@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import { Helmet } from "react-helmet"
 import GoogleSheets from "../utils/googleSheets";
 
 import Layout from "../components/layout"
@@ -33,7 +34,8 @@ const CulturePage = () => {
 
   return (
     <Layout>
-    
+      <Helmet><title>Tribe + Culture</title></Helmet>
+
       <div className="join-a-culture-section df-cc df-column content-ctr">
         <h2 className="">Join a culture of permanent <br/> work-in-progress.</h2>
       </div>

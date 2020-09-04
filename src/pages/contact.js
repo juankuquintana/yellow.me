@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import { Helmet } from "react-helmet"
 import GoogleSheets from "../utils/googleSheets";
 
 import Layout from "../components/layout"
@@ -59,6 +60,8 @@ const ContactPage = () => {
 
   return(
     <Layout>
+      <Helmet><title>Contact</title></Helmet>
+
       <div className={`${emailSent ? 'hidden' : ''}`}>
         <div className="client-card content-ctr">
           <h2>Tell us, we are all ears</h2>

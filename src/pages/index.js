@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout"
 import "../styles/home.scss"
@@ -12,6 +13,8 @@ import YellowmeGifMp4 from "../images/home/yellowme-home.mp4"
 
 const IndexPage = () => (
   <Layout>
+    <Helmet><title>Home</title></Helmet>
+
     <div className="hero content-ctr-thin">
       <div className="hero--ctr">
         <div className="hero--sentence">
