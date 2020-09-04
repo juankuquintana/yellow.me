@@ -60,7 +60,13 @@ const ContactPage = () => {
 
   return(
     <Layout>
-      <Helmet><title>Contact</title></Helmet>
+      <Helmet>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no"
+        />
+        <title>Contact</title>
+      </Helmet>
 
       <div className={`${emailSent ? 'hidden' : ''}`}>
         <div className="client-card content-ctr">

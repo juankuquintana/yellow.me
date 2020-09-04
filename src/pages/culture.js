@@ -34,7 +34,13 @@ const CulturePage = () => {
 
   return (
     <Layout>
-      <Helmet><title>Tribe + Culture</title></Helmet>
+      <Helmet>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no"
+        />
+        <title>Tribe + Culture</title>
+      </Helmet>
 
       <div className="join-a-culture-section df-cc df-column content-ctr">
         <h2 className="">Join a culture of permanent <br/> work-in-progress.</h2>

@@ -13,7 +13,13 @@ import YellowmeGifMp4 from "../images/home/yellowme-home.mp4"
 
 const IndexPage = () => (
   <Layout>
-    <Helmet><title>Home</title></Helmet>
+    <Helmet>
+      <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no"
+        />
+      <title>Home</title>
+    </Helmet>
 
     <div className="hero content-ctr-thin">
       <div className="hero--ctr">
