@@ -133,6 +133,7 @@ const PhotosGrid = ({sectionNumber}) => {
               <picture>
                 <source srcSet={DaniWebpDesktop} media="(min-width: 992px)" type="image/webp" />
                 <source srcSet={DaniJpgDesktop} media="(min-width: 992px)" type="image/jpeg" />
+                <source srcSet="data:,x" />
                 
                 <img srcSet={DaniJpgDesktop} />
               </picture>
@@ -171,6 +172,7 @@ const PhotosGrid = ({sectionNumber}) => {
               <picture>
                 <source srcSet={TeamMembersWebpDesktop} media="(min-width: 992px)" type="image/webp" />
                 <source srcSet={TeamMembersJpgDesktop} media="(min-width: 992px)" type="image/jpeg" />
+                <source srcSet="data:,x" />
                 
                 <img srcSet={TeamMembersJpgDesktop} />
               </picture>
