@@ -62,14 +62,14 @@ const ValuesList = () => {
     <>
       {valuesList.map(value => {
         return (
-          <div className="values-list-section bg-light-grey full-screen df-cc df-column ta-c content-ctr">
-          <div>
-            <img src={value.icon.name}/>
-          </div>
-          <h2>{value.title}</h2>
-          <p>
-            {value.description}
-          </p>
+          <div className="values-list-section bg-light-grey full-screen df-cc df-column ta-c">
+            <div>
+              <img src={value.icon.name}/>
+            </div>
+            <h2>{value.title}</h2>
+            <p>
+              {value.description}
+            </p>
           </div>
         )
       })}

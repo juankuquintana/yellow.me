@@ -175,51 +175,54 @@ const Yellows = () => {
   }
 
   return (
-    <div className="meet-yellows">
+    <div className="meet-yellows-section">
+      <h2>Meet the Yellows</h2>
+      <div className="meet-yellows">
 
-      <div className="yellow-photo">
-        <picture>
-          <source srcSet={currentYellowPerson.photoWebpDesktop} media="(min-width: 992px)" type="image/webp" />
-          <source srcSet={currentYellowPerson.photoJpgDesktop} media="(min-width: 992px)" type="image/jpeg" />
-          <source srcSet={currentYellowPerson.photoWebpMobile} type="image/webp" />
-          <source srcSet={currentYellowPerson.photoJpgMobile} type="image/jpeg" />
+        <div className="yellow-photo">
+          <picture>
+            <source srcSet={currentYellowPerson.photoWebpDesktop} media="(min-width: 992px)" type="image/webp" />
+            <source srcSet={currentYellowPerson.photoJpgDesktop} media="(min-width: 992px)" type="image/jpeg" />
+            <source srcSet={currentYellowPerson.photoWebpMobile} type="image/webp" />
+            <source srcSet={currentYellowPerson.photoJpgMobile} type="image/jpeg" />
 
-          <img src={currentYellowPerson.photoJpgDesktop}/>
-        </picture>
-      </div>
-
-      <div className="yellow-bio">
-        <div className="yellow-data">
-          <p className="yellow-name">{ `${currentYellowPerson.firstname}` }</p>
-
-          <div class="display-flex">
-            <div class="yellow-role">
-              <p className="caption">ROLE</p>
-              <p className="value">{`${currentYellowPerson.role}`}</p>
-            </div>
-
-            <div class="yellow-exp">
-              <p className="caption">EXP</p>
-              <p className="value">{`${currentYellowPerson.exp} Years`}</p>
-            </div>
-          </div>
-
-          <div class="yellow-currently">
-            <p className="caption">CURRENTLY</p>
-            <p className="value">{`${currentYellowPerson.currently}`}</p>
-          </div>
-
-          <div class="yellow-scoop">
-            <p className="caption">SCOOP</p>
-            <p className="value">{`${currentYellowPerson.scoop}`}</p>
-          </div>
+            <img src={currentYellowPerson.photoJpgDesktop}/>
+          </picture>
         </div>
 
-        <div className="divider" />
+        <div className="yellow-bio">
+          <div className="yellow-data">
+            <p className="yellow-name">{ `${currentYellowPerson.firstname}` }</p>
 
-        <div className="footer">
-          <span>{`Yellowme is ${currentYellowPerson.firstname} and 60 other amazing designers, engineers and product managers.`}</span>
-          <img src={ButtonNewMember} onClick={changeYellow}/>
+            <div class="display-flex">
+              <div class="yellow-role">
+                <p className="caption">ROLE</p>
+                <p className="value">{`${currentYellowPerson.role}`}</p>
+              </div>
+
+              <div class="yellow-exp">
+                <p className="caption">EXP</p>
+                <p className="value">{`${currentYellowPerson.exp} Years`}</p>
+              </div>
+            </div>
+
+            <div class="yellow-currently">
+              <p className="caption">CURRENTLY</p>
+              <p className="value">{`${currentYellowPerson.currently}`}</p>
+            </div>
+
+            <div class="yellow-scoop">
+              <p className="caption">SCOOP</p>
+              <p className="value">{`${currentYellowPerson.scoop}`}</p>
+            </div>
+          </div>
+
+          <div className="divider" />
+
+          <div className="other-yellows">
+            <span>{`Yellowme is ${currentYellowPerson.firstname} and 60 other amazing designers, engineers and product managers.`}</span>
+            <img src={ButtonNewMember} onClick={changeYellow}/>
+          </div>
         </div>
       </div>
     </div>

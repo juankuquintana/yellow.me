@@ -1,5 +1,5 @@
 .meet-yellows-section {
-  padding-top: 146px;
+  padding: 146px 5vw 0px 5vw;
   > h2 {
     @include text-style("TTInterfaces Medium", 500, 38px, 1.25);
     text-align: center;
@@ -8,6 +8,7 @@
     margin-bottom: 46px;
   }
   @media (min-width: 992px) {
+    padding: 146px 10vw 0px 10vw;
     > h2 {
       font-size: 56px; 
       margin-bottom: 100px; 
@@ -44,7 +45,7 @@
     .yellow-bio {
       background-color: $neutral-medium-grey;
       border-radius: 0px 0px 20px 20px;
-      padding: 22px 30px 0px 30px;
+      padding: 22px 30px 32px 30px;
 
       .yellow-data {
         height: 300px;
@@ -92,7 +93,7 @@
         }
       }
       
-      .footer {
+      .other-yellows {
         display: grid;
         grid-template-columns: 75% 25%;
         align-items: center;

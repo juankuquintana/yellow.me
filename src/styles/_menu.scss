@@ -66,6 +66,26 @@
     transform: translateY(-8px);
     transition: all .2s;
     animation: fade-in-top .5s ease forwards;
+    text-decoration: none;
+    margin-left: 2rem;
+    padding: 8px 13px;
+
+    &.selected:before {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      border-radius: 100%;
+      background-color: #FFD100;
+      top: 20px;
+      margin-left: -12px;
+      @media (min-width: 992px) {
+        width: 5px;
+        height: 5px;
+        top: 30px;
+        margin-left: -10px;
+      }
+    }
 
     &:after {
       content: "";

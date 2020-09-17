@@ -1,7 +1,7 @@
 @import "./mixins";
 
 .values-list-section {
-  padding-bottom: 80px;
+  padding: 0px 12vw;
   h2 {
     @include text-style("TTInterfaces DemiBold", 600, 42px, 1.17);
   }
@@ -16,7 +16,7 @@
   }
 
   @media (min-width: 992px) {
-    padding: 80px 30vw 0px 30vw;
+    padding: 0px 30vw;
     h2 {
       @include text-style("TTInterfaces Medium", 500, 56px, 1.25);
     }

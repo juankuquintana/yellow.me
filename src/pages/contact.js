@@ -69,7 +69,7 @@ const ContactPage = () => {
       </Helmet>
 
       <div className={`${emailSent ? 'hidden' : ''}`}>
-        <div className="client-card content-ctr">
+        <div className="client-card">
           <h2>Tell us, we are all ears</h2>
           <div className="container">
             <div className="subscribe">
@@ -88,7 +88,7 @@ const ContactPage = () => {
           </div>
         </div>
 
-        <div className="talent-card content-ctr">
+        <div className="talent-card">
           <div className="container">
             <div className="subscribe">
               <div>
@@ -164,12 +164,15 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-
-        <Footer />
+        
+        <div className="footer-contact">
+          <Footer />
+        </div>
+        
       </div>
       
 
-      <div className={`confirmation-email df-cc df-column content-ctr ${emailSent ? '' : 'hidden'}`}>
+      <div className={`confirmation-email df-cc df-column ${emailSent ? '' : 'hidden'}`}>
         <h2 className="">Thank you!</h2>
         <img src={ConfirmationIcon}></img>
         <p>Great! Now you're part of our talent pool.</p>

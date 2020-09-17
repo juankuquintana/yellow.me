@@ -5,8 +5,7 @@
 @import "./yellows";
 
 .join-a-culture-section {
-  padding-top: 202px;
-  padding-bottom: 80px;
+  padding: 202px 12vw 80px 12vw;
 
   h2 {
     @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
@@ -16,8 +15,7 @@
   }
 
   @media (min-width: 992px) {
-    padding-top: 308px;
-    padding-bottom: 147px;
+    padding: 308px 10vw 147px 10vw;
     h2 {
       font-size: 56px;
       line-height: normal;
@@ -29,108 +27,98 @@
 }
 
 .principles-section {
-  .section-1 {
-    padding-top: 80px;
+  padding: 80px 12vw 100px 12vw;
+
+  h2 {
+    @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+    &:not(:first-child) {
+      margin-top: 100px;
+    }
+  }
+
+  p {
+    @include text-style("TTInterfaces", 400, 24px, 1.5);
+    &:not(:last-child) {
+      margin-bottom: 100px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
     h2 {
-      @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
-      &:not(:first-child) {
-        margin-top: 100px;
+      margin-top: 0px !important;
+      font-size: 56px;
+      line-height: normal;
+      &:first-child {
+        padding-top: 366px;
       }
     }
-  
     p {
-      @include text-style("TTInterfaces", 400, 24px, 1.5);
-      &:not(:last-child) {
-        margin-bottom: 100px;
-      }
+      margin-bottom: 1.45rem !important;
     }
+  }
 
-    @media (min-width: 992px) {
-      padding-top: 82px;
-      padding-bottom: 100px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-  
-      h2 {
-        margin-top: 0px !important;
-        font-size: 56px;
-        line-height: normal;
-        &:first-child {
-          padding-top: 366px;
-        }
-      }
-      p {
-        margin-bottom: 1.45rem !important;
-      }
-    }
-
-    &--left {
-      .statement {
-        margin-bottom: 100px;
-        @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
-        width: 314px;
-        letter-spacing: -1.0px;
-        @media (min-width: 992px) {
-          padding-top: 142px;
-          max-width: 330px;
-          position: sticky;
-          top: 4rem;
-        }
+  .section--left {
+    .statement {
+      margin-bottom: 100px;
+      @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
+      letter-spacing: -1.0px;
+      @media (min-width: 992px) {
+        padding-top: 142px;
+        max-width: 330px;
+        position: sticky;
+        top: 4rem;
       }
     }
   }
 }
 
 .we-are-our-values-section {
-  .section-1 {
-    padding-top: 146px;
-    padding-bottom: 80px;
+  padding: 146px 12vw 80px 12vw;
 
-    p {
-      @include text-style("TTInterfaces", 400, 24px, 1.5);
-    }
+  p {
+    @include text-style("TTInterfaces", 400, 24px, 1.5);
+  }
 
-    @media (min-width: 992px) {
-      padding-top: 224px;
-      padding-bottom: 146px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
+  @media (min-width: 992px) {
+    padding: 224px 10vw 146px 10vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 
-    &--left {
-      .statement {
-        margin-bottom: 12px;
-        @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
-      
-        @media (min-width: 992px) {
-          padding-top: 0px;
-          margin-bottom: 90px;
-          font-size: 56px;
-          line-height: normal;
-          max-width: 330px;
-          position: sticky;
-          top: 4rem;
-        }
-      }
-    }
-    &--right {
+  .section--left {
+    .statement {
+      margin-bottom: 12px;
+      @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+    
       @media (min-width: 992px) {
-        padding-top: 140px;
+        padding-top: 0px;
+        margin-bottom: 90px;
+        font-size: 56px;
+        line-height: normal;
+        max-width: 330px;
+        position: sticky;
+        top: 4rem;
       }
+    }
+  }
+  .section--right {
+    @media (min-width: 992px) {
+      padding-top: 140px;
     }
   }
 }
 
 .subscribe-section {
-  padding-top: 100px;
+  padding: 100px 12vw 0px 12vw;
   > h2 {
     @include text-style("TTInterfaces", 400, 38px, 1.26);
     margin-bottom: 33px;
   }
   @media (min-width: 992px) {
-    padding-top: 146px;
-    padding-bottom: 145px;
+    padding: 146px 23vw 145px 23vw;
     > h2 {
       font-size: 56px;
       line-height: 1.18;
@@ -204,27 +192,6 @@
         > span {
           @include text-style("TTInterfaces Bold", 700, 32px, 1.44);
         }
-      }
-    }
-  }
-}
-
-.culture-footer {
-  div.footer {
-    > div.divider {
-      margin-top: 0px;
-    }
-
-    @media (min-width: 992px) {
-      padding-top: 50px;
-      > div.footer--find-us {
-        padding: 0px 14vw 0px 14vw;
-        margin-bottom: 10px;
-        max-width: none;
-      }
-      > div.footer--social-icons {
-        padding: 0px 14vw 0px 14vw;
-        margin: 0px 0px 85px 0px;
       }
     }
   }

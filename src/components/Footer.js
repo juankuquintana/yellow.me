@@ -11,7 +11,7 @@ import DribbbleIcon from "../images/dribbble-icon.svg"
 
 const Footer = () => {
   return (
-    <div className="footer content-ctr">
+    <div className="footer">
       <div className="divider" />
 
       <div className="footer--find-us">

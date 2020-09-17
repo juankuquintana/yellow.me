@@ -14,18 +14,6 @@
   background-color: #ffe384;
 }
 
-.content-ctr {
-  padding: 80px 10vw 0px 10vw;
-}
-
-.content-ctr-thin {
-  padding: 80px 5vw 0px 5vw;
-
-  @media (min-width: 992px) {
-    padding: 80px 10vw 0px 10vw;
-  }
-}
-
 // utils
 .uppercase {
   text-transform: uppercase;
@@ -116,7 +104,7 @@ header {
     top: -100px
   }
 
-  .links-ctr a, nav a {
+  .links-ctr a {
     @include text-style("TTInterfaces Bold", 700, 14px, 1.29);
     text-decoration: none;
     color: #000;
@@ -184,38 +172,42 @@ header {
 }
 
 .footer {
-  padding-bottom: 32px;
+  padding: 40px 12vw 80px 12vw;
   &--find-us {
     @include text-style("TTInterfaces Bold", 700, 18px);
-    margin: 0px auto 19px auto;
-    max-width: 600px;
-
+    
     @media (min-width: 992px) {
       @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
-      margin-bottom: 7px;
+      padding: 0px 13vw 0px 13vw;
     }
   }
 
   &--social-icons {
-    height: 30px;
-    max-width: 600px;
+    margin-top: 15px;
     display: flex;
     align-items: center;
-    margin: auto;
 
-    & a {
-      margin-left: 0px;
-      padding: 9px 0px;
-      margin-right: 4px;
+    @media (min-width: 992px) {
+      padding: 0px 13vw 0px 13vw;
     }
+    
+    & a {
+      margin-right: 18px;
+      height: 25px;
+      width: 25px;
 
-    & img {
-      max-width: max-content;
-      height: 37px;
-      width: 37px;
       @media (min-width: 992px) {
-        height: 47px;
-        width: 47px;
+        height: 32px;
+        width: 32px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        min-width: 25px;
+        @media (min-width: 992px) {
+          min-width: 32px;
+        }
       }
     }
   }

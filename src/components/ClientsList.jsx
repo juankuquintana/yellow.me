@@ -45,19 +45,17 @@ const clientsList = [
 
 const ClientsList = () => {
   return (
-    <div>
-      <div className="clients-section content-ctr">
-        <h2>Currently working alongside these promising companies</h2>
-        <div className="clients-list">
-          {clientsList.map(client => {
-            return (
-              <div className="clients-list--client">
-                <img src={client.logo} alt="client-logo" />
-                <p>{client.text}</p>
-              </div>
-            )
-          })}
-        </div>
+    <div className="clients-section">
+      <h2>Currently working alongside these promising companies</h2>
+      <div className="clients-list">
+        {clientsList.map(client => {
+          return (
+            <div className="clients-list--client">
+              <img src={client.logo} alt="client-logo" />
+              <p>{client.text}</p>
+            </div>
+          )
+        })}
       </div>
     </div>
   )
