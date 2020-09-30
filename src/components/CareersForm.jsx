@@ -508,7 +508,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
           <div class={`step-11-${form[2].answer == "Software Engineer" ? 'software' : 'designer'} full-screen df-cc ta-c df-column ${(currentStep == 11 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
               <div className="description">
-                <span>{form[9].question[form[2].answer == "Software Engineer" ? 0 : 1]}</span>
+                <span>{form[10].question[form[2].answer == "Software Engineer" ? 0 : 1]}</span>
               </div>
 
               <div className="question-container">
