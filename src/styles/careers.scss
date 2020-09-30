@@ -1,0 +1,195 @@
+@import "./variables.scss";
+@import "./mixins";
+
+@import "./careersForm";
+
+.want-to-be-part-section {
+  padding: 120px 6vw 20px 6vw;
+
+  h2 {
+    @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+    margin-bottom: 0;
+    br {
+      display: none;
+    }
+  }
+
+  p {
+    @include text-style("TTInterfaces", 400, 24px, 1.5);
+    margin-top: 24px;
+  }
+
+  button {
+    @include text-style("TTInterfaces Bold", 700, 18px, normal);
+    text-decoration: none;
+    background-color: $neutral-black;
+    color: $neutral-white;
+    border: 0;
+    border-radius: 45px;
+    display: inline-block;
+    margin-top: 32px;
+    padding: 18px 28px;
+    
+    @media (min-width: 992px) {
+      margin-top: 64px;
+      padding: 25px 35px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    padding: 254px 22vw 30px 23vw;
+    h2 {
+      font-size: 56px;
+      line-height: 1.25;
+      br {
+        display: block;
+      }
+    }
+    p {
+      @include text-style("TTInterfaces", 400, 32px, 1.5);
+      margin-top: 32px;
+    }
+  }
+}
+
+.photo-section {
+  padding: 34px 6vw;
+  @media (min-width: 992px) {
+    padding: 80px 10vw;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.we-promise {
+  padding: 0px 6vw 0px 6vw;
+
+  @media(min-width: 992px) {
+    padding: 0px 10vw 0px 10vw;
+  }
+
+  p.title {
+    @include text-style("TTInterfaces Medium", 500, 38px, 1.27);
+    text-align: center;
+    @media(min-width: 992px){
+      @include text-style("TTInterfaces", 400, 56px, 1.25);
+    }
+  }
+
+  .cards-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100%;
+
+    .card {
+      flex: 0 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $brand-yellow;
+      border: 1px solid $brand-yellow;
+      border-radius: 15px;
+      width: 92%;
+      height: 327px;
+      margin-right: 12px;
+
+      p {
+        @include text-style("TTInterfaces", 400, 24px, 1.5);
+        display: inline-block;
+        margin: 0px;
+        padding: 30% 7% 30% 7%;
+      }
+    }
+  }
+
+  @media(min-width: 992px) {
+    .cards-container {
+      overflow-x: unset;
+      .card {
+        width: 368px;
+        margin-right: 32px;
+        p {
+          padding: 30% 12% 30% 12%;
+        }
+      }
+    }
+  }
+
+  
+}
+
+.start-section {
+  padding: 64px 5vw 80px 5vw;
+  
+  @media (min-width: 992px) {
+    padding: 124px 10vw 80px 10vw;
+  }
+
+  .start-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #e1e1e1;
+    border-radius: 30px;
+    padding: 32px;
+    
+    img {
+      width: 139px;
+      height: 199px;
+      margin-bottom: 48px;
+    }
+  
+    .start-with-us {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      span {
+        @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+        max-width: 290px;
+      }
+
+      button {
+        @include text-style("TTInterfaces Bold", 700, 18px, normal);
+        text-decoration: none;
+        background-color: $neutral-black;
+        color: $neutral-white;
+        border: 0;
+        border-radius: 45px;
+        display: inline-block;
+        margin-top: 32px;
+        padding: 18px 28px;
+        width: fit-content;
+        
+        @media (min-width: 992px) {
+          margin-top: 64px;
+          padding: 25px 62px;
+        }
+      }
+    }
+    
+
+    @media (min-width: 992px) {
+      padding: 65px 100px;
+      flex-direction: row;
+      
+      img {
+        width: 260px;
+        height: 372px;
+        margin-right: 196px;
+      }
+
+      .start-with-us {
+        align-self: center;
+        span {
+          max-width: 370px;
+          font-size: 32px;
+          line-height: 1.44;
+        }
+      }
+      
+    }
+  }
+}

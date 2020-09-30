@@ -16,6 +16,9 @@ const Menu = ({ isMenuOpen, toggleMenu }) => (
         <Link style={{transitionDelay: isMenuOpen ? '.41s' : '.3s' }} className={`menu__link ${isMenuOpen ? 'animate' : ''}`} to="/culture" activeClassName="selected">
           Tribe + Culture
         </Link>
+        <Link style={{transitionDelay: isMenuOpen ? '.41s' : '.3s' }} className={`menu__link ${isMenuOpen ? 'animate' : ''}`} to="/careers" activeClassName="selected">
+          Careers
+        </Link>
         <Link style={{transitionDelay: isMenuOpen ? '.41s' : '.3s' }} className={`menu__link ${isMenuOpen ? 'animate' : ''}`} to="/contact" activeClassName="selected">
           Contact
         </Link>

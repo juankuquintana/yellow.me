@@ -67,11 +67,9 @@ const Header = () => {
         <Link to="/culture" activeClassName="selected">
           TRIBE + CULTURE
         </Link>
-        {
-        /*<Link to="/careers" activeClassName="selected">
+        <Link to="/careers" activeClassName="selected">
           CAREERS
-        </Link>*/
-        }
+        </Link>
         <Link to="/contact" className="bg-yellow CTA">
           CONTACT
         </Link>
