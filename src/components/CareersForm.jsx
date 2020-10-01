@@ -136,7 +136,8 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
           { "name": "Ruby", "value": 0},
           { "name": "Swift", "value": 0},
           { "name": "Kotlin", "value": 0},
-          { "name": "Scala", "value": 0}
+          { "name": "Dart", "value": 0},
+          { "name": "Objective-C", "value": 0},
         ], 
         [
           { "name": "Product design", "value": 0},
@@ -172,6 +173,10 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
           { "name": "Gatsby.js", "value": 0},
           { "name": "Meteorjs", "value": 0},
           { "name": "AWS", "value": 0},
+          { "name": "Android", "value": 0},
+          { "name": "IOS", "value": 0},
+          { "name": "React Native", "value": 0},
+          { "name": "Xamarin", "value": 0},
         ],
         [
           { "name": "Design thinking", "value": 0},
