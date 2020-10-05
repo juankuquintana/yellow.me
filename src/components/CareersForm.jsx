@@ -19,9 +19,10 @@ function usePreviousValue(value) {
 
 const CareersForm = ({ isMenuOpen, toggleMenu }) => {
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    setIsMobile(window.innerWidth < 992)
     window.addEventListener("resize", function() {
       setIsMobile(window.innerWidth < 992)
     });
