@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import GoogleSheets from "../utils/googleSheets";
+import renderIf from "../utils/renderIf"
 
 import Illustration2 from "../images/careers/Careers-Page-Illustration-02.png";
 import Illustration3 from "../images/careers/Careers-Page-Illustration-03.png";
@@ -18,18 +19,32 @@ function usePreviousValue(value) {
 
 const CareersForm = ({ isMenuOpen, toggleMenu }) => {
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
+
+  useEffect(() => {
+    window.addEventListener("resize", function() {
+      setIsMobile(window.innerWidth < 992)
+    });
+  }, [])
+
   const [formFinished, setFormFinished] = useState(false);
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(-1);
   const prevValue = usePreviousValue(currentStep);
 
   const progressBarWidth = 200;
-  const numberSteps = 16;
+  const numberSteps = 14;
   const [progressStepsBarWidth, setProgressStepsBarWidth] = useState(progressBarWidth/numberSteps);
   
   const previousStep = () => {
-    if(currentStep > 1) {
 
-      if (currentStep == 13 && form[2].answer == "Designer") {
+    if(currentStep == 1 || currentStep == 0){
+      setCurrentStep(currentStep - 1);
+      return;  
+    }
+
+    if(currentStep > -1) {
+
+      if (currentStep == 11 && form[2].answer == "Designer") {
         setCurrentStep(currentStep - 2);
         setProgressStepsBarWidth(progressStepsBarWidth - ((progressBarWidth * 2)/numberSteps));
       } else {
@@ -44,7 +59,13 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
   }
 
   const nextStep = () => {
-    if (currentStep == 11 && form[2].answer == "Designer") {
+
+    if(currentStep == -1 || currentStep == 0){
+      setCurrentStep(currentStep + 1);
+      return;  
+    }
+    
+    if (currentStep == 9 && form[2].answer == "Designer") {
       setCurrentStep(currentStep + 2);
       setProgressStepsBarWidth(progressStepsBarWidth + ((progressBarWidth*2)/numberSteps));  
     } else {
@@ -388,264 +409,380 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
           
           <img src={backButton} onClick={previousStep}/>
           
-          <div className={`stepper ${currentStep == numberSteps ? 'display-none' : ''}`} style={{width: `${progressBarWidth}px`}}>
-            <div className="progress" style={{width: `${progressStepsBarWidth}px`}}></div>
-          </div>
+          {renderIf(isMobile)(
+            <div className={`stepper ${(currentStep == numberSteps || currentStep < 1) ? 'display-none' : ''}`} style={{width: `${progressBarWidth}px`}}>
+              <div className="progress" style={{width: `${progressStepsBarWidth}px`}}></div>
+            </div>
+          )}
         </div>
 
         <div className="careers-form">
-          <div className={`step-1 full-screen df-cc ta-c ${(currentStep == 1 ? 'show-step' : 'hidden-step')}`}>
-            <div className="container"> 
+          <div className={`step-1 full-screen df-cc df-column ta-c ${(currentStep == -1 ? 'show-step' : 'hidden-step')}`}>
+            <div className="container">
               <img src={Illustration2}/>
               <div className="text-container">
                 <span>Take 5 minutes to answer some key questions.</span>
                 <p>This is pretty easy, we ask, you answer then you get back to your busy life.</p>
-                <button onClick={nextStep}>NEXT</button>
+                {renderIf(!isMobile)(
+                  <button onClick={nextStep}>NEXT</button>
+                )}
               </div>
             </div>
+            {renderIf(isMobile)(
+              <button onClick={nextStep}>NEXT</button>
+            )}
           </div>
 
-          <div className={`step-2 full-screen df-cc ta-c ${(currentStep == 2 ? 'show-step' : 'hidden-step')}`}>
-            <div className="container"> 
+          <div className={`step-2 full-screen df-cc df-column ta-c ${(currentStep == 0 ? 'show-step' : 'hidden-step')}`}>
+            <div className="container">
               <img src={Illustration3}/>
               <div className="text-container">
                 <span>We protect your data.</span>
                 <p>We don’t share personally identifiable information with anyone. We use this information to communicate directly with you, but you can ask us to stop messaging at any time.</p>
-                <button onClick={nextStep}>NEXT</button>
+                {renderIf(!isMobile)(
+                  <button onClick={nextStep}>NEXT</button>
+                )}
               </div>
             </div>
+            {renderIf(isMobile)(
+              <button onClick={nextStep}>NEXT</button>
+            )}
           </div>
 
-          <div class={`step-3 full-screen df-cc ta-c df-column ${(currentStep == 3 ? 'show-step' : 'hidden-step')}`}>
+          <div className={`step-3 full-screen ta-c ${(currentStep == 1 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
-              <div className="description">
+              <div className="left-side">
                 <span>You identify as a:</span>
                 <p>IN CASE YOU IDENTIFY AS BOTH, PICK THE ONE THAT INTERESTS YOU THE MOST</p>
               </div>
 
-              <div class="question-container">
-                {
-                  form[2].options.map(option => 
-                    <div 
-                      className={`card ${form[2].answer == option ? 'selected' : ''}`}
-                      onClick={() => {setAnswer(3, option)}}
-                    >
-                      <span>{option}</span>  
-                    </div>  
+              <div className="right-side">
+                {renderIf(!isMobile)(
+                  <div className={`stepper ${currentStep == numberSteps ? 'display-none' : ''}`} style={{width: `${progressBarWidth}px`}}>
+                    <div className="progress" style={{width: `${progressStepsBarWidth}px`}}></div>
+                  </div>
                 )}
-                <button onClick={nextStep} disabled={isDisabledButton(form[2])} className={`${isDisabledButton(form[2]) ? 'disabled' : ''}`}>NEXT</button>
-              </div>
-
-            </div>            
+                <div className="wrapper">
+                  {
+                    form[2].options.map(option => 
+                      <div 
+                        className={`card ${form[2].answer == option ? 'selected' : ''}`}
+                        onClick={() => {setAnswer(3, option)}}
+                      >
+                        <span>{option}</span>  
+                      </div>  
+                  )}
+                </div>
+                {renderIf(!isMobile)(
+                  <button onClick={nextStep} disabled={isDisabledButton(form[2])} className={`${isDisabledButton(form[2]) ? 'disabled' : ''}`}>NEXT</button>
+                )}
+              </div>     
+            </div>
+            {renderIf(isMobile)(
+              <button onClick={nextStep} disabled={isDisabledButton(form[2])} className={`${isDisabledButton(form[2]) ? 'disabled' : ''}`}>NEXT</button>
+            )}
           </div>
 
-          <div class={`step-4 full-screen df-cc ta-c df-column ${(currentStep == 4 ? 'show-step' : 'hidden-step')}`}>
+          <div className={`step-4 full-screen ta-c ${(currentStep == 2 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
-              <div className="description">
+              <div className="left-side">
                 <span>How experienced are you?</span>
                 <p>AND BY EXPERIENCED, WE MEAN ACTUAL YEARS OF PAID PROFESSIONAL EXPERIENCE.</p>
               </div>
 
-              <div className="question-container">
-                <div className="options-container">
-                  {
-                    form[3].options.map(option => 
-                      <div 
-                        className={`card ${form[3].answer == option ? 'selected' : ''}`}
-                        onClick={() => {setAnswer(4, option)}}
-                      >
-                        <span>{option}</span>  
-                      </div>  
-                  )}
+              <div className="right-side">
+                {renderIf(!isMobile)(
+                  <div className={`stepper ${currentStep == numberSteps ? 'display-none' : ''}`} style={{width: `${progressBarWidth}px`}}>
+                    <div className="progress" style={{width: `${progressStepsBarWidth}px`}}></div>
+                  </div>
+                )}
+                <div className="wrapper">
+                  <div className="options-container">
+                    {
+                      form[3].options.map(option => 
+                        <div 
+                          className={`card ${form[3].answer == option ? 'selected' : ''}`}
+                          onClick={() => {setAnswer(4, option)}}
+                        >
+                          <span>{option}</span>  
+                        </div>  
+                    )}
+                  </div>
                 </div>
-                <button onClick={nextStep} disabled={isDisabledButton(form[3])} className={`${isDisabledButton(form[3]) ? 'disabled' : ''}`}>NEXT</button>
+                {renderIf(!isMobile)(
+                  <button onClick={nextStep} disabled={isDisabledButton(form[3])} className={`${isDisabledButton(form[3]) ? 'disabled' : ''}`}>NEXT</button>
+                )}
               </div>
             </div>
+            {renderIf(isMobile)(
+              <button onClick={nextStep} disabled={isDisabledButton(form[3])} className={`${isDisabledButton(form[3]) ? 'disabled' : ''}`}>NEXT</button>
+            )}
           </div>
 
           {
             [5, 6, 7, 8, 9].map((stepNumber) =>
-              <div class={`step-${stepNumber} full-screen df-cc ta-c df-column ${(currentStep == stepNumber ? 'show-step' : 'hidden-step')}`}>
+              <div className={`step-${stepNumber} full-screen ta-c ${(currentStep == (stepNumber - 2) ? 'show-step' : 'hidden-step')}`}>
                 <div className="container">
-                  <div className="description">
+                  <div className="left-side">
                     <span>{form[stepNumber - 1].question[form[2].answer == "Software Engineer" ? 0 : 1]}</span>
                   </div>
 
-                  <div className="question-container">
-                    {form[stepNumber - 1].options.map((option) =>
-                      <div
-                        className={`card ${form[stepNumber - 1].answer == option ? 'selected' : ''}`}
-                        onClick={() => {setAnswer(stepNumber, option)}}
-                      >
-                        <span>{option}</span>
+                  <div className="right-side">
+                    {renderIf(!isMobile)(
+                      <div className={`stepper ${currentStep == numberSteps ? 'display-none' : ''}`} style={{width: `${progressBarWidth}px`}}>
+                        <div className="progress" style={{width: `${progressStepsBarWidth}px`}}></div>
                       </div>
                     )}
-                    <button onClick={nextStep} disabled={isDisabledButton(form[stepNumber - 1])} className={`${isDisabledButton(form[stepNumber - 1]) ? 'disabled' : ''}`}>NEXT</button>
+                    <div className="wrapper">
+                      {form[stepNumber - 1].options.map((option) =>
+                        <div
+                          className={`card ${form[stepNumber - 1].answer == option ? 'selected' : ''}`}
+                          onClick={() => {setAnswer(stepNumber, option)}}
+                        >
+                          <span>{option}</span>
+                        </div>
+                      )}
+                    </div>
+                    {renderIf(!isMobile)(
+                      <button onClick={nextStep} disabled={isDisabledButton(form[stepNumber - 1])} className={`${isDisabledButton(form[stepNumber - 1]) ? 'disabled' : ''}`}>NEXT</button>
+                    )}
                   </div>
                 </div>
+                {renderIf(isMobile)(
+                  <button onClick={nextStep} disabled={isDisabledButton(form[stepNumber - 1])} className={`${isDisabledButton(form[stepNumber - 1]) ? 'disabled' : ''}`}>NEXT</button>
+                )}
               </div>
             )
           }
           
-          <div class={`step-10-${form[2].answer == "Software Engineer" ? 'software' : 'designer'} full-screen df-cc ta-c df-column ${(currentStep == 10 ? 'show-step' : 'hidden-step')}`}>
+          <div className={`step-10 full-screen ta-c ${(currentStep == 8 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
-              <div className="description">
+              <div className="left-side">
                 <span>{form[9].question[form[2].answer == "Software Engineer" ? 0 : 1]}</span>
               </div>
 
-              <div className="question-container">
-                <div className="scroll">
-                {
-                  form[9].options[form[2].answer == "Software Engineer" ? 0 : 1].map(option =>
-                    <div
-                      className={`card w${option.value}`}
-                      onClick={()=> {setAnswerSteps(10, option.name, form[2].answer)}}
-                    >
-                      <span>{option.name}</span>
-                    </div>
+              <div className="right-side">
+                {renderIf(!isMobile)(
+                  <div className={`stepper ${currentStep == numberSteps ? 'display-none' : ''}`} style={{width: `${progressBarWidth}px`}}>
+                    <div className="progress" style={{width: `${progressStepsBarWidth}px`}}></div>
+                  </div>
                 )}
-                </div>
-                <button onClick={nextStep} disabled={isDisabledButton(form[9])} className={`${isDisabledButton(form[9]) ? 'disabled' : ''}`}>NEXT</button>
-              </div>
-            </div>
-          </div>
-
-          <div class={`step-11-${form[2].answer == "Software Engineer" ? 'software' : 'designer'} full-screen df-cc ta-c df-column ${(currentStep == 11 ? 'show-step' : 'hidden-step')}`}>
-            <div className="container">
-              <div className="description">
-                <span>{form[10].question[form[2].answer == "Software Engineer" ? 0 : 1]}</span>
-              </div>
-
-              <div className="question-container">
-                <div className="scroll">
+                <div className="wrapper">
+                  <div className="scroll">
                   {
-                    form[10].options[form[2].answer == "Software Engineer" ? 0 : 1].map(option =>
+                    form[9].options[form[2].answer == "Software Engineer" ? 0 : 1].map(option =>
                       <div
                         className={`card w${option.value}`}
-                        onClick={()=> {setAnswerSteps(11, option.name, form[2].answer)}}
+                        onClick={()=> {setAnswerSteps(10, option.name, form[2].answer)}}
                       >
                         <span>{option.name}</span>
                       </div>
                   )}
+                  </div>
                 </div>
-                <button onClick={nextStep} disabled={isDisabledButton(form[10])} className={`${isDisabledButton(form[10]) ? 'disabled' : ''}`}>NEXT</button>
+                {renderIf(!isMobile)(
+                  <button onClick={nextStep} disabled={isDisabledButton(form[9])} className={`${isDisabledButton(form[9]) ? 'disabled' : ''}`}>NEXT</button>
+                )}
               </div>
             </div>
-            
+            {renderIf(isMobile)(
+              <button onClick={nextStep} disabled={isDisabledButton(form[9])} className={`${isDisabledButton(form[9]) ? 'disabled' : ''}`}>NEXT</button>
+            )}
+          </div>
+
+          <div class={`step-11 full-screen ta-c ${(currentStep == 9 ? 'show-step' : 'hidden-step')}`}>
+            <div className="container">
+              <div className="left-side">
+                <span>{form[10].question[form[2].answer == "Software Engineer" ? 0 : 1]}</span>
+              </div>
+
+              <div className="right-side">
+                {renderIf(!isMobile)(
+                  <div className={`stepper ${currentStep == numberSteps ? 'display-none' : ''}`} style={{width: `${progressBarWidth}px`}}>
+                    <div className="progress" style={{width: `${progressStepsBarWidth}px`}}></div>
+                  </div>
+                )}
+                <div className="wrapper">
+                  <div className="scroll">
+                    {
+                      form[10].options[form[2].answer == "Software Engineer" ? 0 : 1].map(option =>
+                        <div
+                          className={`card w${option.value}`}
+                          onClick={()=> {setAnswerSteps(11, option.name, form[2].answer)}}
+                        >
+                          <span>{option.name}</span>
+                        </div>
+                    )}
+                  </div>
+                </div>
+                {renderIf(!isMobile)(
+                  <button onClick={nextStep} disabled={isDisabledButton(form[10])} className={`${isDisabledButton(form[10]) ? 'disabled' : ''}`}>NEXT</button>
+                )}
+              </div>
+            </div>
+            {renderIf(isMobile)(
+              <button onClick={nextStep} disabled={isDisabledButton(form[10])} className={`${isDisabledButton(form[10]) ? 'disabled' : ''}`}>NEXT</button>
+            )}
           </div>
 
           {
           form[2].answer == "Software Engineer" ?
-
-          <div class={`step-12 full-screen df-cc ta-c df-column ${(currentStep == 12 ? 'show-step' : 'hidden-step')}`}>
+          <div class={`step-12 full-screen ta-c ${(currentStep == 10 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
-              <div className="description">
+              <div className="left-side">
                 <span>Pick 1 to 3 technologies that you want to learn in the 12 months.</span>
               </div>
 
-              <div className="question-container">
-                <div className="scroll">
-                  {
-                    form[11].options[0].map(option =>
-                      <div
-                        className={`card w${option.value}`}
-                        onClick={()=> {setAnswerSteps(12, option.name, form[2].answer)}}
-                      >
-                        <span>{option.name}</span>
-                      </div>
-                  )}
+              <div className="right-side">
+                {renderIf(!isMobile)(
+                  <div className={`stepper ${currentStep == numberSteps ? 'display-none' : ''}`} style={{width: `${progressBarWidth}px`}}>
+                    <div className="progress" style={{width: `${progressStepsBarWidth}px`}}></div>
+                  </div>
+                )}
+                <div className="wrapper">
+                  <div className="scroll">
+                    {
+                      form[11].options[0].map(option =>
+                        <div
+                          className={`card w${option.value}`}
+                          onClick={()=> {setAnswerSteps(12, option.name, form[2].answer)}}
+                        >
+                          <span>{option.name}</span>
+                        </div>
+                    )}
+                  </div>
                 </div>
-                <button onClick={nextStep} disabled={isDisabledButton(form[11])} className={`${isDisabledButton(form[11]) ? 'disabled' : ''}`}>NEXT</button>
+                {renderIf(!isMobile)(
+                  <button onClick={nextStep} disabled={isDisabledButton(form[11])} className={`${isDisabledButton(form[11]) ? 'disabled' : ''}`}>NEXT</button>
+                )}
               </div>
             </div>
+            {renderIf(isMobile)(
+              <button onClick={nextStep} disabled={isDisabledButton(form[11])} className={`${isDisabledButton(form[11]) ? 'disabled' : ''}`}>NEXT</button>
+            )}
           </div> : <></>
           }
 
-          <div class={`step-13 full-screen df-cc ta-c df-column ${(currentStep == 13 ? 'show-step' : 'hidden-step')}`}>
+          <div class={`step-13 full-screen ta-c ${(currentStep == 11 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
-              <div className="description">
+              <div className="left-side">
                 <span>{form[12].question[form[2].answer == "Software Engineer" ? 0 : 1]}</span>
               </div>
 
-              <div class="question-container">
-                {
-                  form[12].options[form[2].answer == "Software Engineer" ? 0 : 1].map(option => 
-                    <div 
-                      className={`card ${form[12].answer == option ? 'selected' : ''}`}
-                      onClick={() => {setAnswer(13, option, form[2].answer)}}
-                    >
-                      <span>{option}</span>  
-                    </div>  
+              <div class="right-side">
+                {renderIf(!isMobile)(
+                  <div className={`stepper ${currentStep == numberSteps ? 'display-none' : ''}`} style={{width: `${progressBarWidth}px`}}>
+                    <div className="progress" style={{width: `${progressStepsBarWidth}px`}}></div>
+                  </div>
                 )}
-                <button onClick={nextStep} disabled={isDisabledButton(form[12])} className={`${isDisabledButton(form[12]) ? 'disabled' : ''}`}>NEXT</button>
+                <div className="wrapper">
+                  {
+                    form[12].options[form[2].answer == "Software Engineer" ? 0 : 1].map(option => 
+                      <div 
+                        className={`card ${form[12].answer == option ? 'selected' : ''}`}
+                        onClick={() => {setAnswer(13, option, form[2].answer)}}
+                      >
+                        <span>{option}</span>  
+                      </div>  
+                  )}
+                </div>
+                {renderIf(!isMobile)(
+                  <button onClick={nextStep} disabled={isDisabledButton(form[12])} className={`${isDisabledButton(form[12]) ? 'disabled' : ''}`}>NEXT</button>
+                )}
               </div>
             </div>
+            {renderIf(isMobile)(
+              <button onClick={nextStep} disabled={isDisabledButton(form[12])} className={`${isDisabledButton(form[12]) ? 'disabled' : ''}`}>NEXT</button>
+            )}
           </div>
 
-          <div class={`step-14 full-screen df-cc ta-c df-column ${(currentStep == 14 ? 'show-step' : 'hidden-step')}`}>
+          <div class={`step-14 full-screen ta-c ${(currentStep == 12 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
-              <div className="description">
+              <div className="left-side">
                 <span>Now, to the interesting part. Who are you?</span>
               </div>
 
-              <div class="question-container">
-                <p>My name is <span id="formName" contenteditable="true"></span>,
-                  I live in <span id="formCity" contenteditable="true"></span>,
-                  this is my email <span id="formEmail" contenteditable="true"></span> and
-                  you can learn more about me on this link <span id="formProfile" contenteditable="true"></span>
-                </p>
+              <div class="right-side">
+                {renderIf(!isMobile)(
+                  <div className={`stepper ${currentStep == numberSteps ? 'display-none' : ''}`} style={{width: `${progressBarWidth}px`}}>
+                    <div className="progress" style={{width: `${progressStepsBarWidth}px`}}></div>
+                  </div>
+                )}
+                <div className="wrapper">
+                  <p>My name is <span id="formName" contenteditable="true"></span>,
+                    I live in <span id="formCity" contenteditable="true"></span>,
+                    this is my email <span id="formEmail" contenteditable="true"></span> and
+                    you can learn more about me on this link <span id="formProfile" contenteditable="true"></span>
+                  </p>
 
-                <button onClick={() => {saveUserData()}} disabled={isDisabledButton(form[13])} className={`${isDisabledButton(form[13]) ? 'disabled' : ''}`}>NEXT</button>
-                <p className={`alert-fill ${inputsEmpty ? '': 'display-none'}`}>Please fill your information</p>
+                  <p className={`alert-fill ${inputsEmpty ? '': 'display-none'}`}>Please fill your information</p>
+                </div>
+                {renderIf(!isMobile)(
+                  <button onClick={() => {saveUserData()}} disabled={isDisabledButton(form[13])} className={`${isDisabledButton(form[13]) ? 'disabled' : ''}`}>NEXT</button>
+                )}
               </div>
-            </div>            
+            </div>
+            {renderIf(isMobile)(
+              <button onClick={() => {saveUserData()}} disabled={isDisabledButton(form[13])} className={`${isDisabledButton(form[13]) ? 'disabled' : ''}`}>NEXT</button>
+            )}        
           </div>
 
-          <div class={`step-15 full-screen df-cc ta-c df-column ${(currentStep == 15 ? 'show-step' : 'hidden-step')}`}>
+          <div class={`step-15 full-screen ta-c ${(currentStep == 13 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
-              <div className="description">
+              <div className="left-side">
                 <span>One last thing, we are curious about a few stuff</span>
               </div>
 
-              <div class="question-container">
-                <p>Can we send you offers that match your profile? (Maximum one per week)</p>
-                <div className="options-container">
-                  {
-                    form[14].options1.map(option => 
-                      <div 
-                        className={`card ${form[14].answer1 == option ? 'selected' : ''}`}
-                        onClick={() => {setMultiAnswer(1, option)}}
-                      >
-                        <span>{option}</span>  
-                      </div>  
-                  )}
-                </div>
+              <div class="right-side">
+                {renderIf(!isMobile)(
+                  <div className={`stepper ${currentStep == numberSteps ? 'display-none' : ''}`} style={{width: `${progressBarWidth}px`}}>
+                    <div className="progress" style={{width: `${progressStepsBarWidth}px`}}></div>
+                  </div>
+                )}
+                <div className="wrapper">
+                  <p>Can we send you offers that match your profile? (Maximum one per week)</p>
+                  <div className="options-container">
+                    {
+                      form[14].options1.map(option => 
+                        <div 
+                          className={`card ${form[14].answer1 == option ? 'selected' : ''}`}
+                          onClick={() => {setMultiAnswer(1, option)}}
+                        >
+                          <span>{option}</span>  
+                        </div>  
+                    )}
+                  </div>
 
-                <p>If we made you an offer today, when would you be ready to start?</p>
-                <div className="options-container">
-                  {
-                    form[14].options2.map(option => 
-                      <div 
-                        className={`card ${form[14].answer2 == option ? 'selected' : ''}`}
-                        onClick={() => {setMultiAnswer(2, option)}}
-                      >
-                        <span>{option}</span>  
-                      </div>  
-                  )}
+                  <p>If we made you an offer today, when would you be ready to start?</p>
+                  <div className="options-container">
+                    {
+                      form[14].options2.map(option => 
+                        <div 
+                          className={`card ${form[14].answer2 == option ? 'selected' : ''}`}
+                          onClick={() => {setMultiAnswer(2, option)}}
+                        >
+                          <span>{option}</span>  
+                        </div>  
+                    )}
+                  </div>
                 </div>
-                
-                <button onClick={nextStep} disabled={isDisabledButton(form[14])} className={`${isDisabledButton(form[14]) ? 'disabled' : ''}`}>NEXT</button>
+                {renderIf(!isMobile)(
+                  <button onClick={nextStep} disabled={isDisabledButton(form[14])} className={`${isDisabledButton(form[14]) ? 'disabled' : ''}`}>NEXT</button>
+                )}
               </div>
             </div>
+            {renderIf(isMobile)(
+              <button onClick={nextStep} disabled={isDisabledButton(form[14])} className={`${isDisabledButton(form[14]) ? 'disabled' : ''}`}>NEXT</button>
+            )}
           </div>
 
-          <div class={`step-16 ${(currentStep == 16 ? 'show-step' : 'hidden-step-large')}`}>
+          <div class={`step-16 ${(currentStep == 14 ? 'show-step' : 'hidden-step-large')}`}>
             <div className="container">
-              <div className="description">
+              <div className="left-side">
                 <span className="ta-c title">This is what we have so far. Is it correct?</span>
 
                 <div className="card-summary">
-                  <p>{form[13].answers[0]}</p>
+                  <p id="name">{form[13].answers[0]}</p>
                   <p>{form[2].answer}</p>
                   <p>{form[13].answers[1]}</p>
                   <p>{`${form[3].answer} of experience`}</p>
@@ -679,7 +816,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
 
               </div>
 
-              <div class="question-container">
+              <div class="right-side">
                 {
                   form[2].answer == "Software Engineer" ?
                   <>
@@ -702,7 +839,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
 
                 <span className="subtitle">You feel more productive</span>
 
-                <span className="feel-productive">{form[12].answer}</span>
+                <p className="feel-productive">{form[12].answer}</p>
 
                 <button onClick={sendFormGoogleSheet}>YES, THAT’S ME</button>
                 <button onClick={previousStep} className="button outline">EDIT INFO</button>
@@ -738,25 +875,3 @@ CareersForm.propTypes = {
 }
 
 export default CareersForm
-
-
-/* 
-
-<h2>current {currentStep}</h2>
-      <h2>prev {prevValue}</h2>
-
-      <div className={`step-0 ${(currentStep == 0 ? 'show-step' : 'hidden-step-left')}` }>
-        <h1>hola step 0</h1>
-        <button onClick={nextStep}>Go to next step</button>
-      </div>
-      <div className={`step-1 ${(currentStep == 1 ? 'show-step' : (prevValue == 0 ? 'hidden-step-right' : 'hidden-step-left'))}` }>
-        <h1>hola step 1</h1>
-        <button onClick={previousStep}>Return to previous step</button>
-        <button onClick={nextStep}>Go to next step</button>
-      </div>
-      <div className={`step-1 ${(currentStep == 2 ? 'show-step' : (prevValue == 1 ? 'hidden-step-right' : 'hidden-step-left'))}` }>
-        <h1>hola step 2</h1>
-        <button onClick={previousStep}>Return to previous step</button>
-      </div>
-
-*/

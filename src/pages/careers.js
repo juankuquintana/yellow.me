@@ -69,7 +69,7 @@ const CareersPage = () => {
           <h2>Get your ideal high-growth job.</h2>
           <p>It doesn’t matter if you’re looking for an immediate opportunity or if you’re happy with your job and simply exploring options.</p>
           <button to="/contact" className="button" onClick={toggleMenu}>
-            YES, I WANT
+            CREATE PROFILE
           </button>
         </div>
 

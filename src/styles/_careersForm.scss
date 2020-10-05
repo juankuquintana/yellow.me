@@ -22,17 +22,22 @@
       width: 54px;
     }
   }
-  
-  .stepper {
+}
+
+.stepper {
+  height: 5px;
+  background-color: #F1F1F1;
+  border-radius: 45px;
+
+  @media (min-width: 992px) {
+    margin: 46px 100px 0px auto;
+  }
+
+  .progress {
     height: 5px;
-    background-color: #F1F1F1;
+    background-color: $yellow-primary;
     border-radius: 45px;
-    .progress {
-      height: 5px;
-      background-color: $yellow-primary;
-      border-radius: 45px;
-      transition: all 1s;
-    }
+    transition: all 1s;
   }
 }
 
@@ -141,10 +146,29 @@
     padding: 0px 10vw
   }
 
+  button {
+    @include text-style("TTInterfaces Bold", 700, 18px, normal);
+    text-decoration: none;
+    background-color: $neutral-black;
+    color: $neutral-white;
+    border: 0;
+    border-radius: 45px;
+    display: inline-block;
+    padding: 18px 28px;
+    margin-bottom: 32px;
+    width: fit-content;
+    
+    @media (min-width: 992px) {
+      margin-top: 32px;
+      padding: 25px 62px;
+    }
+  }
+
   .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto 0;
     
     img {
       width: 121px;
@@ -164,24 +188,6 @@
       p {
         @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
         margin-top: 8px;
-      }
-
-      button {
-        @include text-style("TTInterfaces Bold", 700, 18px, normal);
-        text-decoration: none;
-        background-color: $neutral-black;
-        color: $neutral-white;
-        border: 0;
-        border-radius: 45px;
-        display: inline-block;
-        margin-top: 32px;
-        padding: 18px 28px;
-        width: fit-content;
-        
-        @media (min-width: 992px) {
-          margin-top: 64px;
-          padding: 25px 62px;
-        }
       }
     }
     
@@ -215,9 +221,16 @@
   position: absolute;
   width: 100vw;
   padding: 0px 7vw;
+  display: flex;
+  flex-direction: column;
 
   @media(min-width: 992px) {
-    padding: 5vh 7vw;
+    padding: 7vh 9vw;
+  }
+
+  .container {
+    margin: auto;
+    width: 100%;
   }
 
   span {
@@ -235,21 +248,23 @@
     border: 1px solid #e1e1e1;
     border-radius: 30px;
     margin: 8px 0px;
-    padding: 80px 0px;
+    padding: 80px 32px;
     span {
       @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+      @media (min-width: 992px) {
+        @include text-style("TTInterfaces", 400, 24px, 1.5);
+      }
     }
     &.selected { background-color: $yellow-primary; border-color: $yellow-primary;}
   }
   button {
-    @include text-style("TTInterfaces Bold", 700, 18px, normal);
+    @include text-style("TTInterfaces Bold", 700, 14px, 1.35);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
     border-radius: 15px;
     display: inline-block;
-    margin-top: 32px;
-    padding: 18px 28px;
+    padding: 24px;
     width: 100%;
     border: 0px;
     &.disabled {
@@ -257,7 +272,6 @@
     }
     
     @media (min-width: 992px) {
-      margin-top: 64px;
       padding: 25px 62px;
       width: fit-content;
       align-self: flex-end;
@@ -268,11 +282,13 @@
     .container {
       display: flex;
       flex-direction: row;
-      align-items: center;
       width: 100%;
+      height: 100%;
       justify-content: space-around;
 
-      .description {
+      .left-side {
+        width: 40%;
+        margin: auto;
         text-align: left;
         padding-right: 50px;
         span {
@@ -280,13 +296,23 @@
         }
       }
 
-      .question-container {
+      .right-side {
         width: 60%;
-        border: 1px solid $grey-medium;
         border-radius: 30px;
-        padding: 140px 80px 40px 80px;
+        border: 1px solid $grey-medium;
         display: flex;
         flex-direction: column;
+
+        .wrapper {
+          padding: 0px 13%;
+          margin: auto 0px
+        }
+
+        button {
+          padding: 18px 48px;
+          margin: 0px 48px 32px 0px;
+        }
+        
       }
     }
   }
@@ -297,9 +323,16 @@
   position: absolute;
   width: 100vw;
   padding: 0px 7vw;
+  display: flex;
+  flex-direction: column;
 
   @media(min-width: 992px) {
-    padding: 5vh 7vw;
+    padding: 7vh 9vw;
+  }
+
+  .container {
+    margin: auto;
+    width: 100%;
   }
 
   span {
@@ -332,14 +365,13 @@
     }
   }
   button {
-    @include text-style("TTInterfaces Bold", 700, 18px, normal);
+    @include text-style("TTInterfaces Bold", 700, 14px, 1.35);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
     border-radius: 45px;
     display: inline-block;
-    margin-top: 32px;
-    padding: 18px 28px;
+    padding: 24px;
     width: 100%;
     border: 0px;
     &.disabled {
@@ -347,8 +379,6 @@
     }
     
     @media (min-width: 992px) {
-      margin-top: 64px;
-      padding: 25px 62px;
       width: fit-content;
       align-self: flex-end;
     }
@@ -358,11 +388,13 @@
     .container {
       display: flex;
       flex-direction: row;
-      align-items: center;
       width: 100%;
+      height: 100%;
       justify-content: space-around;
 
-      .description {
+      .left-side {
+        width: 40%;
+        margin: auto;
         text-align: left;
         padding-right: 50px;
         span {
@@ -370,13 +402,23 @@
         }
       }
 
-      .question-container {
+      .right-side {
         width: 60%;
-        border: 1px solid $grey-medium;
         border-radius: 30px;
-        padding: 168px 80px 168px 80px;
+        border: 1px solid $grey-medium;
         display: flex;
         flex-direction: column;
+
+        .wrapper {
+          padding: 0px 13%;
+          margin: auto 0px
+        }
+
+        button {
+          padding: 18px 48px;
+          margin: 0px 48px 32px 0px;
+        }
+        
       }
     }
   }
@@ -386,9 +428,16 @@
   position: absolute;
   width: 100vw;
   padding: 0px 7vw;
+  display: flex;
+  flex-direction: column;
 
   @media(min-width: 992px) {
-    padding: 5vh 7vw;
+    padding: 7vh 9vw;
+  }
+
+  .container {
+    margin: auto;
+    width: 100%;
   }
 
   span {
@@ -408,14 +457,13 @@
     &.selected { background-color: $yellow-primary; border-color: $yellow-primary;}
   }
   button {
-    @include text-style("TTInterfaces Bold", 700, 18px, normal);
+    @include text-style("TTInterfaces Bold", 700, 14px, 1.35);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
     border-radius: 45px;
     display: inline-block;
-    margin-top: 32px;
-    padding: 18px 28px;
+    padding: 24px;
     width: 100%;
     border: 0px;
     &.disabled {
@@ -423,8 +471,6 @@
     }
     
     @media (min-width: 992px) {
-      margin-top: 64px;
-      padding: 25px 62px;
       width: fit-content;
       align-self: flex-end;
     }
@@ -434,55 +480,64 @@
     .container {
       display: flex;
       flex-direction: row;
-      align-items: center;
       width: 100%;
+      height: 100%;
       justify-content: space-around;
 
-      .description {
+      .left-side {
+        width: 40%;
+        margin: auto;
         text-align: left;
         padding-right: 50px;
-        max-width: 650px;
-        min-width: 550px;
         span {
           @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
         }
       }
 
-      .question-container {
-        width: 100%;
-        border: 1px solid $grey-medium;
+      .right-side {
+        width: 60%;
         border-radius: 30px;
-        padding: 175px 80px 175px 80px;
+        border: 1px solid $grey-medium;
         display: flex;
         flex-direction: column;
+
+        .wrapper {
+          padding: 0px 13%;
+          margin: auto 0px
+        }
+
+        button {
+          padding: 18px 48px;
+          margin: 0px 48px 32px 0px;
+        }
+        
       }
     }
   }
 }
 
-.step-6, .step-7, .step-8, .step-9 {
-  @media (min-width: 992px) {
-    .container {
-      .question-container {
-        padding: 210px 80px 210px 80px;
-      }
-    }
-  }
-}
-
-.step-10-software, .step-11-software {
+.step-10, .step-11, .step-12 {
   position: absolute;
   width: 100vw;
-  padding: 15vh 3vw 0px 7vw;
+  padding: 0px 3vw 0px 7vw;
+  display: flex;
+  flex-direction: column;
 
   @media(min-width: 992px) {
-    padding: 5vh 7vw;
+    padding: 7vh 9vw;
   }
 
   .container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    margin: auto;
+    width: 100%;
+    height: 55%;
+    .right-side {
+      margin-top: 48px;
+      height: 75%;
+      .wrapper {
+        height: 100%;
+      }
+    }
   }
 
   span {
@@ -497,10 +552,7 @@
     flex-direction: column;
     align-items: start;
     width: 100%;
-    height: 22%;
-    @media(min-width: 992px){
-      max-height: 60vh;  
-    }
+    height: 100%;
     // ALWAYS SHOW THE SCROLLBAR
     &::-webkit-scrollbar {
       -webkit-appearance: none;
@@ -534,15 +586,14 @@
   }
   
   button {
-    @include text-style("TTInterfaces Bold", 700, 18px, normal);
+    @include text-style("TTInterfaces Bold", 700, 14px, 1.35);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
     border: 0;
     border-radius: 45px;
     display: inline-block;
-    margin-top: 32px;
-    padding: 18px 28px;
+    padding: 24px;
     width: 100%;
     border: 0px;
     &.disabled {
@@ -550,8 +601,6 @@
     }
     
     @media (min-width: 992px) {
-      margin-top: 64px;
-      padding: 25px 62px;
       width: fit-content;
       align-self: flex-end;
     }
@@ -559,13 +608,15 @@
 
   @media (min-width: 992px) {
     .container {
+      display: flex;
       flex-direction: row;
-      align-items: center;
       width: 100%;
+      height: 100%;
       justify-content: space-around;
-      margin-top: 0;
 
-      .description {
+      .left-side {
+        width: 40%;
+        margin: auto;
         text-align: left;
         padding-right: 50px;
         span {
@@ -573,245 +624,25 @@
         }
       }
 
-      .question-container {
-        width: 100%;
-        border: 1px solid $grey-medium;
+      .right-side {
+        width: 60%;
+        height: 100%;
+        margin-top: 0px;
         border-radius: 30px;
-        padding: 45px 80px 45px 80px;
+        border: 1px solid $grey-medium;
         display: flex;
         flex-direction: column;
-      }
-    }
-  }
-}
 
-.step-10-designer, .step-11-designer {
-  position: absolute;
-  width: 100vw;
-  padding: 15vh 3vw 0px 7vw;
-
-  @media(min-width: 992px) {
-    padding: 5vh 7vw;
-  }
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  span {
-    @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
-    margin-bottom: 46px;
-  }
-
-  .scroll {
-    overflow-x: hidden; 
-    overflow-y: scroll;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    width: 100%;
-    height: 45%;
-    @media(min-width: 992px){
-      max-height: 60vh;  
-    }
-    // ALWAYS SHOW THE SCROLLBAR
-    &::-webkit-scrollbar {
-      -webkit-appearance: none;
-    }
-    &::-webkit-scrollbar:vertical {
-      width: 11px;
-    }
-    &::-webkit-scrollbar-thumb {
-      border-radius: 8px;
-      border: 2px solid white;
-      background-color: rgba(0, 0, 0, .5);
-    }
-    //
-    .card {
-      border: 1px solid #e1e1e1;
-      border-radius: 15px;
-      margin: 8px 0px;
-      padding: 16px;
-      transition: all 0.25s;
-      span {
-        @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
-      }
-
-      &.w0 { min-width: 95%; color: $grey-medium; border-color: $grey-medium;}
-      &.w25 { min-width: 25%; border-color: $yellow-medium; }
-      &.w50 { min-width: 50%; background-color: $yellow-light; border-color: $yellow-light; }
-      &.w75 { min-width: 75%; background-color: $yellow-medium; border-color: $yellow-medium;}
-      &.w100 { min-width: 95%; background-color: $yellow-primary; border-color: $yellow-primary;}
-
-    }
-  }
-  
-  button {
-    @include text-style("TTInterfaces Bold", 700, 18px, normal);
-    text-decoration: none;
-    background-color: $neutral-white;
-    color: $neutral-black;
-    border: 0;
-    border-radius: 45px;
-    display: inline-block;
-    margin-top: 32px;
-    padding: 18px 28px;
-    width: 100%;
-    border: 0px;
-    &.disabled {
-      color: $grey-medium;
-    }
-    
-    @media (min-width: 992px) {
-      margin-top: 64px;
-      padding: 25px 62px;
-      width: fit-content;
-      align-self: flex-end;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .container {
-      flex-direction: row;
-      align-items: center;
-      width: 100%;
-      justify-content: space-around;
-      margin-top: 0;
-
-      .description {
-        text-align: left;
-        padding-right: 50px;
-        span {
-          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+        .wrapper {
+          padding: 0px 13%;
+          margin: auto 0px;
+          height: 55%;
         }
-      }
 
-      .question-container {
-        width: 100%;
-        border: 1px solid $grey-medium;
-        border-radius: 30px;
-        padding: 45px 80px 45px 80px;
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  }
-}
-
-
-
-.step-12 {
-  position: absolute;
-  width: 100vw;
-  padding: 15vh 3vw 0px 7vw;
-
-  @media(min-width: 992px) {
-    padding: 5vh 7vw;
-  }
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  span {
-    @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
-    margin-bottom: 46px;
-  }
-
-  .scroll {
-    overflow-x: hidden; 
-    overflow-y: scroll;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    width: 100%;
-    height: 45%;
-    @media(min-width: 992px){
-      max-height: 60vh;  
-    }
-    // ALWAYS SHOW THE SCROLLBAR
-    &::-webkit-scrollbar {
-      -webkit-appearance: none;
-    }
-    &::-webkit-scrollbar:vertical {
-      width: 11px;
-    }
-    &::-webkit-scrollbar-thumb {
-      border-radius: 8px;
-      border: 2px solid white;
-      background-color: rgba(0, 0, 0, .5);
-    }
-    //
-    .card {
-      border: 1px solid #e1e1e1;
-      border-radius: 15px;
-      margin: 8px 0px;
-      padding: 16px;
-      transition: all 0.25s;
-      span {
-        @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
-      }
-
-      &.w0 { min-width: 95%; color: $grey-medium; border-color: $grey-medium;}
-      &.w25 { min-width: 25%; border-color: $yellow-medium; }
-      &.w50 { min-width: 50%; background-color: $yellow-light; border-color: $yellow-light; }
-      &.w75 { min-width: 75%; background-color: $yellow-medium; border-color: $yellow-medium;}
-      &.w100 { min-width: 95%; background-color: $yellow-primary; border-color: $yellow-primary;}
-
-    }
-  }
-  
-  button {
-    @include text-style("TTInterfaces Bold", 700, 18px, normal);
-    text-decoration: none;
-    background-color: $neutral-white;
-    color: $neutral-black;
-    border: 0;
-    border-radius: 45px;
-    display: inline-block;
-    margin-top: 32px;
-    padding: 18px 28px;
-    width: 100%;
-    border: 0px;
-    &.disabled {
-      color: $grey-medium;
-    }
-    
-    @media (min-width: 992px) {
-      margin-top: 64px;
-      padding: 25px 62px;
-      width: fit-content;
-      align-self: flex-end;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .container {
-      flex-direction: row;
-      align-items: center;
-      width: 100%;
-      justify-content: space-around;
-      margin-top: 0;
-
-      .description {
-        text-align: left;
-        padding-right: 50px;
-        span {
-          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+        button {
+          padding: 18px 48px;
+          margin: 0px 48px 32px 0px;
         }
-      }
-
-      .question-container {
-        width: 100%;
-        border: 1px solid $grey-medium;
-        border-radius: 30px;
-        padding: 45px 80px 45px 80px;
-        display: flex;
-        flex-direction: column;
       }
     }
   }
@@ -821,9 +652,16 @@
   position: absolute;
   width: 100vw;
   padding: 0px 7vw;
+  display: flex;
+  flex-direction: column;
 
   @media(min-width: 992px) {
-    padding: 5vh 7vw;
+    padding: 7vh 9vw;
+  }
+
+  .container {
+    margin: auto;
+    width: 100%;
   }
 
   span {
@@ -841,9 +679,15 @@
       caret-color: $brand-yellow;
       min-width: 80px;
       display: inline-block;
+      &#formEmail {
+        word-break: break-all;
+      }
       &:focus {
         outline: none;
       }
+    }
+    @media (min-width: 992px) {
+      @include text-style("TTInterfaces", 400, 32px, 1.44);
     }
 
   }
@@ -855,14 +699,13 @@
   }
 
   button {
-    @include text-style("TTInterfaces Bold", 700, 18px, normal);
+    @include text-style("TTInterfaces Bold", 700, 14px, 1.35);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
     border-radius: 15px;
     display: inline-block;
-    margin-top: 32px;
-    padding: 18px 28px;
+    padding: 24px;
     width: 100%;
     border: 0px;
     &.disabled {
@@ -870,8 +713,6 @@
     }
     
     @media (min-width: 992px) {
-      margin-top: 0px;
-      padding: 25px 62px;
       width: fit-content;
       align-self: flex-end;
     }
@@ -881,11 +722,13 @@
     .container {
       display: flex;
       flex-direction: row;
-      align-items: center;
       width: 100%;
+      height: 100%;
       justify-content: space-around;
 
-      .description {
+      .left-side {
+        width: 40%;
+        margin: auto;
         text-align: left;
         padding-right: 50px;
         span {
@@ -893,13 +736,23 @@
         }
       }
 
-      .question-container {
-        width: 80%;
-        border: 1px solid $grey-medium;
+      .right-side {
+        width: 60%;
         border-radius: 30px;
-        padding: 220px 80px 220px 80px;
+        border: 1px solid $grey-medium;
         display: flex;
         flex-direction: column;
+
+        .wrapper {
+          padding: 0px 13%;
+          margin: auto 0px
+        }
+
+        button {
+          padding: 18px 48px;
+          margin: 0px 48px 32px 0px;
+        }
+        
       }
     }
   }
@@ -909,9 +762,16 @@
   position: absolute;
   width: 100vw;
   padding: 0px 7vw;
+  display: flex;
+  flex-direction: column;
 
   @media(min-width: 992px) {
-    padding: 5vh 7vw;
+    padding: 7vh 9vw;
+  }
+
+  .container {
+    margin: auto;
+    width: 100%;
   }
 
   span {
@@ -920,13 +780,16 @@
   }
 
   p {
-    @include text-style("TTInterfaces Medium", 500, 12px, 1.5);
+    @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
     margin-bottom: 16px;
     &:nth-of-type(1) {
       margin-top: 48px;
     }
     &:nth-of-type(2) {
       margin-top: 32px;
+    }
+    @media (min-width: 992px) {
+      @include text-style("TTInterfaces", 400, 24px, 1.44);
     }
   }
 
@@ -950,14 +813,13 @@
     }
   }
   button {
-    @include text-style("TTInterfaces Bold", 700, 18px, normal);
+    @include text-style("TTInterfaces Bold", 700, 14px, 1.35);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
     border-radius: 45px;
     display: inline-block;
-    margin-top: 32px;
-    padding: 18px 28px;
+    padding: 24px;
     width: 100%;
     border: 0px;
     &.disabled {
@@ -965,8 +827,6 @@
     }
     
     @media (min-width: 992px) {
-      margin-top: 32px;
-      padding: 25px 62px;
       width: fit-content;
       align-self: flex-end;
     }
@@ -976,11 +836,13 @@
     .container {
       display: flex;
       flex-direction: row;
-      align-items: center;
       width: 100%;
+      height: 100%;
       justify-content: space-around;
 
-      .description {
+      .left-side {
+        width: 40%;
+        margin: auto;
         text-align: left;
         padding-right: 50px;
         span {
@@ -988,16 +850,23 @@
         }
       }
 
-      .question-container {
-        width: 80%;
-        border: 1px solid $grey-medium;
+      .right-side {
+        width: 60%;
         border-radius: 30px;
-        padding: 40px 80px 40px 80px;
+        border: 1px solid $grey-medium;
         display: flex;
         flex-direction: column;
-        p {
-          @include text-style("TTInterfaces", 400, 32px, 1.44);
+
+        .wrapper {
+          padding: 0px 13%;
+          margin: auto 0px
         }
+
+        button {
+          padding: 18px 48px;
+          margin: 0px 48px 32px 0px;
+        }
+        
       }
     }
   }
@@ -1013,8 +882,14 @@
     padding: 5vh 7vw;
   }
   
-  span {
+  span.title {
     @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+
+  span.subtitle {
+    @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
     margin-bottom: 8px;
     display: inline-block;
   }
@@ -1022,12 +897,6 @@
   p {
     @include text-style("TTInterfaces Medium", 500, 12px, 1.5);
     margin-bottom: 16px;
-    &:nth-of-type(1) {
-      margin-top: 48px;
-    }
-    &:nth-of-type(2) {
-      margin-top: 32px;
-    }
   }
 
   .card-summary {
@@ -1040,6 +909,12 @@
       @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
       margin: 4px 0px;
       text-align: left;
+      &#name {
+        @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+        @media (min-width: 992px) {
+          @include text-style("TTInterfaces Bold", 700, 32px, normal);
+        }
+      }
       @media(min-width: 992px) {
         @include text-style("TTInterfaces", 400, 24px, 1.5);
       }
@@ -1068,7 +943,7 @@
         margin-bottom: 0px;
       }
       p {
-        @include text-style("TTInterfaces Medium", 500, 12px, 1.5);
+        @include text-style("TTInterfaces Bold", 700, 12px, 1.5);
         margin: 0px;
         text-align: left;
       }
@@ -1103,14 +978,14 @@
         margin-bottom: 0px;
       }
       p {
-        @include text-style("TTInterfaces Medium", 500, 12px, 1.5);
+        @include text-style("TTInterfaces Bold", 700, 12px, 1.5);
         margin: 0px;
         text-align: left;
       }
     }
   }
 
-  span.feel-productive {
+  p.feel-productive {
     @include text-style("TTInterfaces", 400, 24px, 1.5);
     text-decoration: underline;
     margin-bottom: 48px;
@@ -1147,7 +1022,7 @@
       width: 100%;
       justify-content: space-around;
 
-      .description {
+      .left-side {
         text-align: left;
         padding-right: 50px;
         width: 50%;
@@ -1156,11 +1031,11 @@
         }
       }
 
-      .question-container {
+      .right-side {
         width: 50%;
         padding: 56px 80px 56px 80px;
         p {
-          @include text-style("TTInterfaces", 400, 32px, 1.44);
+          @include text-style("TTInterfaces", 400, 24px, 1.34);
         }
       }
 
@@ -1238,11 +1113,12 @@
       span {
         @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
         max-width: 290px;
+        margin-top: 48px;
       }
 
       p {
         @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
-        margin-top: 8px;
+        margin-top: 16px;
       }
 
       button {
@@ -1254,6 +1130,7 @@
         border-radius: 45px;
         display: inline-block;
         padding: 18px 28px;
+        margin-top: 24px;
         width: fit-content;
         
         @media (min-width: 992px) {
