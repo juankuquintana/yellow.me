@@ -22,9 +22,13 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    setIsMobile(window.innerWidth < 992)
+    setIsMobile(window.innerWidth < 992);
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
     window.addEventListener("resize", function() {
-      setIsMobile(window.innerWidth < 992)
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+      setIsMobile(window.innerWidth < 992);
     });
   }, [])
 
@@ -418,12 +422,12 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
         </div>
 
         <div className="careers-form">
-          <div className={`step-1 full-screen df-cc df-column ta-c ${(currentStep == -1 ? 'show-step' : 'hidden-step')}`}>
+          <div className={`step-1 full-screen ta-c ${(currentStep == -1 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
               <img src={Illustration2}/>
               <div className="text-container">
-                <span>Take 5 minutes to answer some key questions.</span>
-                <p>This is pretty easy, we ask, you answer then you get back to your busy life.</p>
+                <p className="title">Take 5 minutes to answer some key questions.</p>
+                <p className="subtitle">This is pretty easy, we ask, you answer then you get back to your busy life.</p>
                 {renderIf(!isMobile)(
                   <button onClick={nextStep}>NEXT</button>
                 )}
@@ -434,12 +438,12 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
             )}
           </div>
 
-          <div className={`step-2 full-screen df-cc df-column ta-c ${(currentStep == 0 ? 'show-step' : 'hidden-step')}`}>
+          <div className={`step-2 full-screen ta-c ${(currentStep == 0 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
               <img src={Illustration3}/>
               <div className="text-container">
-                <span>We protect your data.</span>
-                <p>We don’t share personally identifiable information with anyone. We use this information to communicate directly with you, but you can ask us to stop messaging at any time.</p>
+                <p className="title">We protect your data.</p>
+                <p className="subtitle">We don’t share personally identifiable information with anyone. We use this information to communicate directly with you, but you can ask us to stop messaging at any time.</p>
                 {renderIf(!isMobile)(
                   <button onClick={nextStep}>NEXT</button>
                 )}
@@ -453,8 +457,8 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
           <div className={`step-3 full-screen ta-c ${(currentStep == 1 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
               <div className="left-side">
-                <span>You identify as a:</span>
-                <p>IN CASE YOU IDENTIFY AS BOTH, PICK THE ONE THAT INTERESTS YOU THE MOST</p>
+                <p className="title">You identify as a:</p>
+                <p className="subtitle">IN CASE YOU IDENTIFY AS BOTH, PICK THE ONE THAT INTERESTS YOU THE MOST</p>
               </div>
 
               <div className="right-side">
@@ -487,8 +491,8 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
           <div className={`step-4 full-screen ta-c ${(currentStep == 2 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
               <div className="left-side">
-                <span>How experienced are you?</span>
-                <p>AND BY EXPERIENCED, WE MEAN ACTUAL YEARS OF PAID PROFESSIONAL EXPERIENCE.</p>
+                <p className="title">How experienced are you?</p>
+                <p className="subtitle">AND BY EXPERIENCED, WE MEAN ACTUAL YEARS OF PAID PROFESSIONAL EXPERIENCE.</p>
               </div>
 
               <div className="right-side">
@@ -525,7 +529,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
               <div className={`step-${stepNumber} full-screen ta-c ${(currentStep == (stepNumber - 2) ? 'show-step' : 'hidden-step')}`}>
                 <div className="container">
                   <div className="left-side">
-                    <span>{form[stepNumber - 1].question[form[2].answer == "Software Engineer" ? 0 : 1]}</span>
+                    <p className="title">{form[stepNumber - 1].question[form[2].answer == "Software Engineer" ? 0 : 1]}</p>
                   </div>
 
                   <div className="right-side">
@@ -559,7 +563,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
           <div className={`step-10 full-screen ta-c ${(currentStep == 8 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
               <div className="left-side">
-                <span>{form[9].question[form[2].answer == "Software Engineer" ? 0 : 1]}</span>
+                <p className="title">{form[9].question[form[2].answer == "Software Engineer" ? 0 : 1]}</p>
               </div>
 
               <div className="right-side">
@@ -594,7 +598,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
           <div class={`step-11 full-screen ta-c ${(currentStep == 9 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
               <div className="left-side">
-                <span>{form[10].question[form[2].answer == "Software Engineer" ? 0 : 1]}</span>
+                <p className="title">{form[10].question[form[2].answer == "Software Engineer" ? 0 : 1]}</p>
               </div>
 
               <div className="right-side">
@@ -631,7 +635,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
           <div class={`step-12 full-screen ta-c ${(currentStep == 10 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
               <div className="left-side">
-                <span>Pick 1 to 3 technologies that you want to learn in the 12 months.</span>
+                <p className="title">Pick 1 to 3 technologies that you want to learn in the 12 months.</p>
               </div>
 
               <div className="right-side">
@@ -667,7 +671,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
           <div class={`step-13 full-screen ta-c ${(currentStep == 11 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
               <div className="left-side">
-                <span>{form[12].question[form[2].answer == "Software Engineer" ? 0 : 1]}</span>
+                <p className="title">{form[12].question[form[2].answer == "Software Engineer" ? 0 : 1]}</p>
               </div>
 
               <div class="right-side">
@@ -700,7 +704,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
           <div class={`step-14 full-screen ta-c ${(currentStep == 12 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
               <div className="left-side">
-                <span>Now, to the interesting part. Who are you?</span>
+                <p className="title">Now, to the interesting part. Who are you?</p>
               </div>
 
               <div class="right-side">
@@ -710,7 +714,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
                   </div>
                 )}
                 <div className="wrapper">
-                  <p>My name is <span id="formName" contenteditable="true"></span>,
+                  <p className="person">My name is <span id="formName" contenteditable="true"></span>,
                     I live in <span id="formCity" contenteditable="true"></span>,
                     this is my email <span id="formEmail" contenteditable="true"></span> and
                     you can learn more about me on this link <span id="formProfile" contenteditable="true"></span>
@@ -731,7 +735,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
           <div class={`step-15 full-screen ta-c ${(currentStep == 13 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
               <div className="left-side">
-                <span>One last thing, we are curious about a few stuff</span>
+                <p className="title">One last thing, we are curious about a few stuff</p>
               </div>
 
               <div class="right-side">
@@ -741,7 +745,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
                   </div>
                 )}
                 <div className="wrapper">
-                  <p>Can we send you offers that match your profile? (Maximum one per week)</p>
+                  <p className="first-question">Can we send you offers that match your profile? (Maximum one per week)</p>
                   <div className="options-container">
                     {
                       form[14].options1.map(option => 
@@ -754,7 +758,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
                     )}
                   </div>
 
-                  <p>If we made you an offer today, when would you be ready to start?</p>
+                  <p className="second-question">If we made you an offer today, when would you be ready to start?</p>
                   <div className="options-container">
                     {
                       form[14].options2.map(option => 
@@ -780,7 +784,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
           <div class={`step-16 ${(currentStep == 14 ? 'show-step' : 'hidden-step-large')}`}>
             <div className="container">
               <div className="left-side">
-                <span className="ta-c title">This is what we have so far. Is it correct?</span>
+                <p className="ta-c title">This is what we have so far. Is it correct?</p>
 
                 <div className="card-summary">
                   <p id="name">{form[13].answers[0]}</p>
@@ -791,7 +795,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
                   <p>{form[13].answers[3]}</p>
                 </div>
 
-                <span className="subtitle">{form[2].answer == "Software Engineer" ? "Your top languages are" : "Your top designer roles are"}</span>
+                <p className="subtitle">{form[2].answer == "Software Engineer" ? "Your top languages are" : "Your top designer roles are"}</p>
                 <div className="top-selected-container">
                   {
                     form[9].options[form[2].answer == "Software Engineer" ? 0 : 1].slice(0).sort((a, b) => b.value - a.value).map(option =>
@@ -803,7 +807,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
                   )}
                 </div>
 
-                <span className="subtitle">{form[2].answer == "Software Engineer" ? "Your top frameworks are" : "Your top mindset or methodologies are"}</span>
+                <p className="subtitle">{form[2].answer == "Software Engineer" ? "Your top frameworks are" : "Your top mindset or methodologies are"}</p>
                 <div className="top-selected-container">
                   {
                     form[10].options[form[2].answer == "Software Engineer" ? 0 : 1].slice(0).sort((a, b) => b.value - a.value).map(option =>
@@ -821,7 +825,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
                 {
                   form[2].answer == "Software Engineer" ?
                   <>
-                  <span className="subtitle">You would like to learn</span>
+                  <p className="subtitle">You would like to learn</p>
                   <div className="like-to-learn-container">
                     {
                       form[11].options[0].map(option => {
@@ -838,7 +842,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
                   </div> </> : <></>
                 }
 
-                <span className="subtitle">You feel more productive</span>
+                <p className="subtitle">You feel more productive</p>
 
                 <p className="feel-productive">{form[12].answer}</p>
 
