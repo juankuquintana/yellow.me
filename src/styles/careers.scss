@@ -20,15 +20,28 @@
   }
 
   button {
-    @include text-style("TTInterfaces Bold", 700, 18px, normal);
+    @include text-style("TTInterfaces Bold", 700, 18px, normal, 0.54px);
+    
     text-decoration: none;
     background-color: $neutral-black;
     color: $neutral-white;
-    border: 0;
+    outline: none;
+    border: 1px solid transparent;
     border-radius: 45px;
     display: inline-block;
     margin-top: 32px;
     padding: 18px 28px;
+    cursor: pointer;
+    &:hover {
+      background-color: $neutral-white;
+      color: $neutral-black;
+      border: 1px solid #FAD100;
+    }
+    &:active {
+      background-color: #FAD100;
+      color: $neutral-black;
+      border: 1px solid #FAD100;
+    }
     
     @media (min-width: 992px) {
       margin-top: 64px;
@@ -89,6 +102,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      text-align: center;
       background-color: $brand-yellow;
       border: 1px solid $brand-yellow;
       border-radius: 15px;
@@ -146,25 +160,36 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      span {
+      p {
         @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
         max-width: 290px;
       }
 
       button {
-        @include text-style("TTInterfaces Bold", 700, 18px, normal);
+        @include text-style("TTInterfaces Bold", 700, 18px, normal, 0.54px);
         text-decoration: none;
         background-color: $neutral-black;
         color: $neutral-white;
-        border: 0;
+        outline: none;
+        border: 1px solid transparent;
         border-radius: 45px;
         display: inline-block;
         margin-top: 32px;
         padding: 18px 28px;
         width: fit-content;
+        cursor: pointer;
+        &:hover {
+          background-color: $neutral-white;
+          color: $neutral-black;
+          border: 1px solid #FAD100;
+        }
+        &:active {
+          background-color: #FAD100;
+          color: $neutral-black;
+          border: 1px solid #FAD100;
+        }
         
         @media (min-width: 992px) {
-          margin-top: 64px;
           padding: 25px 62px;
         }
       }
@@ -172,21 +197,21 @@
     
 
     @media (min-width: 992px) {
-      padding: 65px 100px;
+      padding: 186px 168px;
       flex-direction: row;
+      justify-content: space-around;
       
       img {
-        width: 260px;
-        height: 372px;
-        margin-right: 196px;
+        width: 200px;
+        height: 286px;
+        margin-bottom: 0px;
       }
 
       .start-with-us {
         align-self: center;
-        span {
+        p {
+          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
           max-width: 370px;
-          font-size: 32px;
-          line-height: 1.44;
         }
       }
       

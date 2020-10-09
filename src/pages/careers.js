@@ -14,43 +14,8 @@ import Illustration1 from "../images/careers/Careers-Page-Illustration-01.png";
 
 const CareersPage = () => {
   const [isMenuOpen, setOpen] = useState(false);
-  const [isScrollingDown, setIsScrollingDown] = useState(false);
-  useEffect(() => {enableScrolling(); watchScrolling();}, []);
-
-  const disableScrolling = () => {
-    let scrollX = window.scrollX;
-    let crollY = window.scrollY;
-    window.onscroll=function(){window.scrollTo(scrollX, crollY);};
-  }
-
-  const enableScrolling = () => {
-    window.onscroll=function(){};
-  }
-
-  const watchScrolling = () => {
-    let prevScrollpos = window.pageYOffset;
-    window.onscroll = function() {
-      let currentScrollPos = window.pageYOffset;
-      
-      if (currentScrollPos > prevScrollpos) {
-        if (currentScrollPos > 250)
-          setIsScrollingDown(true);
-      } else {
-        setIsScrollingDown(false);
-      }
-      prevScrollpos = currentScrollPos;
-    }
-  }
 
   const toggleMenu = () => {
-    /*
-    if (isMenuOpen === false){
-      disableScrolling()
-    } else {
-      enableScrolling();
-      watchScrolling();
-    }
-    */
     setOpen(!isMenuOpen)
   }
   
@@ -106,7 +71,7 @@ const CareersPage = () => {
               
               <div className="start-with-us ta-c">
 
-                <span>If you ready to be part of our top-talent base, just answer this form</span>
+                <p>If you ready to be part of our top-talent base, just answer this form</p>
 
                 <button to="/contact" className="button" onClick={toggleMenu}>
                   START

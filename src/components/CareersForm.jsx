@@ -144,7 +144,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
     {
       "stepNumber": 10,
       "type": "multiple-options-steps",
-      "question": ["In which programming language do you feel most productive?", "How strong are you as a designers in these roles?"],
+      "question": ["In which programming language do you feel most productive?", "How strong are you as a designer in these roles?"],
       "options": [
         [
           { "name": "Javascript", "value": 0},
@@ -577,11 +577,13 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
                   {
                     form[9].options[form[2].answer == "Software Engineer" ? 0 : 1].map(option =>
                       <div
-                        className={`card w${option.value}`}
+                        className={`card-hitbox w${option.value}`}
                         onClick={()=> {setAnswerSteps(10, option.name, form[2].answer)}}
                       >
-                        <span>{option.name}</span>
-                      </div>
+                        <div className={`card w${option.value}`}>
+                          <span>{option.name}</span>
+                        </div>
+                      </div> 
                   )}
                   </div>
                 </div>
@@ -612,10 +614,12 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
                     {
                       form[10].options[form[2].answer == "Software Engineer" ? 0 : 1].map(option =>
                         <div
-                          className={`card w${option.value}`}
+                          className={`card-hitbox`}
                           onClick={()=> {setAnswerSteps(11, option.name, form[2].answer)}}
                         >
-                          <span>{option.name}</span>
+                          <div className={`card w${option.value}`}>
+                            <span>{option.name}</span>
+                          </div>
                         </div>
                     )}
                   </div>
@@ -649,10 +653,12 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
                     {
                       form[11].options[0].map(option =>
                         <div
-                          className={`card w${option.value}`}
+                          className={`card-hitbox`}
                           onClick={()=> {setAnswerSteps(12, option.name, form[2].answer)}}
                         >
-                          <span>{option.name}</span>
+                          <div className={`card w${option.value}`}>
+                            <span>{option.name}</span>
+                          </div>
                         </div>
                     )}
                   </div>
@@ -852,8 +858,8 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
               </div>
             </div>
 
-            <div id="myModal" class={`modal ${formFinished ? 'show' : ''}`}>
-              <div class="modal-content">
+            <div className={`thanks-modal ${formFinished ? 'show' : ''}`}>
+              <div className="modal-content">
                 
                 <div className="container"> 
                   <img src={Illustration4}/>

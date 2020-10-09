@@ -16,6 +16,10 @@
     z-index: 0;
   }
 
+  img {
+    cursor: pointer;
+  }
+
   @media(min-width: 992px){
     padding: 5vh 12vw 24px 6vw;
     img {
@@ -153,16 +157,28 @@
   }
 
   button {
-    @include text-style("TTInterfaces Bold", 700, 18px, normal);
+    @include text-style("TTInterfaces Bold", 700, 18px, normal, 0.54px);
     text-decoration: none;
     background-color: $neutral-black;
     color: $neutral-white;
-    border: 0;
+    outline: none;
+    border: 1px solid transparent;
     border-radius: 45px;
     display: inline-block;
     padding: 18px 28px;
     margin-bottom: 32px;
     width: fit-content;
+    cursor: pointer;
+    &:hover {
+      background-color: $neutral-white;
+      color: $neutral-black;
+      border: 1px solid #FAD100;
+    }
+    &:active {
+      background-color: #FAD100;
+      color: $neutral-black;
+      border: 1px solid #FAD100;
+    }
     
     @media (min-width: 992px) {
       margin-top: 32px;
@@ -252,18 +268,29 @@
       margin-bottom: 8px;
     }
     p.subtitle {
-      @include text-style("TTInterfaces Medium", 500, 12px, 1.5); 
+      @include text-style("TTInterfaces Medium", 500, 12px, 1.5);
+      color: $neutral-dark-grey;
     }
   }
   
   .card {
     width: 100%;
+    display: flex;
     border: 1px solid #e1e1e1;
     border-radius: 30px;
-    margin: 8px 0px;
-    padding: 70px 32px;
+    margin: 18px 0px;
+    padding: 0px 32px;
+    height: 168px;
+    cursor: pointer;
+    &:hover {
+      border: 1px solid $yellow-primary;
+    }
+    @media (min-width: 992px) {
+      height: 188px;
+    }
     span {
       @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+      margin: auto;
       @media (min-width: 992px) {
         @include text-style("TTInterfaces", 400, 24px, 1.5);
       }
@@ -271,15 +298,17 @@
     &.selected { background-color: $yellow-primary; border-color: $yellow-primary;}
   }
   button {
-    @include text-style("TTInterfaces Bold", 700, 14px, 1.35);
+    @include text-style("TTInterfaces Bold", 700, 14px, 1.35, 0.54px);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
+    outline: none;
     border-radius: 15px;
     display: inline-block;
     padding: 24px;
     width: 100%;
     border: 0px;
+    cursor: pointer;
     &.disabled {
       color: $grey-medium;
     }
@@ -307,6 +336,7 @@
         padding-right: 50px;
         p.title {
           @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+          margin-bottom: 12px;
         }
       }
 
@@ -358,7 +388,8 @@
       margin-bottom: 8px;
     }
     p.subtitle {
-      @include text-style("TTInterfaces Medium", 500, 12px, 1.5);  
+      @include text-style("TTInterfaces Medium", 500, 12px, 1.5);
+      color: $neutral-dark-grey;
     }
   }
 
@@ -372,25 +403,34 @@
       margin: 9px 0px;
       padding: 16px 0px;
       width: 48%;
+      cursor: pointer;
       &:nth-child(odd){
         margin-right: 11px;
       }
+      &:hover {
+        border: 1px solid $yellow-primary;
+      }
       span {
         @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+        @media (min-width: 992px) {
+          @include text-style("TTInterfaces", 400, 24px, 1.5);
+        }
       }
       &.selected { background-color: $yellow-primary; border-color: $yellow-primary;}
     }
   }
   button {
-    @include text-style("TTInterfaces Bold", 700, 14px, 1.35);
+    @include text-style("TTInterfaces Bold", 700, 14px, 1.35, 0.54px);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
+    outline: none;
     border-radius: 45px;
     display: inline-block;
     padding: 24px;
     width: 100%;
     border: 0px;
+    cursor: pointer;
     &.disabled {
       color: $grey-medium;
     }
@@ -417,6 +457,7 @@
         padding-right: 50px;
         p.title {
           @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+          margin-bottom: 12px;
         }
       }
 
@@ -471,23 +512,32 @@
     width: 100%;
     border: 1px solid #e1e1e1;
     border-radius: 15px;
-    margin: 8px 0px;
+    margin: 18px 0px;
     padding: 16px 0px;
+    cursor: pointer;
+    &:hover {
+      border: 1px solid $yellow-primary;
+    }
     span {
       @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+      @media (min-width: 992px) {
+        @include text-style("TTInterfaces", 400, 24px, 1.5);
+      }
     }
     &.selected { background-color: $yellow-primary; border-color: $yellow-primary;}
   }
   button {
-    @include text-style("TTInterfaces Bold", 700, 14px, 1.35);
+    @include text-style("TTInterfaces Bold", 700, 14px, 1.35, 0.54px);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
+    outline: none;
     border-radius: 45px;
     display: inline-block;
     padding: 24px;
     width: 100%;
     border: 0px;
+    cursor: pointer;
     &.disabled {
       color: $grey-medium;
     }
@@ -591,39 +641,56 @@
     &::-webkit-scrollbar-thumb {
       border-radius: 8px;
       border: 2px solid white;
-      background-color: rgba(0, 0, 0, .5);
+      background-color: #eaeaea;
     }
     //
     .card {
       border: 1px solid #e1e1e1;
       border-radius: 15px;
-      margin: 8px 0px;
       padding: 16px;
       transition: all 0.25s;
+      &-hitbox {
+        width: 95%;
+        margin: 8px 0px;
+        //border-radius: 15px;
+        //border: 1px solid transparent;
+        cursor: pointer;
+        &.w0 {
+          &:hover {
+            //border: 1px solid $yellow-primary;
+          }
+        }
+      }
+      
       span {
         @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+        @media (min-width: 992px) {
+          @include text-style("TTInterfaces", 400, 24px, 1.5);
+        }
       }
 
-      &.w0 { min-width: 95%; color: $grey-medium; border-color: $grey-medium;}
-      &.w25 { min-width: 25%; border-color: $yellow-medium; }
-      &.w50 { min-width: 50%; background-color: $yellow-light; border-color: $yellow-light; }
-      &.w75 { min-width: 75%; background-color: $yellow-medium; border-color: $yellow-medium;}
-      &.w100 { min-width: 95%; background-color: $yellow-primary; border-color: $yellow-primary;}
+      &.w0 { width: fit-content; min-width: 100%; color: $grey-medium; border-color: $grey-medium;}
+      &.w25 { width: fit-content; min-width: 25%; border-color: $yellow-medium; }
+      &.w50 { width: fit-content; min-width: 50%; background-color: $yellow-light; border-color: $yellow-light; }
+      &.w75 { width: fit-content; min-width: 75%; background-color: $yellow-medium; border-color: $yellow-medium;}
+      &.w100 { width: fit-content; min-width: 100%; background-color: $yellow-primary; border-color: $yellow-primary;}
 
     }
   }
   
   button {
-    @include text-style("TTInterfaces Bold", 700, 14px, 1.35);
+    @include text-style("TTInterfaces Bold", 700, 14px, 1.35, 0.54px);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
+    outline: none;
     border: 0;
     border-radius: 45px;
     display: inline-block;
     padding: 24px;
     width: 100%;
     border: 0px;
+    cursor: pointer;
     &.disabled {
       color: $grey-medium;
     }
@@ -733,15 +800,17 @@
   }
 
   button {
-    @include text-style("TTInterfaces Bold", 700, 14px, 1.35);
+    @include text-style("TTInterfaces Bold", 700, 14px, 1.35, 0.54px);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
+    outline: none;
     border-radius: 15px;
     display: inline-block;
     padding: 24px;
     width: 100%;
     border: 0px;
+    cursor: pointer;
     &.disabled {
       color: $grey-medium;
     }
@@ -843,25 +912,34 @@
       margin: 9px 0px;
       padding: 16px 0px;
       width: 48%;
+      cursor: pointer;
       &:nth-child(odd){
         margin-right: 11px;
       }
+      &:hover {
+        border: 1px solid $yellow-primary;
+      }
       span {
         @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+        @media (min-width: 992px) {
+          @include text-style("TTInterfaces", 400, 24px, 1.5);
+        }
       }
       &.selected { background-color: $yellow-primary; border-color: $yellow-primary;}
     }
   }
   button {
-    @include text-style("TTInterfaces Bold", 700, 14px, 1.35);
+    @include text-style("TTInterfaces Bold", 700, 14px, 1.35, 0.54px);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
+    outline: none;
     border-radius: 45px;
     display: inline-block;
     padding: 24px;
     width: 100%;
     border: 0px;
+    cursor: pointer;
     &.disabled {
       color: $grey-medium;
     }
@@ -1034,16 +1112,18 @@
   }
 
   button {
-    @include text-style("TTInterfaces Bold", 700, 18px, normal);
+    @include text-style("TTInterfaces Bold", 700, 18px, normal, 0.54px);
     text-decoration: none;
     background-color: $neutral-black;
     color: $neutral-white;
+    outline: none;
     border: 0;
     border-radius: 45px;
     display: block;
     padding: 18px 28px;
     width: fit-content;
     margin: 0 auto;
+    cursor: pointer;
 
     &.outline {
       background-color: $neutral-white;
@@ -1102,7 +1182,7 @@
 }
 
 
-.modal {
+.thanks-modal {
   display: none;
   position: absolute;
   padding-top: 100px;
@@ -1162,16 +1242,18 @@
       }
 
       button {
-        @include text-style("TTInterfaces Bold", 700, 18px, normal);
+        @include text-style("TTInterfaces Bold", 700, 18px, normal, 0.54px);
         text-decoration: none;
         background-color: $neutral-black;
         color: $neutral-white;
+        outline: none;
         border: 0;
         border-radius: 45px;
         display: inline-block;
         padding: 18px 28px;
         margin-top: 24px;
         width: fit-content;
+        cursor: pointer;
         
         @media (min-width: 992px) {
           padding: 25px 62px;
