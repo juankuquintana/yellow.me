@@ -66,9 +66,9 @@
 }
 
 .photo-section {
-  padding: 34px 6vw;
+  padding: 64px 6vw;
   @media (min-width: 992px) {
-    padding: 80px 10vw;
+    padding: 100px 10vw 0px 10vw;
   }
   img {
     width: 100%;
@@ -77,62 +77,166 @@
 }
 
 .we-promise {
-  padding: 0px 6vw 0px 6vw;
-
-  @media(min-width: 992px) {
-    padding: 0px 10vw 0px 10vw;
-  }
-
   p.title {
     @include text-style("TTInterfaces Medium", 500, 38px, 1.27);
     text-align: center;
+    margin-bottom: 46px;
     @media(min-width: 992px){
       @include text-style("TTInterfaces", 400, 56px, 1.25);
     }
   }
 
   .cards-container {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    width: 100%;
-
+    padding: 0px 6vw;
     .card {
       flex: 0 0 auto;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      background-color: $brand-yellow;
-      border: 1px solid $brand-yellow;
-      border-radius: 15px;
-      width: 92%;
-      height: 327px;
-      margin-right: 12px;
+      width: fit-content;
+      height: fit-content;
+
+      &:not(:nth-last-child(2)) {
+        margin-bottom: 46px;
+      }
+
+      div {
+        background-color: $brand-yellow;
+        min-height: 80px;
+        width: 80px;
+        border-radius: 45px;
+        display: flex;
+        span {
+          margin: auto 0;
+          padding: 0px 24px;
+          font-size: 32px;
+        }
+      }
 
       p {
         @include text-style("TTInterfaces", 400, 24px, 1.5);
-        display: inline-block;
-        margin: 0px;
-        padding: 30% 7% 30% 7%;
+        margin: 12px 0px 0px 0px;
       }
     }
   }
 
   @media(min-width: 992px) {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    p.title {
+      margin: auto auto 46px auto;
+    }
+
     .cards-container {
-      overflow-x: unset;
+      margin: 0px auto auto auto;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      width: 100%;
+
+      padding-left: 30vw;
       .card {
-        width: 368px;
-        margin-right: 32px;
+        margin-bottom: 0px;
+        margin-right: 200px;
+        min-width: 568px;
+
+        &:nth-last-child(2) {
+          margin-right: 0px;
+        }
+
         p {
-          padding: 30% 12% 30% 12%;
+          @include text-style("TTInterfaces", 400, 32px, 1.44);
+          max-width: 568px;
+        }
+      }
+      .extra-space {
+        min-width: 30vw;
+      }
+    }
+  }
+}
+
+.we-also-offer {
+  margin-top: 146px;
+  padding: 0px 6vw;
+
+  p.title {
+    @include text-style("TTInterfaces Medium", 500, 38px, 1.27);
+    text-align: center;
+    margin-bottom: 46px;
+    @media(min-width: 992px){
+      @include text-style("TTInterfaces", 400, 56px, 1.25);
+    }
+  }
+
+  .perks-container {
+    background-color: $neutral-medium-grey;
+    border-radius: 30px;
+    padding: 46px 16px;
+
+    .perk {
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+
+      div {
+        margin-right: 12px;
+        span {
+          font-size: 24px;
+        }
+      }
+
+      p {
+        @include text-style("TTInterfaces", 400, 24px, 1.5);
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  @media(min-width: 992px) {
+    margin-top: 70px;
+    padding: 0px 10vw;
+    display: flex;
+    flex-direction: row;
+
+    p.title {
+      margin: 80px 132px 0px 0px;
+      width: 35%;
+    }
+
+    .perks-container {
+      padding: 80px 36px;
+      width: 65%;
+
+      .perk {
+
+        &:not(:last-child) {
+          margin-bottom: 46px;
+        }
+
+        div {
+          margin-right: 32px;
+          span {
+            font-size: 32px;
+          }
+        }
+
+        p {
+          @include text-style("TTInterfaces", 400, 32px, 1.44);
+          margin-bottom: 0px;
         }
       }
     }
   }
 
-  
 }
 
 .start-section {

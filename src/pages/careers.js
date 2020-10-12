@@ -12,6 +12,22 @@ import TeamYellowPhotoJpg from "../images/careers/Team-Yellowme-Careers.jpg"
 import TeamYellowPhotoWebp from "../images/careers/Team-Yellowme-Careers.webp"
 import Illustration1 from "../images/careers/Careers-Page-Illustration-01.png";
 
+const promises = [
+  { "emoji": "💸", "text": "Above-market salaries, because we know how much top talent worths." },
+  { "emoji": "💎", "text": "Interesting and challenging opportunities with Silicon Valley-minded companies." },
+  { "emoji": "🎉", "text": "An award-winning culture focused on trust, communication and personal growth." },
+]
+
+const perks = [
+  { "emoji": "💊", "text": "IMSS, INFONAVIT, AFORE" },
+  { "emoji": "⛑", "text": "Mayor Medical Insurance" },
+  { "emoji": "🏠", "text": "Remote Friendly" },
+  { "emoji": "🤓", "text": "Complete Autonomy" },
+  { "emoji": "🎄", "text": "Christmas bonus" },
+  { "emoji": "💡", "text": "Career Development Opportunities" },
+  { "emoji": "🎒", "text": "Paid Certifications" },
+]
+
 const CareersPage = () => {
   const [isMenuOpen, setOpen] = useState(false);
 
@@ -50,17 +66,30 @@ const CareersPage = () => {
         <div className="we-promise"> 
           <p className="title">We promise</p>
           <div className="cards-container">
-            <div className={`card`}>
-              <p>Above-market salaries because we know how much top talent worths.</p>
-            </div>
-            <div className={`card`}>
-              <p>Interesting and challenging opportunities with Silicon Valley-minded companies.</p>
-            </div>
-            <div className={`card`}>
-              <p>An award-winning culture focused on trust, communication and personal growth.</p>
-            </div>
+            {
+              promises.map(promise =>
+                <div className={`card`}>
+                  <div><span role="img">{promise.emoji}</span></div>
+                  <p>{promise.text}</p>
+                </div>  
+              )
+            }
+            <div className={`extra-space`} />
           </div>           
-          
+        </div>
+
+        <div className="we-also-offer"> 
+          <p className="title">And we also offer you</p>
+          <div className="perks-container">
+            {
+              perks.map(perk =>
+                <div className={`perk`}>
+                  <div><span role="img">{perk.emoji}</span></div>
+                    <p>{perk.text}</p>
+                </div>  
+              )
+            }
+          </div>           
         </div>
         
         <div className="start-section">
@@ -81,6 +110,8 @@ const CareersPage = () => {
             
           </div>
         </div>
+
+        <Footer />
       </div>
 
       <CareersForm 
