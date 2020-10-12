@@ -49,13 +49,11 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
 
     if(currentStep > -1) {
 
-      if (currentStep == 11 && form[2].answer == "Designer") {
-        setCurrentStep(currentStep - 2);
-        setProgressStepsBarWidth(progressStepsBarWidth - ((progressBarWidth * 2)/numberSteps));
-      } else {
-        setCurrentStep(currentStep - 1);
-        setProgressStepsBarWidth(progressStepsBarWidth - (progressBarWidth/numberSteps));
-      }
+      
+      
+      setCurrentStep(currentStep - 1);
+      setProgressStepsBarWidth(progressStepsBarWidth - (progressBarWidth/numberSteps));
+      
 
       
     } else {
@@ -70,13 +68,9 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
       return;  
     }
     
-    if (currentStep == 9 && form[2].answer == "Designer") {
-      setCurrentStep(currentStep + 2);
-      setProgressStepsBarWidth(progressStepsBarWidth + ((progressBarWidth*2)/numberSteps));  
-    } else {
-      setCurrentStep(currentStep + 1);
-      setProgressStepsBarWidth(progressStepsBarWidth + (progressBarWidth/numberSteps));
-    }
+    setCurrentStep(currentStep + 1);
+    setProgressStepsBarWidth(progressStepsBarWidth + (progressBarWidth/numberSteps));
+    
   }
 
   const formQuestions = [
@@ -218,7 +212,7 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
     {
       "stepNumber": 12,
       "type": "multiple-options-steps",
-      "question": "Pick 3 technologies that you want to learn in the 12 months.",
+      "question": ["Pick 3 technologies that you want to learn in the 12 months.", "What describes your growth aspirations better?"],
       "options": [
         [
           { "name": "Data science", "value": 0},
@@ -228,16 +222,17 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
           { "name": "Blockchain", "value": 0},
           { "name": "Virtual Reality", "value": 0},
           { "name": "Micro services", "value": 0}
-        ], []
-      ]
+        ], ["Go as deep as possible in my current area", "Broaden my expertise including other design specialties"]
+      ],
+      "answer": ""
     },
     {
       "stepNumber": 13,
       "type": "single-two-large-options",
-      "question": ["Which of these interactions do you prefer?", "What describes your growth aspirations better?"],
+      "question": ["Which of these interactions do you prefer?", "Which of these interactions do you prefer?"],
       "options": [
         ["Finding solutions through live collaboration.", "Spending some time alone and collaborating asyncronously."],
-        ["Go as deep as possible in my current area", "Broaden my expertise including other design specialties"]
+        ["Finding solutions through live collaboration.", "Spending some time alone and collaborating asyncronously."]
       ],
       "answer": ""
     },
@@ -366,7 +361,6 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
     switch (step.stepNumber) {
       case 10:
       case 11:
-      case 12:
         if(form[2].answer == "Software Engineer"){
           let isDisabledButton = true;
           for (let index = 0; index < step.options[0].length; index++) {
@@ -387,6 +381,22 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
             }
           }
           return isDisabledButton;
+        }
+        break;
+
+      case 12:
+        if(form[2].answer == "Software Engineer"){
+          let isDisabledButton = true;
+          for (let index = 0; index < step.options[0].length; index++) {
+            let option = step.options[0][index];
+            if(option.value > 0) {
+              isDisabledButton = false;
+              break;
+            }
+          }
+          return isDisabledButton;
+        } else {
+          return step.answer == "" ? true : false;
         }
         break;
 
@@ -636,10 +646,10 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
 
           {
           form[2].answer == "Software Engineer" ?
-          <div class={`step-12 full-screen ta-c ${(currentStep == 10 ? 'show-step' : 'hidden-step')}`}>
+          <div class={`step-12-engineer full-screen ta-c ${(currentStep == 10 ? 'show-step' : 'hidden-step')}`}>
             <div className="container">
               <div className="left-side">
-                <p className="title">Pick 1 to 3 technologies that you want to learn in the 12 months.</p>
+                <p className="title">{form[11].question[form[2].answer == "Software Engineer" ? 0 : 1]}</p>
               </div>
 
               <div className="right-side">
@@ -671,7 +681,41 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
             {renderIf(isMobile)(
               <button onClick={nextStep} disabled={isDisabledButton(form[11])} className={`${isDisabledButton(form[11]) ? 'disabled' : ''}`}>NEXT</button>
             )}
-          </div> : <></>
+          </div> :
+
+          <div class={`step-12-designer full-screen ta-c ${(currentStep == 10 ? 'show-step' : 'hidden-step')}`}>
+            <div className="container">
+              <div className="left-side">
+                <p className="title">{form[11].question[form[2].answer == "Software Engineer" ? 0 : 1]}</p>
+              </div>
+
+              <div class="right-side">
+                {renderIf(!isMobile)(
+                  <div className={`stepper ${currentStep == numberSteps ? 'display-none' : ''}`} style={{width: `${progressBarWidth}px`}}>
+                    <div className="progress" style={{width: `${progressStepsBarWidth}px`}}></div>
+                  </div>
+                )}
+                <div className="wrapper">
+                  {
+                    form[11].options[form[2].answer == "Software Engineer" ? 0 : 1].map(option => 
+                      <div 
+                        className={`card ${form[11].answer == option ? 'selected' : ''}`}
+                        onClick={() => {setAnswer(12, option, form[2].answer)}}
+                      >
+                        <span>{option}</span>  
+                      </div>  
+                  )}
+                </div>
+                {renderIf(!isMobile)(
+                  <button onClick={nextStep} disabled={isDisabledButton(form[11])} className={`${isDisabledButton(form[11]) ? 'disabled' : ''}`}>NEXT</button>
+                )}
+              </div>
+            </div>
+            {renderIf(isMobile)(
+              <button onClick={nextStep} disabled={isDisabledButton(form[11])} className={`${isDisabledButton(form[11]) ? 'disabled' : ''}`}>NEXT</button>
+            )}
+          </div>
+
           }
 
           <div class={`step-13 full-screen ta-c ${(currentStep == 11 ? 'show-step' : 'hidden-step')}`}>
@@ -845,7 +889,16 @@ const CareersForm = ({ isMenuOpen, toggleMenu }) => {
                         }
                       }
                     )}
-                  </div> </> : <></>
+                  </div> </> : 
+                  <>
+                    <p className="subtitle">You would like to learn</p>
+                    <div className="like-to-learn-container">
+                      <div className={`card`}>
+                        <p></p>
+                        <span>{form[11].answer}</span>
+                      </div>
+                    </div>
+                  </>
                 }
 
                 <p className="subtitle">You feel more productive</p>

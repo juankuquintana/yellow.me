@@ -91,7 +91,6 @@ exports.sendHiringInfo = (form) => {
 
       case 10:
       case 11:
-      case 12:
         let answersOptions = ""
         if(form[2].answer == "Software Engineer") {
           form[index].options[0].forEach(option => {
@@ -108,6 +107,21 @@ exports.sendHiringInfo = (form) => {
         }
         answersForm.push(answersOptions);
         break;
+
+      case 12:
+        if(form[2].answer == "Software Engineer") {
+          let answersOptions = ""
+          form[index].options[0].forEach(option => {
+            if(option.value > 0) {
+              answersOptions += (option.name + " " + option.value + " ");
+            }
+          });
+          answersForm.push(answersOptions);
+        } else {
+          answersForm.push(step.answer);
+        }
+        break;
+        
       case 14:
         step.answers.forEach(answer => {
           answersForm.push(answer);  
