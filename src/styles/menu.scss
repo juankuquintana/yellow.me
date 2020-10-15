@@ -79,7 +79,8 @@
       background-color: #FFD100;
       top: 20px;
       margin-left: -12px;
-      @media (min-width: 992px) {
+
+      @media ($breakpoint-desktop) {
         width: 5px;
         height: 5px;
         top: 30px;

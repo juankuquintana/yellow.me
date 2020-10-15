@@ -1,10 +1,5 @@
 import React from "react"
 
-import "../styles/_valuesList.scss"
-
-import circle from "../images/circle.png";
-import triangle from "../images/triangle.png";
-
 import CultureIcon1 from "../images/culture/culture-icon-1.png"
 import CultureIcon2 from "../images/culture/culture-icon-2.png"
 import CultureIcon3 from "../images/culture/culture-icon-3.png"

@@ -4,6 +4,10 @@
 .client-card {
   padding: 152px 5vw 0px 5vw;
 
+  @media ($breakpoint-desktop) {
+    padding: 224px 16vw 0px 16vw;
+  }
+
   > h2 {
     @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
     text-align: left;
@@ -11,11 +15,8 @@
     margin: auto;
     margin-bottom: 64px;
     padding: 0px 10vw;
-  }
 
-  @media (min-width: 992px) {
-    padding: 224px 16vw 0px 16vw;
-    > h2 {
+    @media ($breakpoint-desktop) {
       font-size: 56px;
       padding: 0px;
     }
@@ -26,27 +27,56 @@
     border-radius: 30px;
     padding: 32px;
 
+    @media ($breakpoint-desktop) {
+      padding: 65px 100px;
+    }
+
     .subscribe {
       
       > span {
         @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
+
+        @media ($breakpoint-desktop) {
+          font-size: 32px;
+          line-height: 1.44;
+        }
       }
       > p {
         @include text-style("TTInterfaces", 400, 24px, 1.5);
         margin-top: 12px;
+
+        @media ($breakpoint-desktop) {
+          font-size: 32px;
+          line-height: 1.44;
+          margin-top: 0px;
+        }
       }
       img {
         width: 139px;
         height: 83px;
+
+        @media ($breakpoint-desktop) {
+          width: 149px;
+          height: 93px;
+        }
       }
       
       .program-a-call {
         display: grid;
         grid-template-columns: 70% 30%;
         align-items: center;
+
+        @media ($breakpoint-desktop) {
+          grid-template-columns: 90% 10%;
+        }
+
         > span {
           @include text-style("TTInterfaces Bold", 700, 14px, 1.29);
           margin-left: auto;
+
+          @media ($breakpoint-desktop) {
+            font-size: 14px;
+          }
         }
 
         a {
@@ -57,32 +87,6 @@
           width: 60px;
           height: 60px;
         }
-        
-      }
-    }
-
-    @media (min-width: 992px) {
-      padding: 65px 100px;
-      .subscribe {
-        > span {
-          font-size: 32px;
-          line-height: 1.44;
-        }
-        > p {
-          font-size: 32px;
-          line-height: 1.44;
-          margin-top: 0px;
-        }
-        img {
-          width: 149px;
-          height: 93px;
-        }
-        .program-a-call {
-          grid-template-columns: 90% 10%;
-          > span {
-            font-size: 14px;
-          }
-        }
       }
     }
   }
@@ -91,7 +95,7 @@
 .talent-card {
   padding: 32px 5vw 0px 5vw;
 
-  @media (min-width: 992px) {
+  @media ($breakpoint-desktop) {
     padding: 64px 16vw 24px 16vw;    
   }
 
@@ -101,14 +105,27 @@
     padding: 32px;
 
     .subscribe {
+      @media ($breakpoint-desktop) {
+        padding: 65px 100px;
+      }
 
       img {
         width: 139px;
         height: 83px;
+
+        @media ($breakpoint-desktop) {
+          width: 139px;
+          height: 93px;
+        }
       }
       
       > span {
         @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
+
+        @media ($breakpoint-desktop) {
+          font-size: 32px;
+          line-height: 1.44;
+        }
       }
 
       .contact-form {
@@ -116,6 +133,12 @@
           @include text-style("TTInterfaces Medium", 500, 24px, 1.5);
           margin-top: 45px;
           margin-bottom: 15px;
+
+          @media ($breakpoint-desktop) {
+            @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+            margin-top: 60px;
+            margin-bottom: 20px;
+          }
         }
         input {
           @include text-style("TTInterfaces", 400, 20px);
@@ -127,9 +150,19 @@
           &:focus {
             outline: none;
           }
+
+          @media ($breakpoint-desktop) {
+            @include text-style("TTInterfaces", 400, 32px, 1.44);
+          }
         }
         form.form-job-searched {
           display: inline-block;
+
+          @media ($breakpoint-desktop) {
+            display: flex;
+            justify-content: space-between;
+          }
+
           .radio-button-inside {
             display: flex;
             align-items: center;
@@ -137,59 +170,43 @@
               width: 150px;
               height: 75px;
               margin-left: 0px;
-            }
-            p {
-              @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
-              margin: 0;
-            }
-          }
-        }
-      }
 
-      @media (min-width: 992px) {
-        img {
-          width: 139px;
-          height: 93px;
-        }
-
-        > span {
-          font-size: 32px;
-          line-height: 1.44;
-        }
-        .contact-form {
-          p {
-            @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
-            margin-top: 60px;
-            margin-bottom: 20px;
-          }
-          input {
-            @include text-style("TTInterfaces", 400, 32px, 1.44);
-          }
-          form.form-job-searched {
-            display: flex;
-            justify-content: space-between;
-            .radio-button-inside {
-              img {
+              @media ($breakpoint-desktop) {
                 height: 51px;
                 width: 96px;
                 margin-left: 0px;
               }
-              p {
+            }
+            p {
+              @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
+              margin: 0;
+
+              @media ($breakpoint-desktop) {
                 @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
               }
             }
           }
-        }  
+        }
       }
-      
+  
       .program-a-call {
         margin-top: 40px;
         display: grid;
         grid-template-columns: 70% 30%;
         align-items: center;
+
+        @media ($breakpoint-desktop) {
+          margin-top: 46px;
+          grid-template-columns: 90% 10%;
+        }
+
         > span {
           @include text-style("TTInterfaces Bold", 700, 14px, 1.29);
           margin-left: auto;
+
+          @media ($breakpoint-desktop) {
+            font-size: 14px;
+          }
         }
 
         img {
@@ -197,23 +214,6 @@
           height: 60px;
           margin-left: auto;
           cursor: pointer;
-        }
-      }
-    }
-
-    @media (min-width: 992px) {
-      padding: 65px 100px;
-      > span {
-        font-size: 32px;
-        line-height: 1.44;
-      }
-      .subscribe {
-        .program-a-call {
-          margin-top: 46px;
-          grid-template-columns: 90% 10%;
-          > span {
-            font-size: 14px;
-          }
         }
       }
     }
@@ -245,8 +245,9 @@ form.form-job-searched {
     margin-bottom: 18px;
     
     -webkit-transition: all 100ms linear;
-    transition: all 100ms linear; 
-    @media (min-width: 992px) {
+    transition: all 100ms linear;
+
+    @media ($breakpoint-desktop) {
       width: 234px;
       padding: 10px;
       margin-bottom: 0px;
@@ -277,7 +278,7 @@ form.form-years-experience {
     
     transition: .3s all ease-in-out;
 
-    @media (min-width: 992px) {
+    @media ($breakpoint-desktop) {
       width: 314px;
       min-height: 55px;
       max-height: 55px;
@@ -299,7 +300,8 @@ form.form-years-experience {
       cursor: pointer;
       position: relative;
       transition: .3s color ease-in-out;
-      @media (min-width: 992px) {
+
+      @media ($breakpoint-desktop) {
         font-size: 20px;
         line-height: 2.5em;
       }
@@ -336,20 +338,22 @@ form.form-years-experience {
   text-align: center;
   h2 {
     @include text-style("TTInterfaces DemiBold", 600, 42px, 1.17);
-    @media (min-width: 992px) {
+
+    @media ($breakpoint-desktop) {
       @include text-style("TTInterfaces DemiBold", 600, 80px, 1.1);   
       margin-bottom: 33px;
     }
   }
   img {
-    @media (min-width: 992px) {
+    @media ($breakpoint-desktop) {
       width: 367px;
       height: 138px;
     }
   }
   p {
     @include text-style("TTInterfaces DemiBold", 400, 24px, 1.5);
-    @media (min-width: 992px) {
+
+    @media ($breakpoint-desktop) {
       @include text-style("TTInterfaces", 400, 56px, 1.25);
       margin-top: 35px;
     }

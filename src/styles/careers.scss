@@ -1,27 +1,45 @@
 @import "./variables.scss";
 @import "./mixins";
 
-@import "./careersForm";
+@import "./components/careersForm";
 
 .want-to-be-part-section {
   padding: 120px 6vw 20px 6vw;
 
+  @media ($breakpoint-desktop) {
+    padding: 254px 22vw 30px 23vw;
+  }
+
   h2 {
     @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
     margin-bottom: 0;
+
+    @media ($breakpoint-desktop) {
+      font-size: 56px;
+      line-height: 1.25;
+    }
+
     br {
       display: none;
+
+      @media ($breakpoint-desktop) {
+        display: block;
+      }
     }
   }
 
   p {
     @include text-style("TTInterfaces", 400, 24px, 1.5);
     margin-top: 24px;
+
+    @media ($breakpoint-desktop) {
+      @include text-style("TTInterfaces", 400, 32px, 1.5);
+      margin-top: 32px;
+    }
   }
 
   button {
     @include text-style("TTInterfaces Bold", 700, 18px, normal, 0.54px);
-    
     text-decoration: none;
     background-color: $neutral-black;
     color: $neutral-white;
@@ -43,33 +61,20 @@
       border: 1px solid #FAD100;
     }
     
-    @media (min-width: 992px) {
+    @media ($breakpoint-desktop) {
       margin-top: 64px;
       padding: 25px 35px;
-    }
-  }
-
-  @media (min-width: 992px) {
-    padding: 254px 22vw 30px 23vw;
-    h2 {
-      font-size: 56px;
-      line-height: 1.25;
-      br {
-        display: block;
-      }
-    }
-    p {
-      @include text-style("TTInterfaces", 400, 32px, 1.5);
-      margin-top: 32px;
     }
   }
 }
 
 .photo-section {
   padding: 64px 6vw;
-  @media (min-width: 992px) {
+
+  @media ($breakpoint-desktop) {
     padding: 100px 10vw 0px 10vw;
   }
+
   img {
     width: 100%;
     height: 100%;
@@ -172,12 +177,22 @@
   margin-top: 146px;
   padding: 0px 6vw;
 
+  @media($breakpoint-desktop) {
+    margin-top: 70px;
+    padding: 0px 10vw;
+    display: flex;
+    flex-direction: row;
+  }
+
   p.title {
     @include text-style("TTInterfaces Medium", 500, 38px, 1.27);
     text-align: center;
     margin-bottom: 46px;
-    @media(min-width: 992px){
+
+    @media($breakpoint-desktop){
       @include text-style("TTInterfaces", 400, 56px, 1.25);
+      margin: 80px 132px 0px 0px;
+      width: 35%;
     }
   }
 
@@ -186,6 +201,11 @@
     border-radius: 30px;
     padding: 46px 16px;
 
+    @media($breakpoint-desktop) {
+      padding: 80px 36px;
+      width: 65%;
+    }
+
     .perk {
       display: flex;
       flex-direction: row;
@@ -193,64 +213,45 @@
 
       &:not(:last-child) {
         margin-bottom: 32px;
+
+        @media($breakpoint-desktop) {
+          margin-bottom: 46px;
+        }
       }
 
       div {
         margin-right: 12px;
+
+        @media($breakpoint-desktop) {
+          margin-right: 32px;
+        }
+
         span {
           font-size: 24px;
+
+          @media($breakpoint-desktop) {
+            font-size: 32px;
+          }
         }
       }
 
       p {
         @include text-style("TTInterfaces", 400, 24px, 1.5);
         margin-bottom: 0px;
-      }
-    }
-  }
 
-  @media(min-width: 992px) {
-    margin-top: 70px;
-    padding: 0px 10vw;
-    display: flex;
-    flex-direction: row;
-
-    p.title {
-      margin: 80px 132px 0px 0px;
-      width: 35%;
-    }
-
-    .perks-container {
-      padding: 80px 36px;
-      width: 65%;
-
-      .perk {
-
-        &:not(:last-child) {
-          margin-bottom: 46px;
-        }
-
-        div {
-          margin-right: 32px;
-          span {
-            font-size: 32px;
-          }
-        }
-
-        p {
+        @media($breakpoint-desktop) {
           @include text-style("TTInterfaces", 400, 32px, 1.44);
           margin-bottom: 0px;
         }
       }
     }
   }
-
 }
 
 .start-section {
   padding: 64px 5vw 80px 5vw;
   
-  @media (min-width: 992px) {
+  @media ($breakpoint-desktop) {
     padding: 124px 10vw 80px 10vw;
   }
 
@@ -261,20 +262,42 @@
     border: 1px solid #e1e1e1;
     border-radius: 30px;
     padding: 32px;
+
+    @media ($breakpoint-desktop) {
+      padding: 186px 168px;
+      flex-direction: row;
+      justify-content: space-around;
+    }
     
     img {
       width: 139px;
       height: 199px;
       margin-bottom: 48px;
+
+      @media ($breakpoint-desktop) {
+        width: 200px;
+        height: 286px;
+        margin-bottom: 0px;
+      }
     }
   
     .start-with-us {
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      @media ($breakpoint-desktop) {
+        align-self: center;
+      }
+
       p {
         @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
         max-width: 290px;
+
+        @media ($breakpoint-desktop) {
+          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+          max-width: 370px;
+        }
       }
 
       button {
@@ -290,6 +313,11 @@
         padding: 18px 28px;
         width: fit-content;
         cursor: pointer;
+
+        @media ($breakpoint-desktop) {
+          padding: 25px 62px;
+        }
+
         &:hover {
           background-color: $neutral-white;
           color: $neutral-black;
@@ -300,33 +328,7 @@
           color: $neutral-black;
           border: 1px solid #FAD100;
         }
-        
-        @media (min-width: 992px) {
-          padding: 25px 62px;
-        }
       }
-    }
-    
-
-    @media (min-width: 992px) {
-      padding: 186px 168px;
-      flex-direction: row;
-      justify-content: space-around;
-      
-      img {
-        width: 200px;
-        height: 286px;
-        margin-bottom: 0px;
-      }
-
-      .start-with-us {
-        align-self: center;
-        p {
-          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
-          max-width: 370px;
-        }
-      }
-      
     }
   }
 }

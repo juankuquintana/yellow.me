@@ -12,17 +12,18 @@
   z-index: 4;
   height: 10%;
 
+  @media($breakpoint-desktop) {
+    padding: 5vh 12vw 24px 6vw;
+  }
+
   &.disabled {
     z-index: 0;
   }
 
   img {
     cursor: pointer;
-  }
 
-  @media(min-width: 992px){
-    padding: 5vh 12vw 24px 6vw;
-    img {
+    @media($breakpoint-desktop) {
       height: 54px;
       width: 54px;
     }
@@ -34,7 +35,7 @@
   background-color: #F1F1F1;
   border-radius: 45px;
 
-  @media (min-width: 992px) {
+  @media ($breakpoint-desktop) {
     margin: 46px 100px 0px auto;
   }
 
@@ -73,8 +74,6 @@
   }
 }
 
-
-
 .show-step {
   opacity: 1;
   transform: translateX(0px);
@@ -87,7 +86,8 @@
   transition: all 1s;
   max-height: 100%;
   overflow: hidden;
-  @media (min-width: 992px) {
+
+  @media ($breakpoint-desktop) {
     transform: translateX(-2000px);
   }
 }
@@ -96,52 +96,11 @@
   opacity: 0;
   transform: translateY(-5000px);
   transition: all 1s;
-  @media (min-width: 992px) {
+
+  @media ($breakpoint-desktop) {
     transform: translateY(-5000px);
   }
 }
-
-/*
-.slide {
-  height: 25vh;
-  width: 100vw;
-  
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  width: 400vw;
-  transform: rotate(90deg) translateY(-50vh);
-  transform-origin: top left;
-}
-
-.outer-wrapper {
-  width: 50vh;
-  height: 100vw;
-  transform: rotate(-90deg) translateX(-50vh);
-  transform-origin: top left;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  position: absolute;
-}
-
-.one {
- background-color: red;
-}
-.two {
- background-color: blue;
-}
-.three {
- background-color: green;
-}
-.four {
- background-color: yellow;
-}
-*/
-
-
-
 
 .step-1, .step-2 {
   position: absolute;
@@ -152,7 +111,7 @@
   flex-direction: column;
   align-items: center;
   
-  @media (min-width: 992px) {
+  @media ($breakpoint-desktop) {
     padding: 0px 10vw
   }
 
@@ -169,6 +128,12 @@
     margin-bottom: 32px;
     width: fit-content;
     cursor: pointer;
+
+    @media ($breakpoint-desktop) {
+      margin-top: 32px;
+      padding: 25px 62px;
+    }
+
     &:hover {
       background-color: $neutral-white;
       color: $neutral-black;
@@ -179,11 +144,6 @@
       color: $neutral-black;
       border: 1px solid #FAD100;
     }
-    
-    @media (min-width: 992px) {
-      margin-top: 32px;
-      padding: 25px 62px;
-    }
   }
 
   .container {
@@ -193,11 +153,23 @@
     margin: calc(10vh + 32px) 0 auto 0; /* Fallback for browsers that do not support Custom Properties */
     margin: calc((var(--vh, 1vh) * 10 + 32px)) 0 auto 0;
     width: 100%;
+
+    @media ($breakpoint-desktop) {
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-around;
+      margin: auto;
+    }
     
     img {
       width: 121px;
       height: 170px;
       margin-bottom: 48px;
+
+      @media ($breakpoint-desktop) {
+        width: 246px;
+        height: 346px; 
+      }
     }
   
     .text-container {
@@ -205,40 +177,28 @@
       flex-direction: column;
       align-items: center;
 
+      @media ($breakpoint-desktop) {
+        align-self: center;
+      }
+
       p.title {
         @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
         max-width: 290px;
+
+        @media ($breakpoint-desktop) {
+          max-width: 370px;
+        }
       }
 
       p.subtitle {
         @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
         margin-top: 8px;
-      }
-    }
-    
 
-    @media (min-width: 992px) {
-      flex-direction: row;
-      width: 100%;
-      justify-content: space-around;
-      margin: auto;
-      
-      img {
-        width: 246px;
-        height: 346px;
-      }
-
-      .text-container {
-        align-self: center;
-        p.title {
-          max-width: 370px;
-        }
-        p.subtitle {
+        @media ($breakpoint-desktop) {
           @include text-style("TTInterfaces", 400, 24px, 1.5);
           max-width: 370px;
         }
       }
-      
     }
   }
 }
@@ -251,7 +211,7 @@
   display: flex;
   flex-direction: column;
 
-  @media(min-width: 992px) {
+  @media($breakpoint-desktop) {
     padding: 7vh 9vw;
   }
 
@@ -259,13 +219,53 @@
     margin: calc(10vh + 32px) 0 auto 0; /* Fallback for browsers that do not support Custom Properties */
     margin: calc((var(--vh, 1vh) * 10 + 32px)) 0 auto 0;
     width: 100%;
+
+    @media ($breakpoint-desktop) {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+      justify-content: space-around;
+      margin: auto;
+
+      .right-side {
+        width: 60%;
+        border-radius: 30px;
+        border: 1px solid $grey-medium;
+        display: flex;
+        flex-direction: column;
+
+        .wrapper {
+          padding: 0px 13%;
+          margin: auto 0px
+        }
+
+        button {
+          padding: 18px 48px;
+          margin: 0px 48px 32px 0px;
+        }
+      }
+    }
   }
 
   .left-side {
     margin-bottom: 46px;
+
+    @media ($breakpoint-desktop) {
+      width: 40%;
+        margin: auto;
+        text-align: left;
+        padding-right: 50px;
+    }
+
     p.title {
       @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
       margin-bottom: 8px;
+
+      @media ($breakpoint-desktop) {
+        @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+        margin-bottom: 12px;
+      }
     }
     p.subtitle {
       @include text-style("TTInterfaces Medium", 500, 12px, 1.5);
@@ -285,18 +285,22 @@
     &:hover {
       border: 1px solid $yellow-primary;
     }
-    @media (min-width: 992px) {
+
+    @media ($breakpoint-desktop) {
       height: 188px;
     }
+
     span {
       @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
       margin: auto;
-      @media (min-width: 992px) {
+
+      @media ($breakpoint-desktop) {
         @include text-style("TTInterfaces", 400, 24px, 1.5);
       }
     }
     &.selected { background-color: $yellow-primary; border-color: $yellow-primary;}
   }
+
   button {
     @include text-style("TTInterfaces Bold", 700, 14px, 1.35, 0.54px);
     text-decoration: none;
@@ -313,32 +317,38 @@
       color: $grey-medium;
     }
     
-    @media (min-width: 992px) {
+    @media ($breakpoint-desktop) {
       padding: 25px 62px;
       width: fit-content;
       align-self: flex-end;
     }
   }
+}
 
-  @media (min-width: 992px) {
-    .container {
+.step-4 {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  padding: 0px 7vw;
+  display: flex;
+  flex-direction: column;
+
+  @media($breakpoint-desktop) {
+    padding: 7vh 9vw;
+  }
+
+  .container {
+    margin: calc(10vh + 32px) 0 auto 0; /* Fallback for browsers that do not support Custom Properties */
+    margin: calc((var(--vh, 1vh) * 10 + 32px)) 0 auto 0;
+    width: 100%;
+
+    @media ($breakpoint-desktop) {
       display: flex;
       flex-direction: row;
       width: 100%;
       height: 100%;
       justify-content: space-around;
       margin: auto;
-
-      .left-side {
-        width: 40%;
-        margin: auto;
-        text-align: left;
-        padding-right: 50px;
-        p.title {
-          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
-          margin-bottom: 12px;
-        }
-      }
 
       .right-side {
         width: 60%;
@@ -356,36 +366,28 @@
           padding: 18px 48px;
           margin: 0px 48px 32px 0px;
         }
-        
       }
     }
   }
 
-}
-
-.step-4 {
-  position: absolute;
-  height: 100%;
-  width: 100vw;
-  padding: 0px 7vw;
-  display: flex;
-  flex-direction: column;
-
-  @media(min-width: 992px) {
-    padding: 7vh 9vw;
-  }
-
-  .container {
-    margin: calc(10vh + 32px) 0 auto 0; /* Fallback for browsers that do not support Custom Properties */
-    margin: calc((var(--vh, 1vh) * 10 + 32px)) 0 auto 0;
-    width: 100%;
-  }
-
   .left-side {
     margin-bottom: 46px;
+
+    @media ($breakpoint-desktop) {
+      width: 40%;
+      margin: auto;
+      text-align: left;
+      padding-right: 50px;
+    }
+
     p.title {
       @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
       margin-bottom: 8px;
+
+      @media ($breakpoint-desktop) {
+        @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+          margin-bottom: 12px;
+      }
     }
     p.subtitle {
       @include text-style("TTInterfaces Medium", 500, 12px, 1.5);
@@ -412,7 +414,8 @@
       }
       span {
         @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
-        @media (min-width: 992px) {
+
+        @media ($breakpoint-desktop) {
           @include text-style("TTInterfaces", 400, 24px, 1.5);
         }
       }
@@ -435,31 +438,37 @@
       color: $grey-medium;
     }
     
-    @media (min-width: 992px) {
+    @media ($breakpoint-desktop) {
       width: fit-content;
       align-self: flex-end;
     }
   }
+}
 
-  @media (min-width: 992px) {
-    .container {
+.step-5, .step-6, .step-7, .step-8, .step-9 {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  padding: 0px 7vw;
+  display: flex;
+  flex-direction: column;
+
+  @media($breakpoint-desktop) {
+    padding: 7vh 9vw;
+  }
+
+  .container {
+    margin: calc(10vh + 32px) 0 auto 0; /* Fallback for browsers that do not support Custom Properties */
+    margin: calc((var(--vh, 1vh) * 10 + 32px)) 0 auto 0;
+    width: 100%;
+
+    @media ($breakpoint-desktop) {
       display: flex;
       flex-direction: row;
       width: 100%;
       height: 100%;
       justify-content: space-around;
       margin: auto;
-
-      .left-side {
-        width: 40%;
-        margin: auto;
-        text-align: left;
-        padding-right: 50px;
-        p.title {
-          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
-          margin-bottom: 12px;
-        }
-      }
 
       .right-side {
         width: 60%;
@@ -477,34 +486,26 @@
           padding: 18px 48px;
           margin: 0px 48px 32px 0px;
         }
-        
       }
     }
-  }
-}
-
-.step-5, .step-6, .step-7, .step-8, .step-9 {
-  position: absolute;
-  height: 100%;
-  width: 100vw;
-  padding: 0px 7vw;
-  display: flex;
-  flex-direction: column;
-
-  @media(min-width: 992px) {
-    padding: 7vh 9vw;
-  }
-
-  .container {
-    margin: calc(10vh + 32px) 0 auto 0; /* Fallback for browsers that do not support Custom Properties */
-    margin: calc((var(--vh, 1vh) * 10 + 32px)) 0 auto 0;
-    width: 100%;
   }
 
   .left-side {
     margin-bottom: 46px;
+
+    @media ($breakpoint-desktop) {
+      width: 40%;
+      margin: auto;
+      text-align: left;
+      padding-right: 50px;
+    }
+
     p.title {
       @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+
+      @media ($breakpoint-desktop) {
+        @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+      }
     }
   }
 
@@ -520,7 +521,8 @@
     }
     span {
       @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
-      @media (min-width: 992px) {
+
+      @media ($breakpoint-desktop) {
         @include text-style("TTInterfaces", 400, 24px, 1.5);
       }
     }
@@ -542,49 +544,9 @@
       color: $grey-medium;
     }
     
-    @media (min-width: 992px) {
+    @media ($breakpoint-desktop) {
       width: fit-content;
       align-self: flex-end;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .container {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      height: 100%;
-      justify-content: space-around;
-      margin: auto;
-
-      .left-side {
-        width: 40%;
-        margin: auto;
-        text-align: left;
-        padding-right: 50px;
-        p.title {
-          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
-        }
-      }
-
-      .right-side {
-        width: 60%;
-        border-radius: 30px;
-        border: 1px solid $grey-medium;
-        display: flex;
-        flex-direction: column;
-
-        .wrapper {
-          padding: 0px 13%;
-          margin: auto 0px
-        }
-
-        button {
-          padding: 18px 48px;
-          margin: 0px 48px 32px 0px;
-        }
-        
-      }
     }
   }
 }
@@ -597,7 +559,7 @@
   display: flex;
   flex-direction: column;
 
-  @media(min-width: 992px) {
+  @media($breakpoint-desktop) {
     padding: 7vh 9vw;
   }
 
@@ -607,18 +569,63 @@
     width: 100%;
     height: 55%;
 
+    @media ($breakpoint-desktop) {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+      justify-content: space-around;
+      margin: auto;
+    }
+
     .left-side {
       margin-bottom: 46px;
+
+      @media ($breakpoint-desktop) {
+        width: 40%;
+        margin: auto;
+        text-align: left;
+        padding-right: 50px;
+      }
+
       p.title {
         @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+
+        @media ($breakpoint-desktop) {
+          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+        }
       }
     }
 
     .right-side {
       margin-top: 48px;
       height: 75%;
+
+      @media ($breakpoint-desktop) {
+        width: 60%;
+        height: 100%;
+        margin-top: 0px;
+        border-radius: 30px;
+        border: 1px solid $grey-medium;
+        display: flex;
+        flex-direction: column;
+      }
+
       .wrapper {
         height: 100%;
+
+        @media ($breakpoint-desktop) {
+          padding: 0px 13%;
+          margin: auto 0px;
+          height: 55%;
+        }
+      }
+
+      button {
+        @media ($breakpoint-desktop) {
+          padding: 18px 48px;
+          margin: 0px 48px 32px 0px;
+        }
       }
     }
   }
@@ -664,7 +671,8 @@
       
       span {
         @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
-        @media (min-width: 992px) {
+
+        @media ($breakpoint-desktop) {
           @include text-style("TTInterfaces", 400, 24px, 1.5);
         }
       }
@@ -695,51 +703,9 @@
       color: $grey-medium;
     }
     
-    @media (min-width: 992px) {
+    @media ($breakpoint-desktop) {
       width: fit-content;
       align-self: flex-end;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .container {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      height: 100%;
-      justify-content: space-around;
-      margin: auto;
-
-      .left-side {
-        width: 40%;
-        margin: auto;
-        text-align: left;
-        padding-right: 50px;
-        p.title {
-          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
-        }
-      }
-
-      .right-side {
-        width: 60%;
-        height: 100%;
-        margin-top: 0px;
-        border-radius: 30px;
-        border: 1px solid $grey-medium;
-        display: flex;
-        flex-direction: column;
-
-        .wrapper {
-          padding: 0px 13%;
-          margin: auto 0px;
-          height: 55%;
-        }
-
-        button {
-          padding: 18px 48px;
-          margin: 0px 48px 32px 0px;
-        }
-      }
     }
   }
 }
@@ -752,7 +718,7 @@
   display: flex;
   flex-direction: column;
 
-  @media(min-width: 992px) {
+  @media($breakpoint-desktop) {
     padding: 7vh 9vw;
   }
 
@@ -760,41 +726,82 @@
     margin: calc(10vh + 32px) 0 auto 0; /* Fallback for browsers that do not support Custom Properties */
     margin: calc((var(--vh, 1vh) * 10 + 32px)) 0 auto 0;
     width: 100%;
-  }
 
-  .left-side {
-    margin-bottom: 46px;
-    p.title {
-      @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+    @media ($breakpoint-desktop) {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+      justify-content: space-around;
+      margin: auto;
     }
-  }
 
-  .right-side {
-    .wrapper {
-      p.person {
-        @include text-style("TTInterfaces", 400, 24px, 1.5);
-        white-space: break-spaces;
+    .left-side {
+      margin-bottom: 46px;
 
-        span {
-          border-bottom: 1px solid;
-          caret-color: $brand-yellow;
-          min-width: 80px;
-          display: inline-block;
-          &#formEmail {
-            word-break: break-all;
-          }
-          &:focus {
-            outline: none;
-          }
-        }
-        @media (min-width: 992px) {
-          @include text-style("TTInterfaces", 400, 32px, 1.44);
+      @media ($breakpoint-desktop) {
+        width: 40%;
+        margin: auto;
+        text-align: left;
+        padding-right: 50px;
+      }
+
+      p.title {
+        @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+
+        @media ($breakpoint-desktop) {
+          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
         }
       }
-      p.alert-fill {
-        @include text-style("TTInterfaces Medium", 500, 16px, normal);
-        color: $brand-yellow;
-        margin-top: 8px;
+    }
+  
+    .right-side {
+      @media ($breakpoint-desktop) {
+        width: 60%;
+        border-radius: 30px;
+        border: 1px solid $grey-medium;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .wrapper {
+        @media ($breakpoint-desktop) {
+          padding: 0px 13%;
+          margin: auto 0px;
+        }
+
+        p.person {
+          @include text-style("TTInterfaces", 400, 24px, 1.5);
+          white-space: break-spaces;
+  
+          span {
+            border-bottom: 1px solid;
+            caret-color: $brand-yellow;
+            min-width: 80px;
+            display: inline-block;
+            &#formEmail {
+              word-break: break-all;
+            }
+            &:focus {
+              outline: none;
+            }
+          }
+          @media ($breakpoint-desktop) {
+            @include text-style("TTInterfaces", 400, 32px, 1.44);
+          }
+        }
+        p.alert-fill {
+          @include text-style("TTInterfaces Medium", 500, 16px, normal);
+          color: $brand-yellow;
+          margin-top: 8px;
+        }
+      }
+
+      button {
+        @media ($breakpoint-desktop) {
+          padding: 18px 48px;
+          margin: 0px 48px 32px 0px;
+        }
       }
     }
   }
@@ -815,49 +822,9 @@
       color: $grey-medium;
     }
     
-    @media (min-width: 992px) {
+    @media ($breakpoint-desktop) {
       width: fit-content;
       align-self: flex-end;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .container {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      height: 100%;
-      justify-content: space-around;
-      margin: auto;
-
-      .left-side {
-        width: 40%;
-        margin: auto;
-        text-align: left;
-        padding-right: 50px;
-        p.title {
-          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
-        }
-      }
-
-      .right-side {
-        width: 60%;
-        border-radius: 30px;
-        border: 1px solid $grey-medium;
-        display: flex;
-        flex-direction: column;
-
-        .wrapper {
-          padding: 0px 13%;
-          margin: auto 0px
-        }
-
-        button {
-          padding: 18px 48px;
-          margin: 0px 48px 32px 0px;
-        }
-        
-      }
     }
   }
 }
@@ -870,7 +837,7 @@
   display: flex;
   flex-direction: column;
 
-  @media(min-width: 992px) {
+  @media($breakpoint-desktop) {
     padding: 7vh 9vw;
   }
 
@@ -878,25 +845,65 @@
     margin: calc(10vh + 32px) 0 auto 0; /* Fallback for browsers that do not support Custom Properties */
     margin: calc((var(--vh, 1vh) * 10 + 32px)) 0 auto 0;
     width: 100%;
-  }
 
-  .left-side {
-    margin-bottom: 46px;
-    p.title {
-      @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+    @media ($breakpoint-desktop) {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+      justify-content: space-around;
+      margin: auto;
     }
-  }
 
-  .right-side {
-    .wrapper {
-      p {
-        @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
-        margin-bottom: 16px;
-        &.second-question {
-          margin-top: 32px;
+    .left-side {
+      margin-bottom: 46px;
+
+      @media ($breakpoint-desktop) {
+        width: 40%;
+        margin: auto;
+        text-align: left;
+        padding-right: 50px;
+      }
+      p.title {
+        @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+
+        @media ($breakpoint-desktop) {
+          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
         }
-        @media (min-width: 992px) {
-          @include text-style("TTInterfaces", 400, 24px, 1.44);
+      }
+    }
+  
+    .right-side {
+      @media ($breakpoint-desktop) {
+        width: 60%;
+        border-radius: 30px;
+        border: 1px solid $grey-medium;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .wrapper {
+        @media ($breakpoint-desktop) {
+          padding: 0px 13%;
+          margin: auto 0px;
+        }
+
+        p {
+          @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+          margin-bottom: 16px;
+          &.second-question {
+            margin-top: 32px;
+          }
+          @media ($breakpoint-desktop) {
+            @include text-style("TTInterfaces", 400, 24px, 1.44);
+          }
+        }
+      }
+
+      button {
+        @media ($breakpoint-desktop) {
+          padding: 18px 48px;
+          margin: 0px 48px 32px 0px;
         }
       }
     }
@@ -921,7 +928,8 @@
       }
       span {
         @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
-        @media (min-width: 992px) {
+
+        @media ($breakpoint-desktop) {
           @include text-style("TTInterfaces", 400, 24px, 1.5);
         }
       }
@@ -944,49 +952,9 @@
       color: $grey-medium;
     }
     
-    @media (min-width: 992px) {
+    @media ($breakpoint-desktop) {
       width: fit-content;
       align-self: flex-end;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .container {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      height: 100%;
-      justify-content: space-around;
-      margin: auto;
-
-      .left-side {
-        width: 40%;
-        margin: auto;
-        text-align: left;
-        padding-right: 50px;
-        p.title {
-          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
-        }
-      }
-
-      .right-side {
-        width: 60%;
-        border-radius: 30px;
-        border: 1px solid $grey-medium;
-        display: flex;
-        flex-direction: column;
-
-        .wrapper {
-          padding: 0px 13%;
-          margin: auto 0px
-        }
-
-        button {
-          padding: 18px 48px;
-          margin: 0px 48px 32px 0px;
-        }
-        
-      }
     }
   }
 }
@@ -997,115 +965,160 @@
   min-height: 100vh;
   width: 100%;
 
-  @media(min-width: 992px) {
+  @media($breakpoint-desktop) {
     padding: 5vh 7vw;
   }
-  
-  .left-side {
-    p.title {
-      @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+
+  .container {
+    @media ($breakpoint-desktop) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      justify-content: space-around;
     }
 
-    .card-summary {
-      width: 100%;
-      border: 1px solid #e1e1e1;
-      border-radius: 30px;
-      margin: 46px 0px;
-      padding: 18px;
-      p {
-        @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
-        margin: 4px 0px;
+    .left-side {
+      @media ($breakpoint-desktop) {
         text-align: left;
-        &#name {
-          @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
-          @media (min-width: 992px) {
-            @include text-style("TTInterfaces Bold", 700, 32px, normal);
+        padding-right: 50px;
+        width: 50%;
+      }
+
+      p.title {
+        @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+
+        @media ($breakpoint-desktop) {
+          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+        }
+      }
+  
+      .card-summary {
+        width: 100%;
+        border: 1px solid #e1e1e1;
+        border-radius: 30px;
+        margin: 46px 0px;
+        padding: 18px;
+  
+        p {
+          @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+          margin: 4px 0px;
+          text-align: left;
+  
+          @media($breakpoint-desktop) {
+            @include text-style("TTInterfaces", 400, 24px, 1.5);
+          }
+  
+          &#name {
+            @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+  
+            @media ($breakpoint-desktop) {
+              @include text-style("TTInterfaces Bold", 700, 32px, normal);
+            }
           }
         }
-        @media(min-width: 992px) {
-          @include text-style("TTInterfaces", 400, 24px, 1.5);
-        }
       }
-    }
-
-    p.subtitle {
-      @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
-      margin-top: 32px;
-      margin-bottom: 12px;
-    }
-
-    .top-selected-container {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      width: 100%;
   
-      .card {
-        flex: 0 0 auto;
-        border: 1px solid #e1e1e1;
-        border-radius: 15px;
-        padding: 18px;
-        width: fit-content;
-        margin-right: 11px;
-  
-        span {
-          @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
-          display: block;
-          text-align: left;
-          margin-bottom: 0px;
-        }
-        p {
-          @include text-style("TTInterfaces Bold", 700, 12px, 1.5);
-          margin: 0px;
-          text-align: left;
-        }
-        
-        &.w0 { color: $grey-medium; border-color: $grey-medium;}
-        &.w25 { border-color: $yellow-medium; }
-        &.w50 { background-color: $yellow-light; border-color: $yellow-light; }
-        &.w75 { background-color: $yellow-medium; border-color: $yellow-medium;}
-        &.w100 { background-color: $yellow-primary; border-color: $yellow-primary;}
+      p.subtitle {
+        @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+        margin-top: 32px;
+        margin-bottom: 12px;
       }
-    }
-  }
-
-  .right-side {
-    p.subtitle {
-      @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
-      margin-top: 46px;
-      margin-bottom: 12px;
-    }
-    p.feel-productive {
-      @include text-style("TTInterfaces", 400, 24px, 1.5);
-      text-decoration: underline;
-      margin-bottom: 48px;
-    }
-
-    .like-to-learn-container {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
   
-      .card {
-        flex: 0 0 auto;
-        border: 1px solid #e1e1e1;
-        border-radius: 15px;
-        margin: 12px 0px;
-        padding: 18px;
+      .top-selected-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
         width: 100%;
-        margin-right: 11px;
-        background-color: $grey-medium; border-color: $grey-medium;
-  
-        span {
-          @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
-          display: block;
-          text-align: left;
-          margin-bottom: 0px;
+    
+        .card {
+          flex: 0 0 auto;
+          border: 1px solid #e1e1e1;
+          border-radius: 15px;
+          padding: 18px;
+          width: fit-content;
+          margin-right: 11px;
+    
+          span {
+            @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+            display: block;
+            text-align: left;
+            margin-bottom: 0px;
+          }
+          p {
+            @include text-style("TTInterfaces Bold", 700, 12px, 1.5);
+            margin: 0px;
+            text-align: left;
+          }
+          
+          &.w0 { color: $grey-medium; border-color: $grey-medium;}
+          &.w25 { border-color: $yellow-medium; }
+          &.w50 { background-color: $yellow-light; border-color: $yellow-light; }
+          &.w75 { background-color: $yellow-medium; border-color: $yellow-medium;}
+          &.w100 { background-color: $yellow-primary; border-color: $yellow-primary;}
         }
-        p {
-          @include text-style("TTInterfaces Bold", 700, 12px, 1.5);
-          margin: 0px;
-          text-align: left;
+      }
+    }
+  
+    .right-side {
+      @media ($breakpoint-desktop) {
+        width: 50%;
+        padding: 56px 80px 56px 80px;
+      }
+
+      p.subtitle {
+        @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+        margin-top: 46px;
+        margin-bottom: 12px;
+
+        @media ($breakpoint-desktop) {
+          @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+        }
+      }
+      p.feel-productive {
+        @include text-style("TTInterfaces", 400, 24px, 1.5);
+        text-decoration: underline;
+        margin-bottom: 48px;
+
+        @media ($breakpoint-desktop) {
+          margin-bottom: 56px;
+        }
+      }
+  
+      .like-to-learn-container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    
+        .card {
+          flex: 0 0 auto;
+          border: 1px solid #e1e1e1;
+          border-radius: 15px;
+          margin: 12px 0px;
+          padding: 18px;
+          width: 100%;
+          margin-right: 11px;
+          background-color: $grey-medium; border-color: $grey-medium;
+    
+          span {
+            @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+            display: block;
+            text-align: left;
+            margin-bottom: 0px;
+
+            @media ($breakpoint-desktop) {
+              @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+            }
+          }
+          p {
+            @include text-style("TTInterfaces Bold", 700, 12px, 1.5);
+            margin: 0px;
+            text-align: left;
+
+            @media ($breakpoint-desktop) {
+              @include text-style("TTInterfaces Medium", 500, 12px, 1.5);
+            }
+          }
         }
       }
     }
@@ -1130,53 +1143,9 @@
       color: $neutral-black;
     }
     
-    @media (min-width: 992px) {
+    @media ($breakpoint-desktop) {
       margin-top: 0px;
       padding: 25px 62px;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      width: 100%;
-      justify-content: space-around;
-
-      .left-side {
-        text-align: left;
-        padding-right: 50px;
-        width: 50%;
-        p.title {
-          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
-        }
-      }
-
-      .right-side {
-        width: 50%;
-        padding: 56px 80px 56px 80px;
-        p.title {
-          @include text-style("TTInterfaces", 400, 24px, 1.34);
-        }
-      }
-
-      p.subtitle {
-        @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
-      }
-
-      .like-to-learn-container {
-        p {
-          @include text-style("TTInterfaces Medium", 500, 12px, 1.5);
-        }
-        span {
-          @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
-        }
-      }
-
-      p.feel-productive {
-        margin-bottom: 56px;
-      }
     }
   }
 }
@@ -1207,7 +1176,7 @@
   left: 5%;
   bottom: 20%;
 
-  @media (min-width: 992px){
+  @media ($breakpoint-desktop){
     width: 70%;
     position: relative;
     left: 0;
@@ -1219,10 +1188,23 @@
     flex-direction: column;
     align-items: center;
     padding: 48px;
-    
+
+    @media ($breakpoint-desktop) {
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-around;
+      padding: 200px 100px;
+    }
+
     img {
       width: 134px;
       height: 119px;
+
+      @media ($breakpoint-desktop) {
+        width: 220px;
+        height: 195px;
+        margin-right: 116px;
+      }
     }
   
     .text-container {
@@ -1230,15 +1212,29 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+
+      @media ($breakpoint-desktop) {
+        align-self: center;
+      }
+
       span {
         @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
         max-width: 290px;
         margin-top: 48px;
+
+        @media ($breakpoint-desktop) {
+          max-width: 370px;
+        }
       }
 
       p {
         @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
         margin-top: 16px;
+
+        @media ($breakpoint-desktop) {
+          @include text-style("TTInterfaces", 400, 24px, 1.5);
+          max-width: 370px;
+        }
       }
 
       button {
@@ -1255,36 +1251,10 @@
         width: fit-content;
         cursor: pointer;
         
-        @media (min-width: 992px) {
+        @media ($breakpoint-desktop) {
           padding: 25px 62px;
         }
       }
-    }
-    
-
-    @media (min-width: 992px) {
-      flex-direction: row;
-      width: 100%;
-      justify-content: space-around;
-      padding: 200px 100px;
-      
-      img {
-        width: 220px;
-        height: 195px;
-        margin-right: 116px;
-      }
-
-      .text-container {
-        align-self: center;
-        span {
-          max-width: 370px;
-        }
-        p {
-          @include text-style("TTInterfaces", 400, 24px, 1.5);
-          max-width: 370px;
-        }
-      }
-      
     }
   }
 }

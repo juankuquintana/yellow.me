@@ -1,0 +1,50 @@
+.clients-section {
+  padding: 100px 12vw 100px 12vw;
+
+  @media ($breakpoint-desktop) {
+    padding: 132px 23vw 146px 23vw;
+  }
+
+  h2 {
+    @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+    margin-bottom: 64px;
+
+    @media ($breakpoint-desktop) {
+      font-size: 56px;
+      margin-bottom: 90px;
+    }
+  }
+
+  .clients-list {
+    @media ($breakpoint-desktop) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 1rem;
+      margin: auto;
+    }
+
+    &--client {
+      margin-bottom: 48px;
+
+      img {
+        height: 31px;  
+        margin: 0;
+        margin-bottom: .8rem;
+
+        @media ($breakpoint-desktop) {
+          height: 35px;
+        }
+      }
+
+      p {
+        @include text-style("TTInterfaces", 400, 20px);
+
+        @media ($breakpoint-desktop) {
+          font-size: 24px;
+          line-height: 1.5;
+          width: 90%;
+        }
+      }
+    }
+  }
+}

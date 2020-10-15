@@ -1,25 +1,29 @@
 @import "./variables.scss";
 @import "./mixins";
 
-@import "./photosGrid";
-@import "./yellows";
+@import "./components/valuesList";
+@import "./components/photosGrid";
+@import "./components/yellows";
 
 .join-a-culture-section {
   padding: 202px 12vw 80px 12vw;
 
-  h2 {
-    @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
-    br {
-      display: none;
-    }
+  @media ($breakpoint-desktop) {
+    padding: 308px 10vw 147px 10vw;
   }
 
-  @media (min-width: 992px) {
-    padding: 308px 10vw 147px 10vw;
-    h2 {
+  h2 {
+    @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+
+    @media ($breakpoint-desktop) {
       font-size: 56px;
       line-height: normal;
-      br {
+    }
+
+    br {
+      display: none;
+
+      @media ($breakpoint-desktop) {
         display: block;
       }
     }
@@ -29,10 +33,24 @@
 .principles-section {
   padding: 80px 12vw 100px 12vw;
 
+  @media ($breakpoint-desktop) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
   h2 {
     @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
     &:not(:first-child) {
       margin-top: 100px;
+    }
+
+    @media ($breakpoint-desktop) {
+      margin-top: 0px !important;
+      font-size: 56px;
+      line-height: normal;
+      &:first-child {
+        padding-top: 366px;
+      }
     }
   }
 
@@ -41,21 +59,8 @@
     &:not(:last-child) {
       margin-bottom: 100px;
     }
-  }
 
-  @media (min-width: 992px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    h2 {
-      margin-top: 0px !important;
-      font-size: 56px;
-      line-height: normal;
-      &:first-child {
-        padding-top: 366px;
-      }
-    }
-    p {
+    @media ($breakpoint-desktop) {
       margin-bottom: 1.45rem !important;
     }
   }
@@ -65,7 +70,8 @@
       margin-bottom: 100px;
       @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
       letter-spacing: -1.0px;
-      @media (min-width: 992px) {
+
+      @media ($breakpoint-desktop) {
         padding-top: 142px;
         max-width: 330px;
         position: sticky;
@@ -78,14 +84,14 @@
 .we-are-our-values-section {
   padding: 146px 12vw 80px 12vw;
 
-  p {
-    @include text-style("TTInterfaces", 400, 24px, 1.5);
-  }
-
-  @media (min-width: 992px) {
+  @media ($breakpoint-desktop) {
     padding: 224px 10vw 146px 10vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  p {
+    @include text-style("TTInterfaces", 400, 24px, 1.5);
   }
 
   .section--left {
@@ -93,7 +99,7 @@
       margin-bottom: 12px;
       @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
     
-      @media (min-width: 992px) {
+      @media ($breakpoint-desktop) {
         padding-top: 0px;
         margin-bottom: 90px;
         font-size: 56px;
@@ -105,7 +111,7 @@
     }
   }
   .section--right {
-    @media (min-width: 992px) {
+    @media ($breakpoint-desktop) {
       padding-top: 140px;
     }
   }
@@ -113,30 +119,57 @@
 
 .subscribe-section {
   padding: 100px 12vw 0px 12vw;
+
+  @media ($breakpoint-desktop) {
+    padding: 146px 23vw 145px 23vw;
+  }
+
   > h2 {
     @include text-style("TTInterfaces", 400, 38px, 1.26);
     margin-bottom: 33px;
-  }
-  @media (min-width: 992px) {
-    padding: 146px 23vw 145px 23vw;
-    > h2 {
+
+    @media ($breakpoint-desktop) {
       font-size: 56px;
       line-height: 1.18;
       margin-bottom: 75px;
     }
   }
+
   .subscribe {
+    @media ($breakpoint-desktop) {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 100px 150px;
+      max-width: 760px;
+    }
+
     img {
       height: 67px;
       width: 75px;
+
+      @media ($breakpoint-desktop) {
+        height: 90px;
+        width: 100px;
+      }
     }
 
     .form-email {
       margin-top: 23px;
+
+      @media ($breakpoint-desktop) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 70px;
+      }
+
       > span {
         @include text-style("TTInterfaces Medium", 500, 24px, 1.5);
         display: inline-block;
         margin-bottom: 46px;
+
+        @media ($breakpoint-desktop) {
+          @include text-style("TTInterfaces Bold", 700, 32px, 1.44);
+        }
       }
       span.suscribed {
         @include text-style("TTInterfaces Bold", 700, 24px, 1.5);  
@@ -170,30 +203,7 @@
         width: 60px;
         height: 60px;
         cursor: pointer;
-      }
-      
-    }
-
-    @media (min-width: 992px) {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 100px 150px;
-      max-width: 760px;
-
-      img {
-        height: 90px;
-        width: 100px;
-      }
-
-      .form-email {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        margin-top: 70px;
-        > span {
-          @include text-style("TTInterfaces Bold", 700, 32px, 1.44);
-        }
-      }
+      } 
     }
   }
 }
-

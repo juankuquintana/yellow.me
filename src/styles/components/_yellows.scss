@@ -1,23 +1,31 @@
 .meet-yellows-section {
   padding: 146px 5vw 0px 5vw;
+
+  @media ($breakpoint-desktop) {
+    padding: 146px 10vw 0px 10vw;
+  }
+
   > h2 {
     @include text-style("TTInterfaces Medium", 500, 38px, 1.25);
     text-align: center;
     max-width: 600px;
     margin: auto;
     margin-bottom: 46px;
-  }
-  @media (min-width: 992px) {
-    padding: 146px 10vw 0px 10vw;
-    > h2 {
+
+    @media ($breakpoint-desktop) {
       font-size: 56px; 
-      margin-bottom: 100px; 
+      margin-bottom: 100px;
     }
   }
 
   .meet-yellows {
     display: grid;
     grid-template-rows: 250px;
+
+    @media ($breakpoint-desktop) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 700px;
+    }
 
     .yellow-photo {
       picture > img {
@@ -26,33 +34,45 @@
         border-radius: 20px 20px 0px 0px;
         object-fit: cover;
         object-position: top;
-      }
-    }
 
-    @media (min-width: 992px) {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 700px;
-      
-      .yellow-photo {
-        picture > img {
+        @media ($breakpoint-desktop) {
           height: 100%;
           width: 100%;
           border-radius: 20px 0px 0px 20px;
         }
       }
     }
-  
+
     .yellow-bio {
       background-color: $neutral-medium-grey;
       border-radius: 0px 0px 20px 20px;
       padding: 22px 30px 32px 30px;
 
+      @media ($breakpoint-desktop) {
+        border-radius: 0px 20px 20px 0px; 
+        padding: 100px;
+
+        .divider {
+          margin-top: 45px;
+          margin-bottom: 35px;
+        }
+      }
+
       .yellow-data {
         height: 300px;
+
+        @media ($breakpoint-desktop) {
+          height: 350px;
+        }
       }
 
       .yellow-name {
         @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+
+        @media ($breakpoint-desktop) {
+          font-size: 56px;
+          line-height: normal;
+        }
       }
   
       .display-flex {
@@ -71,34 +91,18 @@
 
       .value {
         @include text-style("TTInterfaces", 400, 20px, 1.5);
-      }
 
-      @media (min-width: 992px) {
-        border-radius: 0px 20px 20px 0px; 
-        padding: 100px;
-
-        .divider {
-          margin-top: 45px;
-          margin-bottom: 35px;
-        }
-
-        .yellow-data {
-          height: 350px;
-        }
-
-        .yellow-name { font-size: 56px; line-height: normal; }
-
-        .value {
+        @media ($breakpoint-desktop) {
           font-size: 24px;
         }
       }
-      
+  
       .other-yellows {
         display: grid;
         grid-template-columns: 75% 25%;
         align-items: center;
 
-        @media (min-width: 992px) {
+        @media ($breakpoint-desktop) {
           grid-template-columns: 70% 30%;
           padding-bottom: 0px;
         }

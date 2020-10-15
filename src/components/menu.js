@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import Footer from "../components/Footer";
 
-import "../styles/_menu.scss"
+import "../styles/menu.scss"
 
 const Menu = ({ isMenuOpen, toggleMenu }) => (
   <div className={`menu ${isMenuOpen ? 'menu--open' : ''}`}>

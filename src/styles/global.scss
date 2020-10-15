@@ -1,5 +1,5 @@
-@import "./typography.scss";
 @import "./variables.scss";
+@import "./typography.scss";
 @import "./mixins";
 
 .bg-medium-grey {
@@ -89,10 +89,23 @@ header {
   top: 0;
   transition: top 0.5s;
 
+  @media ($breakpoint-desktop) {
+    padding: 24px 10vw;
+  }
+
   a.yellowme-logo {
     height: 24px;
+
+    @media ($breakpoint-desktop) {
+      height: 32px;
+    }
+
     img {
       height: 24px;
+
+      @media ($breakpoint-desktop) {
+        height: 32px;
+      }
     }
   }
 
@@ -132,7 +145,8 @@ header {
       background-color: #FFD100;
       top: 20px;
       margin-left: -12px;
-      @media (min-width: 992px) {
+
+      @media ($breakpoint-desktop) {
         width: 5px;
         height: 5px;
         top: 30px;
@@ -143,30 +157,21 @@ header {
     &.bg-yellow {
       background-color: #FFD100;
     }
-
   }
 
   .links-ctr {
     display: none;
+
+    @media ($breakpoint-desktop) {
+      display: block;
+    }
   }
 
   .links-ctr-toogle-menu {
     display: block;
-  }
 
-  @media (min-width: 992px) {
-    padding: 24px 10vw;
-    .links-ctr {
-      display: block;
-    }
-    .links-ctr-toogle-menu {
+    @media ($breakpoint-desktop) {
       display: none;
-    }
-    a.yellowme-logo {
-      height: 32px;
-      img {
-        height: 32px;
-      }
     }
   }
 }
@@ -176,7 +181,7 @@ header {
   &--find-us {
     @include text-style("TTInterfaces Bold", 700, 18px);
     
-    @media (min-width: 992px) {
+    @media ($breakpoint-desktop) {
       @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
       padding: 0px 13vw 0px 13vw;
     }
@@ -187,7 +192,7 @@ header {
     display: flex;
     align-items: center;
 
-    @media (min-width: 992px) {
+    @media ($breakpoint-desktop) {
       padding: 0px 13vw 0px 13vw;
     }
     
@@ -196,7 +201,7 @@ header {
       height: 25px;
       width: 25px;
 
-      @media (min-width: 992px) {
+      @media ($breakpoint-desktop) {
         height: 32px;
         width: 32px;
       }
@@ -205,7 +210,8 @@ header {
         width: 100%;
         height: 100%;
         min-width: 25px;
-        @media (min-width: 992px) {
+
+        @media ($breakpoint-desktop) {
           min-width: 32px;
         }
       }
@@ -219,7 +225,7 @@ header {
   background-color: #e1e1e1;
   margin: 30px 0;
 
-  @media (min-width: 992px) {
+  @media ($breakpoint-desktop) {
     margin: 60px 0;  
   }
 }

@@ -1,10 +1,12 @@
 @import "./variables.scss";
 @import "./mixins";
 
+@import "./components/clientList";
+
 .hero {
   padding: 64px 12vw 64px 12vw;
 
-  @media (min-width: 992px) {
+  @media ($breakpoint-desktop) {
     padding: 122px 30vw 64px 30vw;
   }
 
@@ -13,7 +15,7 @@
     padding-top: 17vh;
     padding-bottom: 60px;
 
-    @media (min-width: 992px) {
+    @media ($breakpoint-desktop) {
       font-size: 120px;
       line-height: 1.31;
       padding-top: 9vh;
@@ -21,19 +23,20 @@
   }
 
   &--ctr {
+    width: fit-content;
+    margin: auto;
+
     h5 {
       @include text-style("Poppins", 600, 26px, 1.5);
+
+      @media ($breakpoint-desktop) {
+        font-size: 32px;
+        line-height: 1.22;
+      }
     }
 
     p {
       @include text-style("TTInterfaces", 400, 24px, 1.5);
-    }
-
-    @media (min-width: 992px) {
-      h5 {
-        font-size: 32px;
-        line-height: 1.22;
-      }
     }
 
     .hand-emoji {
@@ -42,28 +45,31 @@
       animation: shake 2s;
       animation-delay: .5s;
     }
-
-    @media only screen and (min-width: 768px) {
-      width: fit-content;
-      margin: auto;
-
-      h5 {
-        font-size: 2.2rem;
-      }
-
-      p {
-        font-size: 1.5rem;
-      }
-    }
   }
 }
 
 .working-with-us-section {
   padding: 100px 12vw;
+
+  @media ($breakpoint-desktop) {
+    padding: 80px 10vw 150px 10vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
   h2 {
     @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
     &:not(:first-child) {
       margin-top: 100px;
+    }
+
+    @media ($breakpoint-desktop) {
+      margin-top: 0px !important;
+      font-size: 56px;
+      line-height: normal;
+      &:first-child {
+        padding-top: 170px;
+      }
     }
   }
 
@@ -72,14 +78,18 @@
     &:not(:last-child) {
       margin-bottom: 100px;
     }
+
+    @media ($breakpoint-desktop) {
+      margin-bottom: 1.45rem !important;
+    }
   }
 
-  .section--left{ 
+  .section--left { 
     .statement {
       margin-bottom: 90px;
       @include text-style("TTInterfaces Medium", 500, 24px, 1.5);
-    
-      @media (min-width: 992px) {
+
+      @media ($breakpoint-desktop) {
         @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
         padding-top: 66px;
         max-width: 330px;
@@ -88,95 +98,27 @@
       }
     }
   }
-
-  @media (min-width: 992px) {
-    padding: 80px 10vw 150px 10vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    h2 {
-      margin-top: 0px !important;
-      font-size: 56px;
-      line-height: normal;
-      &:first-child {
-        padding-top: 170px;
-      }
-    }
-    p {
-      margin-bottom: 1.45rem !important;
-    }
-  }
 }
 
 .yellow-section {
   padding: 0px 12vw 0px 12vw;
+
   h2 {
     @include text-style("TTInterfaces DemiBold", 600, 42px, 1.17);
+
+    @media ($breakpoint-desktop) {
+      font-size: 80px;
+      line-height: 1.1;
+    }
   }
 
   p {
     @include text-style("TTInterfaces", 400, 24px, 1.5);
-  }
 
-  @media (min-width: 992px) {
-    h2 {
-      font-size: 80px;
-      line-height: 1.1;
-    }
-    p {
+    @media ($breakpoint-desktop) {
       font-size: 32px;
       line-height: 1.44;
       max-width: 900px;
-    }
-  }
-}
-
-.clients-section {
-  padding: 100px 12vw 100px 12vw;
-
-  h2 {
-    @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
-    margin-bottom: 64px;
-  }
-
-  .clients-list {
-    @media (min-width: 992px) {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: 1rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    &--client {
-      margin-bottom: 48px;
-      img {
-        height: 31px;  
-        margin: 0;
-        margin-bottom: .8rem;
-      }
-
-      @media (min-width: 992px) {
-        img {
-          height: 35px;
-        }
-      }
-      
-      p {
-        @include text-style("TTInterfaces", 400, 20px);
-        @media (min-width: 992px) {
-          font-size: 24px;
-          line-height: 1.5;
-          width: 90%;
-        }
-      }
-    }
-  }
-
-  @media (min-width: 992px) {
-    padding: 132px 23vw 146px 23vw;
-    h2 {
-      font-size: 56px;
-      margin-bottom: 90px;
     }
   }
 }
@@ -187,31 +129,34 @@
   flex-direction: column;
   justify-content: center;
 
+  @media ($breakpoint-desktop) {
+    padding: 0px 23vw;
+  }
+
   h2 {
     @include text-style("TTInterfaces", 400, 28px, 1.44);
+
+    @media ($breakpoint-desktop) {
+      font-size: 44px;
+      line-height: 1.32;
+      max-width: 900px;
+    }
   }
 
   h5 {
     @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
     margin-bottom: 0.3rem;
+
+    @media ($breakpoint-desktop) {
+      font-size: 32px;
+      line-height: 1.44;
+    }
   }
 
   span {
     @include text-style("TTInterfaces", 400, 20px);
-  }
 
-  @media (min-width: 992px) {
-    padding: 0px 23vw;
-    h2 {
-      font-size: 44px;
-      line-height: 1.32;
-      max-width: 900px;
-    }
-    h5 {
-      font-size: 32px;
-      line-height: 1.44;
-    }
-    span {
+    @media ($breakpoint-desktop) {
       font-size: 24px;
       line-height: 1.5;
     }
@@ -220,9 +165,11 @@
 
 .yellowme-home-section {
   padding: 64px 5vw;
-  @media (min-width: 992px) {
+
+  @media ($breakpoint-desktop) {
     padding: 80px 10vw;
   }
+
   video {
     width: 100%;
     height: 100%;
@@ -232,13 +179,18 @@
 .tell-us-section {
   padding: 0px 12vw 0px 12vw;
 
-  @media (min-width: 992px) {
+  @media ($breakpoint-desktop) {
     padding: 20px 23vw 20px 23vw;
   }
 
   h2 {
     @include text-style("TTInterfaces", 400, 38px, 1.26);
     text-align: left;
+
+    @media ($breakpoint-desktop) {
+      @include text-style("TTInterfaces", 400, 56px, 1.25);
+      padding-right: 15%;
+    }
   }
 
   a {
@@ -251,14 +203,8 @@
     &:visited {
       color: black;
     }
-  }
 
-  @media (min-width: 992px) {
-    h2 {
-      @include text-style("TTInterfaces", 400, 56px, 1.25);
-      padding-right: 15%;
-    }
-    a {
+    @media ($breakpoint-desktop) {
       @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
       margin-bottom: 20px;
     }
@@ -267,7 +213,8 @@
 
 .separator {
   padding: 0px 12vw;
-  @media (min-width: 992px) {
+
+  @media ($breakpoint-desktop) {
     padding: 0px 10vw;
   }
 }
@@ -275,13 +222,17 @@
 .explore-oportunity-section {
   padding: 33px 12vw 0px 12vw;
 
-  @media (min-width: 992px) {
+  @media ($breakpoint-desktop) {
     padding: 40px 23vw 20px 23vw;
   }
 
   h2 {
     @include text-style("TTInterfaces", 400, 38px, 1.26);
     text-align: left;
+
+    @media ($breakpoint-desktop) {
+      @include text-style("TTInterfaces", 400, 56px, 1.25);
+    }
   }
 
   a {
@@ -293,16 +244,10 @@
     &:visited {
       color: black;
     }
-  }
 
-  @media (min-width: 992px) {
-    h2 {
-      @include text-style("TTInterfaces", 400, 56px, 1.25);
-    }
-    a {
+    @media ($breakpoint-desktop) {
       @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
       margin-bottom: 0px;
     }
   }
 }
-

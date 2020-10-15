@@ -5,7 +5,8 @@
     grid-gap: 10px;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 70px 70px 150px;
-    @media (min-width: 992px) {
+
+    @media ($breakpoint-desktop) {
       grid-gap: 20px;
       grid-template-rows: 235px 235px 235px;  
     }
@@ -51,14 +52,22 @@
 .photos-grid-section-2 {
   padding-top: 46px;
   max-width: 77.6%;
-  @media (min-width: 992px) {
+
+  @media ($breakpoint-desktop) {
     max-width: 91.5%;  
   }
+
   .photos-wrapper-section-2 {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 10% 22.5% 22.5% 22.5% 22.5% 10%;
     grid-template-rows: 40px 40px 40px 40px 40px 40px 40px 40px;
+
+    @media ($breakpoint-desktop) {
+      grid-gap: 30px;
+      grid-template-columns: 20% 20% 20% 20% 20%;
+      grid-template-rows: 100px 100px 100px 100px 50px 50px;
+    }
 
     .slot {
       background-color: $neutral-medium-grey;
@@ -72,54 +81,49 @@
 
       &.photo-1 {
         visibility: hidden;
-      }
-      &.photo-2 {
-        grid-column: 2 / 4 ;
-        grid-row: 1 / 7 ;
-      }
-      &.photo-3 {
-        grid-column: 4 / 6 ;
-        grid-row: 2 / 5 ;
-      }
-      &.photo-4 {
-        grid-column: 4 / 6;
-        grid-row: 5 / 9;
-      }
-      &.photo-5 {
-        visibility: hidden;
-      }
-    }
 
-    @media (min-width: 992px) {
-      grid-gap: 30px;
-      grid-template-columns: 20% 20% 20% 20% 20%;
-      grid-template-rows: 100px 100px 100px 100px 50px 50px;
-
-      .slot {
-        &.photo-1 {
+        @media ($breakpoint-desktop) {
           grid-column: 1 / 2;
           grid-row: 2 / 7;
           visibility: visible;
         }
-        &.photo-2 {
+      }
+      &.photo-2 {
+        grid-column: 2 / 4 ;
+        grid-row: 1 / 7 ;
+
+        @media ($breakpoint-desktop) {
           grid-column: 2 / 3 ;
           grid-row: 1 / 5 ;
         }
-        &.photo-3 {
+      }
+      &.photo-3 {
+        grid-column: 4 / 6 ;
+        grid-row: 2 / 5 ;
+
+        @media ($breakpoint-desktop) {
           grid-column: 3 / 4 ;
           grid-row: 2 / 4 ;
         }
-        &.photo-4 {
+      }
+      &.photo-4 {
+        grid-column: 4 / 6;
+        grid-row: 5 / 9;
+
+        @media ($breakpoint-desktop) {
           grid-column: 3 / 4;
           grid-row: 4 / 7;
         }
-        &.photo-5 {
+      }
+      &.photo-5 {
+        visibility: hidden;
+
+        @media ($breakpoint-desktop) {
           grid-column: 4 / 6;
           grid-row: 1 / 5;
           visibility: visible;
         }
       }
     }
-
   }
 }

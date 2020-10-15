@@ -1,19 +1,19 @@
-$neutral-medium-grey: #f6f6f6;
+$neutral-medium-grey: #F6F6F6;
 $neutral-black: #000;
-$neutral-dark-grey: #96989a;
-$neutral-light-grey: #fbfbfb;
-$brand-yellow:    #ffd100;
-$brand-yellow-light: #fffbed;
-$neutral-outline-grey: #e0e0e0;
+$neutral-dark-grey: #96989A;
+$neutral-light-grey: #FBFBFB;
+$brand-yellow:    #FFD100;
+$brand-yellow-light: #FFFBED;
+$neutral-outline-grey: #E0E0E0;
 $neutral-white: #FFF;
 
-$yellow-primary: #ffd100;
+$yellow-primary: #FFD100;
 $yellow-medium: #FFE384;
 $yellow-light: #FFFBED;
-$grey-medium: #e1e1e1;
+$grey-medium: #E1E1E1;
 
-$breakpoint-desktop-x-large: "max-width: 1690px";
-$breakpoint-desktop-large:   "max-width: 1200px";
-$breakpoint-desktop:         "max-width: 992px";
-$breakpoint-tablet:          "max-width: 768px";
-$breakpoint-mobile:          "max-width: 576px";
+$breakpoint-desktop-x-large: "min-width: 1690px";
+$breakpoint-desktop-large:   "min-width: 1200px";
+$breakpoint-desktop:         "min-width: 992px";
+$breakpoint-tablet:          "min-width: 768px";
+$breakpoint-mobile:          "min-width: 576px";
