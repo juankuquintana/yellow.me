@@ -7,17 +7,25 @@
   padding: 64px 12vw 64px 12vw;
 
   @media ($breakpoint-desktop) {
+    padding: 64px 30vw 64px 30vw;
+  }
+
+  @media ($breakpoint-desktop-x-large) {
     padding: 122px 30vw 64px 30vw;
   }
 
   &--sentence {
-    @include text-style("Poppins", 600, 56px, 1.28);
+    @include text-style("Poppins", 56px, 1.28, -0.03px);
     padding-top: 17vh;
     padding-bottom: 60px;
 
     @media ($breakpoint-desktop) {
-      font-size: 120px;
-      line-height: 1.31;
+      @include text-style("Poppins", 84px, 1.31, -0.06px);
+      padding-top: 9vh;
+    }
+
+    @media ($breakpoint-desktop-x-large) {
+      @include text-style("Poppins", 120px, 1.31, -0.06px);
       padding-top: 9vh;
     }
   }
@@ -27,16 +35,19 @@
     margin: auto;
 
     h5 {
-      @include text-style("Poppins", 600, 26px, 1.5);
+      @include text-style("Poppins", 26px, 1.5, -0.01px);
 
       @media ($breakpoint-desktop) {
-        font-size: 32px;
-        line-height: 1.22;
+        @include text-style("Poppins", 28px, 1.22, -0.01px);
+      }
+
+      @media ($breakpoint-desktop-x-large) {
+        @include text-style("Poppins", 32px, 1.22, -0.01px);
       }
     }
 
     p {
-      @include text-style("TTInterfaces", 400, 24px, 1.5);
+      @include text-style("TTInterfaces", 24px, 1.5, -0.01px);
     }
 
     .hand-emoji {
@@ -58,15 +69,22 @@
   }
 
   h2 {
-    @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+    @include text-style("TTInterfaces Medium", 38px, 1.26, -0.02px);
     &:not(:first-child) {
       margin-top: 100px;
     }
 
     @media ($breakpoint-desktop) {
+      @include text-style("TTInterfaces Medium", 44px, normal, -0.03px);
       margin-top: 0px !important;
-      font-size: 56px;
-      line-height: normal;
+      &:first-child {
+        padding-top: 170px;
+      }
+    }
+
+    @media ($breakpoint-desktop-x-large) {
+      @include text-style("TTInterfaces Medium", 56px, normal, -0.03px);
+      margin-top: 0px !important;
       &:first-child {
         padding-top: 170px;
       }
@@ -74,7 +92,7 @@
   }
 
   p {
-    @include text-style("TTInterfaces", 400, 24px, 1.5);
+    @include text-style("TTInterfaces", 24px, 1.5, -0.01px);
     &:not(:last-child) {
       margin-bottom: 100px;
     }
@@ -87,10 +105,10 @@
   .section--left { 
     .statement {
       margin-bottom: 90px;
-      @include text-style("TTInterfaces Medium", 500, 24px, 1.5);
+      @include text-style("TTInterfaces Medium", 24px, 1.5, -0.01px);
 
       @media ($breakpoint-desktop) {
-        @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
+        @include text-style("TTInterfaces Bold", 24px, 1.5, -0.01px);
         padding-top: 66px;
         max-width: 330px;
         position: sticky;
@@ -104,20 +122,27 @@
   padding: 0px 12vw 0px 12vw;
 
   h2 {
-    @include text-style("TTInterfaces DemiBold", 600, 42px, 1.17);
+    @include text-style("TTInterfaces DemiBold", 42px, 1.17, -0.02px);
 
     @media ($breakpoint-desktop) {
-      font-size: 80px;
-      line-height: 1.1;
+      @include text-style("TTInterfaces DemiBold", 64px, 1.1, -0.04px);
+    }
+
+    @media ($breakpoint-desktop-x-large) {
+      @include text-style("TTInterfaces DemiBold", 80px, 1.1, -0.04px);
     }
   }
 
   p {
-    @include text-style("TTInterfaces", 400, 24px, 1.5);
+    @include text-style("TTInterfaces", 24px, 1.5, 0.01px);
 
     @media ($breakpoint-desktop) {
-      font-size: 32px;
-      line-height: 1.44;
+      @include text-style("TTInterfaces", 28px, 1.44, -0.01px);
+      max-width: 700px;
+    }
+
+    @media ($breakpoint-desktop-x-large) {
+      @include text-style("TTInterfaces", 32px, 1.44, -0.01px);
       max-width: 900px;
     }
   }
@@ -134,31 +159,41 @@
   }
 
   h2 {
-    @include text-style("TTInterfaces", 400, 28px, 1.44);
+    @include text-style("TTInterfaces", 28px, 1.44, -0.01px);
 
     @media ($breakpoint-desktop) {
-      font-size: 44px;
-      line-height: 1.32;
+      @include text-style("TTInterfaces", 36px, 1.32, -0.02px);
+      max-width: 900px;
+    }
+
+    @media ($breakpoint-desktop-x-large) {
+      @include text-style("TTInterfaces", 44px, 1.32, -0.02px);
       max-width: 900px;
     }
   }
 
   h5 {
-    @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
+    @include text-style("TTInterfaces Bold", 24px, 1.5, -0.01px);
     margin-bottom: 0.3rem;
 
     @media ($breakpoint-desktop) {
-      font-size: 32px;
-      line-height: 1.44;
+      @include text-style("TTInterfaces Bold", 28px, 1.44, -0.01px);
+    }
+
+    @media ($breakpoint-desktop-x-large) {
+      @include text-style("TTInterfaces Bold", 32px, 1.44, -0.01px);
     }
   }
 
   span {
-    @include text-style("TTInterfaces", 400, 20px);
+    @include text-style("TTInterfaces", 20px, normal, 0.29px);
 
     @media ($breakpoint-desktop) {
-      font-size: 24px;
-      line-height: 1.5;
+      @include text-style("TTInterfaces", 20px, 1.5, -0.01px);
+    }
+
+    @media ($breakpoint-desktop-x-large) {
+      @include text-style("TTInterfaces", 24px, 1.5, -0.01px);
     }
   }
 }
@@ -184,19 +219,25 @@
   }
 
   h2 {
-    @include text-style("TTInterfaces", 400, 38px, 1.26);
+    @include text-style("TTInterfaces", 38px, 1.26, -0.02px);
     text-align: left;
 
     @media ($breakpoint-desktop) {
-      @include text-style("TTInterfaces", 400, 56px, 1.25);
+      @include text-style("TTInterfaces", 44px, 1.25, -0.03px);
+      padding-right: 15%;
+    }
+
+    @media ($breakpoint-desktop-x-large) {
+      @include text-style("TTInterfaces", 56px, 1.25, -0.03px);
       padding-right: 15%;
     }
   }
 
   a {
-    @include text-style("TTInterfaces Bold", 700, 18px);
+    @include text-style("TTInterfaces Bold", 18px, normal, 0.2px);
     margin-left: auto;
     margin-bottom: 10px;
+    color: black;
     &:link {
       text-decoration: none;
     }
@@ -205,7 +246,7 @@
     }
 
     @media ($breakpoint-desktop) {
-      @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
+      @include text-style("TTInterfaces Bold", 24px, 1.5, -0.01px);
       margin-bottom: 20px;
     }
   }
@@ -216,6 +257,13 @@
 
   @media ($breakpoint-desktop) {
     padding: 0px 10vw;
+    .divider {
+      margin: 10px 0;
+    }
+  }
+
+  @media ($breakpoint-desktop) {
+    padding: 0px 10vw;
   }
 }
 
@@ -223,21 +271,26 @@
   padding: 33px 12vw 0px 12vw;
 
   @media ($breakpoint-desktop) {
-    padding: 40px 23vw 20px 23vw;
+    padding: 40px 23vw 0px 23vw;
   }
 
   h2 {
-    @include text-style("TTInterfaces", 400, 38px, 1.26);
+    @include text-style("TTInterfaces", 38px, 1.26, -0.02px);
     text-align: left;
 
     @media ($breakpoint-desktop) {
-      @include text-style("TTInterfaces", 400, 56px, 1.25);
+      @include text-style("TTInterfaces", 44px, 1.25, -0.03px);
+    }
+
+    @media ($breakpoint-desktop-x-large) {
+      @include text-style("TTInterfaces", 56px, 1.25, -0.03px);
     }
   }
 
   a {
-    @include text-style("TTInterfaces Bold", 700, 18px);
+    @include text-style("TTInterfaces Bold", 18px, normal, 0.2px);
     margin-left: auto;
+    color: black;
     &:link {
       text-decoration: none;
     }
@@ -246,7 +299,7 @@
     }
 
     @media ($breakpoint-desktop) {
-      @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
+      @include text-style("TTInterfaces Bold", 24px, 1.5, -0.01px);
       margin-bottom: 0px;
     }
   }

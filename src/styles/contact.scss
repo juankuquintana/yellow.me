@@ -9,7 +9,7 @@
   }
 
   > h2 {
-    @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+    @include text-style("TTInterfaces Medium", 38px, 1.26, -0.02px);
     text-align: left;
     max-width: 700px;
     margin: auto;
@@ -17,7 +17,12 @@
     padding: 0px 10vw;
 
     @media ($breakpoint-desktop) {
-      font-size: 56px;
+      @include text-style("TTInterfaces Medium", 44px, normal, -0.03px);
+      padding: 0px;
+    }
+
+    @media ($breakpoint-desktop-x-large) {
+      @include text-style("TTInterfaces Medium", 56px, normal, -0.03px);
       padding: 0px;
     }
   }
@@ -34,20 +39,27 @@
     .subscribe {
       
       > span {
-        @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
+        @include text-style("TTInterfaces Bold", 24px, 1.5, -0.01px);
 
         @media ($breakpoint-desktop) {
-          font-size: 32px;
-          line-height: 1.44;
+          @include text-style("TTInterfaces Bold", 28px, 1.44, -0.01px);
+        }
+
+        @media ($breakpoint-desktop-x-large) {
+          @include text-style("TTInterfaces Bold", 32px, 1.44, -0.01px);
         }
       }
       > p {
-        @include text-style("TTInterfaces", 400, 24px, 1.5);
+        @include text-style("TTInterfaces", 24px, 1.5, -0.01px);
         margin-top: 12px;
 
         @media ($breakpoint-desktop) {
-          font-size: 32px;
-          line-height: 1.44;
+          @include text-style("TTInterfaces", 28px, 1.44, -0.01px);
+          margin-top: 0px;
+        }
+
+        @media ($breakpoint-desktop-x-large) {
+          @include text-style("TTInterfaces", 32px, 1.44, -0.01px);
           margin-top: 0px;
         }
       }
@@ -71,12 +83,8 @@
         }
 
         > span {
-          @include text-style("TTInterfaces Bold", 700, 14px, 1.29);
+          @include text-style("TTInterfaces Bold", 14px, 1.29, 0.54px);
           margin-left: auto;
-
-          @media ($breakpoint-desktop) {
-            font-size: 14px;
-          }
         }
 
         a {
@@ -106,7 +114,7 @@
 
     .subscribe {
       @media ($breakpoint-desktop) {
-        padding: 65px 100px;
+        padding: 32px 68px;
       }
 
       img {
@@ -120,28 +128,37 @@
       }
       
       > span {
-        @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
+        @include text-style("TTInterfaces Bold", 24px, 1.5, -0.01px);
 
         @media ($breakpoint-desktop) {
-          font-size: 32px;
-          line-height: 1.44;
+          @include text-style("TTInterfaces Bold", 28px, 1.44, -0.01px);
+        }
+
+        @media ($breakpoint-desktop-x-large) {
+          @include text-style("TTInterfaces Bold", 32px, 1.44, -0.01px);
         }
       }
 
       .contact-form {
         p {
-          @include text-style("TTInterfaces Medium", 500, 24px, 1.5);
+          @include text-style("TTInterfaces Medium", 24px, 1.5, -0.01px);
           margin-top: 45px;
           margin-bottom: 15px;
 
           @media ($breakpoint-desktop) {
-            @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+            @include text-style("TTInterfaces DemiBold", 28px, 1.44, -0.01px);
+            margin-top: 60px;
+            margin-bottom: 20px;
+          }
+
+          @media ($breakpoint-desktop-x-large) {
+            @include text-style("TTInterfaces DemiBold", 32px, 1.44, -0.01px);
             margin-top: 60px;
             margin-bottom: 20px;
           }
         }
         input {
-          @include text-style("TTInterfaces", 400, 20px);
+          @include text-style("TTInterfaces", 20px, normal, 0.29px);
           border-radius: 0;
           border-width: 0px 0px 1px 0px;
           border-color: $neutral-dark-grey;
@@ -152,7 +169,7 @@
           }
 
           @media ($breakpoint-desktop) {
-            @include text-style("TTInterfaces", 400, 32px, 1.44);
+            @include text-style("TTInterfaces", 32px, 1.44, -0.01px);
           }
         }
         form.form-job-searched {
@@ -178,12 +195,8 @@
               }
             }
             p {
-              @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
+              @include text-style("TTInterfaces Bold", 24px, 1.5, -0.01px);
               margin: 0;
-
-              @media ($breakpoint-desktop) {
-                @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
-              }
             }
           }
         }
@@ -201,12 +214,8 @@
         }
 
         > span {
-          @include text-style("TTInterfaces Bold", 700, 14px, 1.29);
+          @include text-style("TTInterfaces Bold", 14px, 1.29, 0.54px);
           margin-left: auto;
-
-          @media ($breakpoint-desktop) {
-            font-size: 14px;
-          }
         }
 
         img {
@@ -291,10 +300,9 @@ form.form-years-experience {
       visibility: hidden;
     }
     label {
-      @include text-style("TTInterfaces", 400, 18px);
+      @include text-style("TTInterfaces", 18px, 3, -0.01px);
       display: block;
       height: 55px;
-      line-height: 2.9em;
       padding-left: 1em;
       padding-right: 3em;
       cursor: pointer;
@@ -302,8 +310,7 @@ form.form-years-experience {
       transition: .3s color ease-in-out;
 
       @media ($breakpoint-desktop) {
-        font-size: 20px;
-        line-height: 2.5em;
+        @include text-style("TTInterfaces", 20px, 2.5, -0.01px);
       }
     }
     
@@ -337,10 +344,10 @@ form.form-years-experience {
   padding: 30vh 10vw 0px 10vw;
   text-align: center;
   h2 {
-    @include text-style("TTInterfaces DemiBold", 600, 42px, 1.17);
+    @include text-style("TTInterfaces DemiBold", 42px, 1.17, -0.02px);
 
     @media ($breakpoint-desktop) {
-      @include text-style("TTInterfaces DemiBold", 600, 80px, 1.1);   
+      @include text-style("TTInterfaces DemiBold", 80px, 1.1, -0.04px);   
       margin-bottom: 33px;
     }
   }
@@ -351,10 +358,10 @@ form.form-years-experience {
     }
   }
   p {
-    @include text-style("TTInterfaces DemiBold", 400, 24px, 1.5);
+    @include text-style("TTInterfaces DemiBold", 24px, 1.5, -0.01px);
 
     @media ($breakpoint-desktop) {
-      @include text-style("TTInterfaces", 400, 56px, 1.25);
+      @include text-style("TTInterfaces", 56px, 1.25, -0.03px);
       margin-top: 35px;
     }
   }

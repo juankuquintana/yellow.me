@@ -9,15 +9,22 @@
   padding: 202px 12vw 80px 12vw;
 
   @media ($breakpoint-desktop) {
+    padding: 190px 10vw 147px 10vw;
+  }
+
+  @media ($breakpoint-desktop-x-large) {
     padding: 308px 10vw 147px 10vw;
   }
 
   h2 {
-    @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+    @include text-style("TTInterfaces Medium", 38px, 1.26, -0.02px);
 
     @media ($breakpoint-desktop) {
-      font-size: 56px;
-      line-height: normal;
+      @include text-style("TTInterfaces Medium", 52px, normal, -0.03px);
+    }
+
+    @media ($breakpoint-desktop-x-large) {
+      @include text-style("TTInterfaces Medium", 56px, normal, -0.03px);
     }
 
     br {
@@ -39,15 +46,22 @@
   }
 
   h2 {
-    @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+    @include text-style("TTInterfaces Medium", 38px, 1.26, -0.02px);
     &:not(:first-child) {
       margin-top: 100px;
     }
 
     @media ($breakpoint-desktop) {
       margin-top: 0px !important;
-      font-size: 56px;
-      line-height: normal;
+      @include text-style("TTInterfaces Medium", 44px, normal, -0.03px);
+      &:first-child {
+        padding-top: 366px;
+      }
+    }
+
+    @media ($breakpoint-desktop-x-large) {
+      margin-top: 0px !important;
+      @include text-style("TTInterfaces Medium", 56px, normal, -0.03px);
       &:first-child {
         padding-top: 366px;
       }
@@ -55,7 +69,7 @@
   }
 
   p {
-    @include text-style("TTInterfaces", 400, 24px, 1.5);
+    @include text-style("TTInterfaces", 24px, 1.5, -0.01px);
     &:not(:last-child) {
       margin-bottom: 100px;
     }
@@ -68,8 +82,7 @@
   .section--left {
     .statement {
       margin-bottom: 100px;
-      @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
-      letter-spacing: -1.0px;
+      @include text-style("TTInterfaces Bold", 24px, 1.5, -0.01px);
 
       @media ($breakpoint-desktop) {
         padding-top: 142px;
@@ -90,20 +103,15 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  p {
-    @include text-style("TTInterfaces", 400, 24px, 1.5);
-  }
-
   .section--left {
     .statement {
       margin-bottom: 12px;
-      @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+      @include text-style("TTInterfaces Medium", 38px, 1.26, -0.02px);
     
       @media ($breakpoint-desktop) {
         padding-top: 0px;
         margin-bottom: 90px;
-        font-size: 56px;
-        line-height: normal;
+        @include text-style("TTInterfaces Medium", 56px, normal, -0.03px);
         max-width: 330px;
         position: sticky;
         top: 4rem;
@@ -113,6 +121,10 @@
   .section--right {
     @media ($breakpoint-desktop) {
       padding-top: 140px;
+    }
+
+    p {
+      @include text-style("TTInterfaces", 24px, 1.5, -0.01px);
     }
   }
 }
@@ -125,12 +137,11 @@
   }
 
   > h2 {
-    @include text-style("TTInterfaces", 400, 38px, 1.26);
+    @include text-style("TTInterfaces", 38px, 1.26, -0.02px);
     margin-bottom: 33px;
 
     @media ($breakpoint-desktop) {
-      font-size: 56px;
-      line-height: 1.18;
+      @include text-style("TTInterfaces", 56px, 1.25, -0.03px);
       margin-bottom: 75px;
     }
   }
@@ -163,16 +174,16 @@
       }
 
       > span {
-        @include text-style("TTInterfaces Medium", 500, 24px, 1.5);
+        @include text-style("TTInterfaces Medium", 24px, 1.5, -0.01px);
         display: inline-block;
         margin-bottom: 46px;
 
         @media ($breakpoint-desktop) {
-          @include text-style("TTInterfaces Bold", 700, 32px, 1.44);
+          @include text-style("TTInterfaces Bold", 32px, 1.44, -0.01px);
         }
       }
       span.suscribed {
-        @include text-style("TTInterfaces Bold", 700, 24px, 1.5);  
+        @include text-style("TTInterfaces Bold", 24px, 1.5, -0.01px);  
       }
     }
 
@@ -180,7 +191,7 @@
       border-width: 0px 0px 1px 0px;
       border-color: $neutral-dark-grey;
       width: 100%;
-      @include text-style("TTInterfaces", 400, 20px);
+      @include text-style("TTInterfaces", 20px, normal, 0.29px);
       padding: 7px;
 
       &:focus {
@@ -194,7 +205,7 @@
       grid-template-columns: 75% 25%;
       align-items: center;
       > span {
-        @include text-style("TTInterfaces", 400, 14px);
+        @include text-style("TTInterfaces", 14px, normal, 0.16px);
         color: $neutral-dark-grey;
       }
       

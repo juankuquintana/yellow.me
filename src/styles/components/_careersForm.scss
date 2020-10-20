@@ -116,7 +116,7 @@
   }
 
   button {
-    @include text-style("TTInterfaces Bold", 700, 18px, normal, 0.54px);
+    @include text-style("TTInterfaces Bold", 18px, normal, 0.54px);
     text-decoration: none;
     background-color: $neutral-black;
     color: $neutral-white;
@@ -182,7 +182,7 @@
       }
 
       p.title {
-        @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+        @include text-style("TTInterfaces Bold", 24px, 1.34, -0.1px);
         max-width: 290px;
 
         @media ($breakpoint-desktop) {
@@ -191,11 +191,11 @@
       }
 
       p.subtitle {
-        @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+        @include text-style("TTInterfaces DemiBold", 18px, 1.45, -0.1px);
         margin-top: 8px;
 
         @media ($breakpoint-desktop) {
-          @include text-style("TTInterfaces", 400, 24px, 1.5);
+          @include text-style("TTInterfaces", 24px, 1.5);
           max-width: 370px;
         }
       }
@@ -259,16 +259,16 @@
     }
 
     p.title {
-      @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+      @include text-style("TTInterfaces Bold", 24px, 1.34, -0.1px);
       margin-bottom: 8px;
 
       @media ($breakpoint-desktop) {
-        @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+        @include text-style("TTInterfaces DemiBold", 32px, 1.44, -0.2px);
         margin-bottom: 12px;
       }
     }
     p.subtitle {
-      @include text-style("TTInterfaces Medium", 500, 12px, 1.5);
+      @include text-style("TTInterfaces Medium", 12px, 1.5, 0.54px);
       color: $neutral-dark-grey;
     }
   }
@@ -291,18 +291,18 @@
     }
 
     span {
-      @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+      @include text-style("TTInterfaces DemiBold", 18px, 1.45, -0.1px);
       margin: auto;
 
       @media ($breakpoint-desktop) {
-        @include text-style("TTInterfaces", 400, 24px, 1.5);
+        @include text-style("TTInterfaces", 24px, 1.5, -0.1px);
       }
     }
     &.selected { background-color: $yellow-primary; border-color: $yellow-primary;}
   }
 
   button {
-    @include text-style("TTInterfaces Bold", 700, 14px, 1.35, 0.54px);
+    @include text-style("TTInterfaces Bold", 14px, 1.35, 0.54px);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
@@ -381,16 +381,16 @@
     }
 
     p.title {
-      @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+      @include text-style("TTInterfaces Bold", 24px, 1.34, -0.1px);
       margin-bottom: 8px;
 
       @media ($breakpoint-desktop) {
-        @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+        @include text-style("TTInterfaces DemiBold", 32px, 1.44, -0.2px);
           margin-bottom: 12px;
       }
     }
     p.subtitle {
-      @include text-style("TTInterfaces Medium", 500, 12px, 1.5);
+      @include text-style("TTInterfaces Medium", 12px, 1.5, 0.54px);
       color: $neutral-dark-grey;
     }
   }
@@ -413,17 +413,17 @@
         border: 1px solid $yellow-primary;
       }
       span {
-        @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+        @include text-style("TTInterfaces DemiBold", 18px, 1.45, -0.1px);
 
         @media ($breakpoint-desktop) {
-          @include text-style("TTInterfaces", 400, 24px, 1.5);
+          @include text-style("TTInterfaces", 24px, 1.5, -0.1px);
         }
       }
       &.selected { background-color: $yellow-primary; border-color: $yellow-primary;}
     }
   }
   button {
-    @include text-style("TTInterfaces Bold", 700, 14px, 1.35, 0.54px);
+    @include text-style("TTInterfaces Bold", 14px, 1.35, 0.54px);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
@@ -501,10 +501,10 @@
     }
 
     p.title {
-      @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+      @include text-style("TTInterfaces Bold", 24px, 1.34, -0.1px);
 
       @media ($breakpoint-desktop) {
-        @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+        @include text-style("TTInterfaces DemiBold", 32px, 1.44, -0.2px);
       }
     }
   }
@@ -520,16 +520,16 @@
       border: 1px solid $yellow-primary;
     }
     span {
-      @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+      @include text-style("TTInterfaces DemiBold", 18px, 1.45, -0.1px);
 
       @media ($breakpoint-desktop) {
-        @include text-style("TTInterfaces", 400, 24px, 1.5);
+        @include text-style("TTInterfaces", 24px, 1.5, -0.1px);
       }
     }
     &.selected { background-color: $yellow-primary; border-color: $yellow-primary;}
   }
   button {
-    @include text-style("TTInterfaces Bold", 700, 14px, 1.35, 0.54px);
+    @include text-style("TTInterfaces Bold", 14px, 1.35, 0.54px);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
@@ -589,10 +589,10 @@
       }
 
       p.title {
-        @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+        @include text-style("TTInterfaces Bold", 24px, 1.34, -0.1px);
 
         @media ($breakpoint-desktop) {
-          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+          @include text-style("TTInterfaces DemiBold", 32px, 1.44, -0.2px);
         }
       }
     }
@@ -670,10 +670,10 @@
       }
       
       span {
-        @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+        @include text-style("TTInterfaces DemiBold", 18px, 1.45);
 
         @media ($breakpoint-desktop) {
-          @include text-style("TTInterfaces", 400, 24px, 1.5);
+          @include text-style("TTInterfaces", 24px, 1.5);
         }
       }
 
@@ -687,7 +687,7 @@
   }
   
   button {
-    @include text-style("TTInterfaces Bold", 700, 14px, 1.35, 0.54px);
+    @include text-style("TTInterfaces Bold", 14px, 1.35, 0.54px);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
@@ -747,10 +747,10 @@
       }
 
       p.title {
-        @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+        @include text-style("TTInterfaces Bold", 24px, 1.34, -0.1px);
 
         @media ($breakpoint-desktop) {
-          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+          @include text-style("TTInterfaces DemiBold", 32px, 1.44, -0.2px);
         }
       }
     }
@@ -771,7 +771,7 @@
         }
 
         p.person {
-          @include text-style("TTInterfaces", 400, 24px, 1.5);
+          @include text-style("TTInterfaces", 24px, 1.5, -0.1px);
           white-space: break-spaces;
   
           span {
@@ -787,11 +787,11 @@
             }
           }
           @media ($breakpoint-desktop) {
-            @include text-style("TTInterfaces", 400, 32px, 1.44);
+            @include text-style("TTInterfaces", 32px, 1.44, -0.1px);
           }
         }
         p.alert-fill {
-          @include text-style("TTInterfaces Medium", 500, 16px, normal);
+          @include text-style("TTInterfaces Medium", 16px, normal);
           color: $brand-yellow;
           margin-top: 8px;
         }
@@ -807,7 +807,7 @@
   }
 
   button {
-    @include text-style("TTInterfaces Bold", 700, 14px, 1.35, 0.54px);
+    @include text-style("TTInterfaces Bold", 14px, 1.35, 0.54px);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
@@ -865,10 +865,10 @@
         padding-right: 50px;
       }
       p.title {
-        @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+        @include text-style("TTInterfaces Bold", 24px, 1.34, -0.1px);
 
         @media ($breakpoint-desktop) {
-          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+          @include text-style("TTInterfaces DemiBold", 32px, 1.44, -0.2px);
         }
       }
     }
@@ -889,13 +889,13 @@
         }
 
         p {
-          @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+          @include text-style("TTInterfaces DemiBold", 18px, 1.45, -0.1px);
           margin-bottom: 16px;
           &.second-question {
             margin-top: 32px;
           }
           @media ($breakpoint-desktop) {
-            @include text-style("TTInterfaces", 400, 24px, 1.44);
+            @include text-style("TTInterfaces", 24px, 1.44, -0.2px);
           }
         }
       }
@@ -927,17 +927,17 @@
         border: 1px solid $yellow-primary;
       }
       span {
-        @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+        @include text-style("TTInterfaces DemiBold", 18px, 1.45, -0.1px);
 
         @media ($breakpoint-desktop) {
-          @include text-style("TTInterfaces", 400, 24px, 1.5);
+          @include text-style("TTInterfaces", 24px, 1.5, -0.1px);
         }
       }
       &.selected { background-color: $yellow-primary; border-color: $yellow-primary;}
     }
   }
   button {
-    @include text-style("TTInterfaces Bold", 700, 14px, 1.35, 0.54px);
+    @include text-style("TTInterfaces Bold", 14px, 1.35, 0.54px);
     text-decoration: none;
     background-color: $neutral-white;
     color: $neutral-black;
@@ -986,10 +986,10 @@
       }
 
       p.title {
-        @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+        @include text-style("TTInterfaces Bold", 24px, 1.34, -0.1px);
 
         @media ($breakpoint-desktop) {
-          @include text-style("TTInterfaces DemiBold", 600, 32px, 1.44);
+          @include text-style("TTInterfaces DemiBold", 32px, 1.44, -0.2px);
         }
       }
   
@@ -1001,26 +1001,26 @@
         padding: 18px;
   
         p {
-          @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+          @include text-style("TTInterfaces DemiBold", 18px, 1.45, -0.1px);
           margin: 4px 0px;
           text-align: left;
   
           @media($breakpoint-desktop) {
-            @include text-style("TTInterfaces", 400, 24px, 1.5);
+            @include text-style("TTInterfaces", 24px, 1.5, -0.1px);
           }
   
           &#name {
-            @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+            @include text-style("TTInterfaces Bold", 24px, 1.34, -0.1px);
   
             @media ($breakpoint-desktop) {
-              @include text-style("TTInterfaces Bold", 700, 32px, normal);
+              @include text-style("TTInterfaces Bold", 32px, normal);
             }
           }
         }
       }
   
       p.subtitle {
-        @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+        @include text-style("TTInterfaces DemiBold", 18px, 1.45, 0.54px);
         margin-top: 32px;
         margin-bottom: 12px;
       }
@@ -1040,13 +1040,13 @@
           margin-right: 11px;
     
           span {
-            @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+            @include text-style("TTInterfaces Bold", 24px, 1.34, -0.1px);
             display: block;
             text-align: left;
             margin-bottom: 0px;
           }
           p {
-            @include text-style("TTInterfaces Bold", 700, 12px, 1.5);
+            @include text-style("TTInterfaces Bold", 12px, 1.5, -0.1px);
             margin: 0px;
             text-align: left;
           }
@@ -1067,16 +1067,16 @@
       }
 
       p.subtitle {
-        @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+        @include text-style("TTInterfaces DemiBold", 18px, 1.45, 0.54px);
         margin-top: 46px;
         margin-bottom: 12px;
 
         @media ($breakpoint-desktop) {
-          @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+          @include text-style("TTInterfaces DemiBold", 18px, 1.45, 0.54px);
         }
       }
       p.feel-productive {
-        @include text-style("TTInterfaces", 400, 24px, 1.5);
+        @include text-style("TTInterfaces", 24px, 1.5, -0.1px);
         text-decoration: underline;
         margin-bottom: 48px;
 
@@ -1101,22 +1101,22 @@
           background-color: $grey-medium; border-color: $grey-medium;
     
           span {
-            @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+            @include text-style("TTInterfaces Bold", 24px, 1.34, -0.1px);
             display: block;
             text-align: left;
             margin-bottom: 0px;
 
             @media ($breakpoint-desktop) {
-              @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+              @include text-style("TTInterfaces Bold", 24px, 1.34, -0.1px);
             }
           }
           p {
-            @include text-style("TTInterfaces Bold", 700, 12px, 1.5);
+            @include text-style("TTInterfaces Bold", 12px, 1.5, -0.1px);
             margin: 0px;
             text-align: left;
 
             @media ($breakpoint-desktop) {
-              @include text-style("TTInterfaces Medium", 500, 12px, 1.5);
+              @include text-style("TTInterfaces Medium", 12px, 1.5, -0.1px);
             }
           }
         }
@@ -1125,7 +1125,7 @@
   }
 
   button {
-    @include text-style("TTInterfaces Bold", 700, 18px, normal, 0.54px);
+    @include text-style("TTInterfaces Bold", 18px, normal, 0.54px);
     text-decoration: none;
     background-color: $neutral-black;
     color: $neutral-white;
@@ -1218,7 +1218,7 @@
       }
 
       span {
-        @include text-style("TTInterfaces Bold", 700, 24px, 1.34);
+        @include text-style("TTInterfaces Bold", 24px, 1.34, -0.1px);
         max-width: 290px;
         margin-top: 48px;
 
@@ -1228,17 +1228,17 @@
       }
 
       p {
-        @include text-style("TTInterfaces DemiBold", 600, 18px, 1.45);
+        @include text-style("TTInterfaces DemiBold", 18px, 1.45, -0.1px);
         margin-top: 16px;
 
         @media ($breakpoint-desktop) {
-          @include text-style("TTInterfaces", 400, 24px, 1.5);
+          @include text-style("TTInterfaces", 24px, 1.5, -0.1px);
           max-width: 370px;
         }
       }
 
       button {
-        @include text-style("TTInterfaces Bold", 700, 18px, normal, 0.54px);
+        @include text-style("TTInterfaces Bold", 18px, normal, 0.54px);
         text-decoration: none;
         background-color: $neutral-black;
         color: $neutral-white;

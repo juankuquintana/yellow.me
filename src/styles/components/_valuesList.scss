@@ -6,15 +6,15 @@
   }
 
   h2 {
-    @include text-style("TTInterfaces DemiBold", 600, 42px, 1.17);
+    @include text-style("TTInterfaces DemiBold", 42px, 1.17, -0.02px);
 
     @media ($breakpoint-desktop) {
-      @include text-style("TTInterfaces Medium", 500, 56px, 1.25);
+      @include text-style("TTInterfaces Medium", 56px, 1.25, -0.03px);
     }
   }
 
   p {
-    @include text-style("TTInterfaces", 400, 24px, 1.5);
+    @include text-style("TTInterfaces", 24px, 1.5, -0.01px);
 
     @media ($breakpoint-desktop) {
       max-width: 900px;

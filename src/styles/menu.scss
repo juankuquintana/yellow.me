@@ -58,7 +58,7 @@
   }
 
   &__link {
-    @include text-style("TTInterfaces DemiBold", 600, 42px, 1.17);
+    @include text-style("TTInterfaces DemiBold", 42px, 1.17);
     position: relative;
     text-align: end;
     opacity: 0;

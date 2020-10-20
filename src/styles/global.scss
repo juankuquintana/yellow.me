@@ -118,7 +118,7 @@ header {
   }
 
   .links-ctr a {
-    @include text-style("TTInterfaces Bold", 700, 14px, 1.29);
+    @include text-style("TTInterfaces Bold", 14px, 1.29);
     text-decoration: none;
     color: #000;
     margin-left: 2rem;
@@ -179,10 +179,10 @@ header {
 .footer {
   padding: 40px 12vw 80px 12vw;
   &--find-us {
-    @include text-style("TTInterfaces Bold", 700, 18px);
+    @include text-style("TTInterfaces Bold", 18px, normal, 0.2px);
     
     @media ($breakpoint-desktop) {
-      @include text-style("TTInterfaces Bold", 700, 24px, 1.5);
+      @include text-style("TTInterfaces Bold", 24px, 1.5, -0.01px);
       padding: 0px 13vw 0px 13vw;
     }
   }

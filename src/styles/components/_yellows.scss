@@ -6,14 +6,14 @@
   }
 
   > h2 {
-    @include text-style("TTInterfaces Medium", 500, 38px, 1.25);
+    @include text-style("TTInterfaces Medium", 38px, 1.26, -0.02px);
     text-align: center;
     max-width: 600px;
     margin: auto;
     margin-bottom: 46px;
 
     @media ($breakpoint-desktop) {
-      font-size: 56px; 
+      @include text-style("TTInterfaces Medium", 56px, 1.25, -0.03px);
       margin-bottom: 100px;
     }
   }
@@ -67,11 +67,10 @@
       }
 
       .yellow-name {
-        @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+        @include text-style("TTInterfaces Medium", 38px, 1.26, -0.02px);
 
         @media ($breakpoint-desktop) {
-          font-size: 56px;
-          line-height: normal;
+          @include text-style("TTInterfaces Medium", 56px, normal, -0.03px);
         }
       }
   
@@ -85,15 +84,15 @@
       }
       
       .caption {
-        @include text-style("TTInterfaces Bold", 700, 14px, 1.29);
+        @include text-style("TTInterfaces Bold", 14px, 1.29, 0.54px);
         margin-bottom: 0;
       }
 
       .value {
-        @include text-style("TTInterfaces", 400, 20px, 1.5);
+        @include text-style("TTInterfaces", 20px, normal, 0.29px);
 
         @media ($breakpoint-desktop) {
-          font-size: 24px;
+          @include text-style("TTInterfaces", 24px, 1.5, -0.01px);
         }
       }
   
@@ -108,7 +107,7 @@
         }
 
         span {
-          @include text-style("TTInterfaces", 400, 14px);
+          @include text-style("TTInterfaces", 14px, normal, 0.16px);
         }
 
         img {

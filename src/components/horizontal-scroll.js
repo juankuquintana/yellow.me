@@ -30,9 +30,10 @@ const Title = styled.div`
   text-align: center;
   margin-top: calc(50vh - 217px);
   font-family: "TTInterfaces";
-  font-weight: 400;
+  font-weight: 500;
   font-size: 56px;
   line-height: 1.25;
+  letter-spacing: -0.01px;
 `;
 
 const calcDynamicHeight = objectWidth => {

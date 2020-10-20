@@ -6,11 +6,16 @@
   }
 
   h2 {
-    @include text-style("TTInterfaces Medium", 500, 38px, 1.26);
+    @include text-style("TTInterfaces Medium", 38px, 1.26, -0.02px);
     margin-bottom: 64px;
 
     @media ($breakpoint-desktop) {
-      font-size: 56px;
+      @include text-style("TTInterfaces Medium", 44px, normal, -0.03px);
+      margin-bottom: 90px;
+    }
+
+    @media ($breakpoint-desktop-x-large) {
+      @include text-style("TTInterfaces Medium", 56px, normal, -0.03px);
       margin-bottom: 90px;
     }
   }
@@ -37,11 +42,10 @@
       }
 
       p {
-        @include text-style("TTInterfaces", 400, 20px);
+        @include text-style("TTInterfaces", 20px, normal, 0.29px);
 
         @media ($breakpoint-desktop) {
-          font-size: 24px;
-          line-height: 1.5;
+          @include text-style("TTInterfaces", 24px, 1.5, -0.01px);
           width: 90%;
         }
       }
