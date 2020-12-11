@@ -22,7 +22,7 @@ const promises = [
 
 const perks = [
   { "emoji": "💊", "text": "IMSS, INFONAVIT, AFORE" },
-  { "emoji": "⛑", "text": "Mayor Medical Insurance" },
+  { "emoji": "⛑", "text": "Major Medical Insurance" },
   { "emoji": "🏠", "text": "Remote Friendly" },
   { "emoji": "🤓", "text": "Complete Autonomy" },
   { "emoji": "🎄", "text": "Christmas bonus" },
