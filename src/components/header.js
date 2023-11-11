@@ -25,7 +25,7 @@ const Header = () => {
     let prevScrollpos = window.pageYOffset;
     window.onscroll = function() {
       let currentScrollPos = window.pageYOffset;
-      
+
       if (currentScrollPos > prevScrollpos) {
         if (currentScrollPos > 250)
           setIsScrollingDown(true);
@@ -52,31 +52,7 @@ const Header = () => {
         <img src={Logotype}/>
       </Link>
 
-      <div className="links-ctr-toogle-menu">
-        <div className={`menu__icon ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
-          <span className={`line-1`}></span>
-          <span className={`line-1`}></span>
-        </div>  
-        <Menu 
-          isMenuOpen={isMenuOpen}
-          toggleMenu={toggleMenu}
-        />
-      </div>
-
-      <div className="links-ctr">
-        <Link to="/culture" activeClassName="selected">
-          TRIBE + CULTURE
-        </Link>
-        <Link to="/careers" activeClassName="selected">
-          CAREERS
-        </Link>
-        <Link to="/contact" className="bg-yellow CTA">
-          CONTACT
-        </Link>
-      </div>
-
-      
-
+      <div className="text">Closed in 2022</div>
     </header>
   )
 }
