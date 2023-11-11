@@ -8,10 +8,7 @@ const Menu = ({ isMenuOpen, toggleMenu }) => (
   <div className={`menu ${isMenuOpen ? 'menu--open' : ''}`}>
     <div className="overlay-menu">
       <nav className="menu__items-container">
-
-
       </nav>
-
     </div>
   </div>
 )
