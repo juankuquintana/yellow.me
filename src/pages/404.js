@@ -1,9 +1,7 @@
-import { useEffect } from 'react';
-import { navigate } from "@reach/router"
+import { navigate } from 'gatsby'
 
-export default () => {
-  useEffect(() => {
-    navigate('/');
-  }, []);
-  return null;
-};
+const NotFoundPage = () => {
+  return navigate('/')
+}
+
+export default NotFoundPage
