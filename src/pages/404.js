@@ -1,7 +1,9 @@
-import { navigate } from 'gatsby'
+import React from 'react';
 
-const NotFoundPage = () => {
-  return navigate('/')
+export default function NotFound() {
+  if (typeof window !== 'undefined') {
+    window.location = '/';
+  }
+
+  return null;
 }
-
-export default NotFoundPage
