@@ -52,7 +52,7 @@ const Header = () => {
         <img src={Logotype}/>
       </Link>
 
-      <div className="text">Closed in 2022</div>
+      <div className="text">We closed our doors in 2022</div>
     </header>
   )
 }
