@@ -95,10 +95,12 @@ header {
   }
 
   div.text {
+    font-size: 14px;
     height: 24px;
     line-height: 24px;
 
     @media ($breakpoint-desktop) {
+      font-size: 18px;
       height: 32px;
       line-height: 32px;
     }
