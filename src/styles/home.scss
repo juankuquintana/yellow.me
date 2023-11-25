@@ -59,9 +59,11 @@
 
 .yellowme-home-section {
   padding: 0 5vw;
+  margin-bottom: 50px;
 
   @media ($breakpoint-desktop) {
     padding: 80px 10vw;
+    margin-bottom: 0px;
   }
 
   video {
